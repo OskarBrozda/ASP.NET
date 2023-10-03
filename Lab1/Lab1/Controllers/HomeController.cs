@@ -4,6 +4,10 @@ using System.Diagnostics;
 
 namespace Lab1.Controllers
 {
+    public enum Operators
+    {
+        ADD, SUB, MUL, DIV
+    }
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -20,6 +24,33 @@ namespace Lab1.Controllers
 
         public IActionResult Privacy()
         {
+            return View();
+        }
+
+        public IActionResult About([FromQuery(Name = "app-author")]string author)
+        {
+            //string author = Request.Query["author"];
+            ViewBag.Author = author;
+            return View();
+        }
+
+        public IActionResult Calculator([FromQuery(Name = "operator")] Operators op, double? x, double? y)
+        {
+            if (x == null || y == null)
+            {
+                return View("Error");
+            }
+            switch(op)
+            {
+                case Operators.ADD:
+                ViewBag.result = x + y; break;
+                case Operators.SUB:
+                ViewBag.result = x - y; break;
+                case Operators.MUL:
+                ViewBag.result = x * y; break;
+                case Operators.DIV:
+                ViewBag.result = x / y; break;
+            }
             return View();
         }
 
