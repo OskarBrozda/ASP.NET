@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\oskar.brozda\\Documents\\GitHub\\ASP.NET\\Lab1\\Lab1\\Lab1.csproj": {}
+    "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab1\\Lab1\\Lab1.csproj": {}
   },
   "projects": {
-    "D:\\Users\\oskar.brozda\\Documents\\GitHub\\ASP.NET\\Lab1\\Lab1\\Lab1.csproj": {
+    "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab1\\Lab1\\Lab1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\oskar.brozda\\Documents\\GitHub\\ASP.NET\\Lab1\\Lab1\\Lab1.csproj",
+        "projectUniqueName": "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab1\\Lab1\\Lab1.csproj",
         "projectName": "Lab1",
-        "projectPath": "D:\\Users\\oskar.brozda\\Documents\\GitHub\\ASP.NET\\Lab1\\Lab1\\Lab1.csproj",
+        "projectPath": "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab1\\Lab1\\Lab1.csproj",
         "packagesPath": "D:\\Users\\oskar.brozda\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\oskar.brozda\\Documents\\GitHub\\ASP.NET\\Lab1\\Lab1\\obj\\",
+        "outputPath": "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab1\\Lab1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "D:\\Users\\oskar.brozda\\AppData\\Roaming\\NuGet\\NuGet.Config",
