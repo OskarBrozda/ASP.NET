@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A9SShcTftXGsHjucAD2MOj4c4wrLp/7h349udbdDM7JE+QHijPaHRoMAfN/J3RnbPJ6Gcp7OJuB4YxQ3Ts+vLQ==",
+  "dgSpecHash": "YZojGYgnqlWFhdjx6odTz2HA5srKEX8MXpxNTQ0dm9bvpUFZmTzYvaygXrVrER5iTVAQIPIDCcgKuNod6EBnEQ==",
   "success": true,
-  "projectFilePath": "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab2\\Lab2.csproj",
+  "projectFilePath": "/Users/oskarbrozda/GitHub/ASP.NET/Lab2/Lab2.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -13,7 +13,7 @@ namespace Lab2.Models
         public double? X { get; set; }
         public double? Y { get; set; }
 
-        public String Op
+        public string Op
         {
             get
             {

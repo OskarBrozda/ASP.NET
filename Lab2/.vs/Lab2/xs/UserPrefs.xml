@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{D4E9F5C5-C8A1-4868-BC43-9D1FBE0494BA}|Default">
+  <MonoDevelop.Ide.ItemProperties.Lab2 PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Birth.cs">
+    <Files>
+      <File FileName="Controllers/BirthController.cs" Line="4" Column="1" />
+      <File FileName="Models/Birth.cs" Line="21" Column="31" />
+      <File FileName="Views/Birth/Age.cshtml" Line="9" Column="45" />
+      <File FileName="Views/Birth/Form.cshtml" Line="21" Column="45" />
+      <File FileName="Controllers/CalculatorController.cs" Line="29" Column="1" NotebookId="1" />
+      <File FileName="Models/Calculator.cs" Line="10" Column="28" NotebookId="1" />
+      <File FileName="Views/Calculator/Result.cshtml" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Views/Calculator/Form.cshtml" Line="20" Column="34" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Lab2" expanded="True">
+            <Node name="Lab2">
+              <Node name="Views">
+                <Node name="Birth">
+                  <Node name="Age.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

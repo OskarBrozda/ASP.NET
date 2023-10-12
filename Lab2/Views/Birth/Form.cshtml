@@ -7,18 +7,37 @@
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="col-6">
-            <h2>Wiek</h2>
-            <form action="Result" method="POST">
+            <h2>Data urodzenia</h2>
+            <form action="Age" method="POST">
                 <div class="mb-3">
                     <label class="form-label" for="name">Imię</label>
-                    <input class="form-control" type="text" name="imie" id="name" />
+                    <input class="form-control" type="text" name="name" id="name" />
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="y">Data urodzenia</label>
-                    <input class="form-control" type="number" name="y" step="0.00001" id="y" />
+                    <label class="form-label" for="dayOfBirth">Dzień</label>
+                    <select name="dayOfBirth">
+                        @for(int i = 1; i <= 31; i++)
+                        {
+                         <option value="@i">@i</option>
+                        }
+                    </select>
+                    <label class="form-label" for="monthOfBirth">Miesiąc</label>
+                    <select name="monthOfBirth">
+                        @for (int i = 1; i <= 12; i++)
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    </select>
+                    <label class="form-label" for="yearOfBirth">Rok</label>
+                    <select name="yearOfBirth">
+                        @for (int i = DateTime.Now.Year; i > 0 ; i--)
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    </select>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-primary" type="submit">Oblicz</button>
+                    <button class="btn btn-primary" type="submit">Akcja</button>
                 </div>
             </form>
         </div>
