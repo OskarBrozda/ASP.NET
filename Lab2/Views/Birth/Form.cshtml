@@ -30,7 +30,7 @@
                     </select>
                     <label class="form-label" for="yearOfBirth">Rok</label>
                     <select name="yearOfBirth">
-                        @for (int i = DateTime.Now.Year; i > 0 ; i--)
+                        @for (int i = DateTime.Now.Year; i > 1900 ; i--)
                         {
                             <option value="@i">@i</option>
                         }
