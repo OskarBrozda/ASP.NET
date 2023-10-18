@@ -1,0 +1,50 @@
+﻿@model Photo
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <h2>Podaj dane dodawanego zdjęcia:</h2>
+            <form asp-controller="Photo" asp-action="Create" method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Data i godzina</label>
+                    <input class="form-control" asp-for="Date_time" />
+                    <span asp-validation-for="Date_time" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Opis</label>
+                    <input class="form-control" asp-for="Description" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Model aparatu</label>
+                    <input class="form-control" asp-for="Camera" />
+                    <span asp-validation-for="Camera" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Imię i nazwisko autora</label>
+                    <input class="form-control" asp-for="Author" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Rozdzielczość</label>
+                    <input class="form-control" asp-for="Definition" />
+                    <span asp-validation-for="Definition" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Format</label>
+                    <input class="form-control" asp-for="Format" />
+                    <span asp-validation-for="Format" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary" type="submit" asp-action="Gallery">Wróć</button>
+                    <button class="btn btn-primary" type="submit">Dodaj</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

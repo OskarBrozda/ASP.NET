@@ -1,0 +1,43 @@
+﻿@model Dictionary<int, Photo>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>GALERIA</h1>
+<h2>
+    <a class="btn btn-outline-primary" asp-controller="Photo" asp-action="Create">Dodaj zdjęcie</a>
+</h2>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Opis
+            </th>
+            <th>
+                Data i godzina
+            </th>
+            <th>
+                Akcje
+            </th>
+        </tr>
+        @foreach (var item in @Model)
+        {
+            <tr>
+                <td>
+                    @item.Value.Description
+                </td>
+                <td>
+                    @item.Value.Date_time
+                </td>
+                <td>
+                    <a class ="btn btn-outline-primary" asp-controller="Photo" asp-action="Update" asp-route-id=@item.Value.Id>Edycja</a>
+                    <a class ="btn btn-outline-info" asp-controller="Photo" asp-action="Details" asp-route-id=@item.Value.Id>Szczegóły</a>
+                    <a class ="btn btn-outline-danger" asp-controller="Photo" asp-action="Delete" asp-route-id=@item.Value.Id>Usuń</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
