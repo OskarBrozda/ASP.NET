@@ -11,16 +11,16 @@
         <h2>Szczegółowe dane:</h2>
         <form asp-controller="Photo" asp-action="Gallery" method="POST">
             <div class="mb-3">
-                <b class="form-label">Data i godzina: </b><p>@Model.Date_time</p>
-            </div>
-            <div class="mb-3">
                 <b class="form-label">Opis: </b><p>@Model.Description</p>                
             </div>
             <div class="mb-3">
-                <b class="form-label">Model aparatu: </b><p>@Model.Camera</p>                
+                <b class="form-label">Autor: </b><p>@Model.Author</p>               
             </div>
             <div class="mb-3">
-                <b class="form-label">Autor: </b><p>@Model.Author</p>               
+                <b class="form-label">Data i godzina: </b><p>@Model.Date_time</p>
+            </div>
+            <div class="mb-3">
+                <b class="form-label">Model aparatu: </b><p>@Model.Camera</p>
             </div>
             <div class="mb-3">
                 <b class="form-label">Rozdzielczość: </b><p>@Model.Definition</p>                

@@ -29,11 +29,9 @@ namespace Lab3___App.Models
         public string Author { get; set; }
 
 
-        [Required(ErrorMessage = " Proszę podać rozdzielczość.")]
         public string Definition { get; set; }
 
 
-        [Required(ErrorMessage = " Proszę podać format zdjęcia.")]
         public string Format { get; set; }
     }
 }
