@@ -10,28 +10,33 @@ namespace Lab3___App.Models
         public int Id { get; set; }
 
 
-        [Required(ErrorMessage = "Proszę podać date oraz godzinę.")]
+        [Display(Name = "Data i godzina")]
         public DateTime Date_time { get; set; }
 
 
-        [Required(ErrorMessage = " Proszę podać opis.")]
+        [Required(ErrorMessage = "Proszę podać opis.")]
         [StringLength(maximumLength: 100, MinimumLength = 3, ErrorMessage = "Długość opisu powinna mieścić sie między 3, a 100 znaków.")]
+        [Display(Name = "Opis")]
         public string Description { get; set; }
 
 
-        [Required(ErrorMessage = " Proszę podać nazwę aparatu.")]
+        [Required(ErrorMessage = "Proszę podać nazwę aparatu.")]
         [StringLength(maximumLength: 100, MinimumLength = 3, ErrorMessage = "Nazwa aparatu powinna mieścić sie między 3, a 100 znaków.")]
+        [Display(Name = "Model aparatu")] 
         public string Camera { get; set; }
 
 
-        [Required(ErrorMessage = " Proszę podać autora zdjęcia.")]
+        [Required(ErrorMessage = "Proszę podać autora zdjęcia.")]
         [StringLength(maximumLength: 100, MinimumLength = 3, ErrorMessage = "Imię i nazwisko autora powinno mieścić sie między 3, a 100 znaków.")]
+        [Display(Name = "Imię i nazwisko autora")] 
         public string Author { get; set; }
 
 
-        public string Definition { get; set; }
+        [Display(Name = "Rozdzielczość")] 
+        public Definition Definition { get; set; }
 
 
-        public string Format { get; set; }
+        [Display(Name = "Format")] 
+        public Format Format { get; set; }
     }
 }

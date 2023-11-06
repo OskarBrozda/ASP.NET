@@ -5,6 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IContactService, MemoryContactService>();
+builder.Services.AddSingleton<IDateTimeProvider, CurrentDateTimeProvider>();
+builder.Services.AddSingleton<IPhotoService, MemoryPhotoService>();
+
 
 
 var app = builder.Build();

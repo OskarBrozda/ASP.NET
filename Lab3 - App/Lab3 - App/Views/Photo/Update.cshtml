@@ -11,46 +11,32 @@
             <h2>Edytuj dane zdjęcia:</h2>
             <form asp-controller="Photo" asp-action="Update" method="POST">
                 <div class="mb-3">
-                    <label class="form-label">Opis</label>
+                    <label class="form-label" asp-for="Description"></label>
                     <input class="form-control" asp-for="Description" />
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <p class="form-label">Autor: <br /> @Model.Author</p>
+                    <label class="form-label" asp-for="Author"></label>
+                    <input class="form-control" asp-for="Author" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Data i godzina</label>
+                    <label class="form-label" asp-for="Date_time"></label>
                     <input class="form-control" asp-for="Date_time" />
                     <span asp-validation-for="Date_time" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Model aparatu</label>
+                    <label class="form-label" asp-for="Camera"></label>
                     <input class="form-control" asp-for="Camera" />
                     <span asp-validation-for="Camera" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Rozdzielczość</label>
-                    <select class="form-control" asp-for="Definition">
-                        <option value="360 × 640">360 × 640</option>
-                        <option value="375 × 667">375 × 667</option>
-                        <option value="576 x 480">576 x 480</option>
-                        <option value="1366 × 768">1366 × 768</option>
-                        <option value="1600 × 900">1600 × 900</option>
-                        <option value="1920 × 1080">1920 × 1080</option>
-                        <option value="2560 x 1440">2560 x 1440</option>
-                        <option value="4096 x 2160">4096 x 2160</option>
-                    </select>
+                    <label class="form-label" asp-for="Definition"></label>
+                    <select class="form-control" asp-for="Definition" asp-items="@Html.GetEnumSelectList<Definition>()"></select>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Format</label>
-                    <select class="form-control" asp-for="Format">
-                        <option value="JPEG">JPEG</option>
-                        <option value="JPG">JPG</option>
-                        <option value="PNG">PNG</option>
-                        <option value="GIF">GIF</option>
-                        <option value="SVG">SVG</option>
-                        <option value="WebP">WebP</option>
-                    </select>
+                    <label class="form-label" asp-for="Format"></label>
+                    <select class="form-control" asp-for="Format" asp-items="@Html.GetEnumSelectList<Format>()"></select>
                 </div>
                 <div class="mb-3">
                     <button class="btn btn-primary" type="submit" asp-action="Gallery">Wróć</button>

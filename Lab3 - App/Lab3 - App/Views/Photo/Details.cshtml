@@ -23,7 +23,7 @@
                 <b class="form-label">Model aparatu: </b><p>@Model.Camera</p>
             </div>
             <div class="mb-3">
-                <b class="form-label">Rozdzielczość: </b><p>@Model.Definition</p>                
+                <b class="form-label">Rozdzielczość: </b><p>@Model.Definition.GetDisplayName()</p>
             </div>
             <div class="mb-3">
                 <b class="form-label">Format: </b><p>@Model.Format</p>               

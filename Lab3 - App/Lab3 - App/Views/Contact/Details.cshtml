@@ -11,6 +11,9 @@
         <h2>Szczegółowe dane:</h2>
         <form asp-controller="Contact" asp-action="Index" method="POST">
             <div class="mb-3">
+                <b><label class="form-label" asp-for="Created"></label></b><p>@Model.Created</p>
+            </div>
+            <div class="mb-3">
                 <b><label class="form-label" asp-for="first_name"></label></b><p>@Model.first_name</p>
             </div>
             <div class="mb-3">
@@ -20,7 +23,7 @@
                 <b><label class="form-label" asp-for="birth_date"></label></b><p>@(DateOnly.FromDateTime(Model.birth_date))</p>
             </div>
             <div class="mb-3">
-                <b><label class="form-label" asp-for="Priority"></label></b><p>@Model.Priority</p>
+                <b><label class="form-label" asp-for="Priority"></label></b><p>@Model.Priority.GetDisplayName()</p>
             </div>
             <div class="mb-3">
                 <button class="btn btn-primary" type="submit">Wróć</button>
