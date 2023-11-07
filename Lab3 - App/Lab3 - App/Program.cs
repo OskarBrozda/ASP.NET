@@ -1,12 +1,15 @@
+using Data;
 using Lab3___App.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IContactService, MemoryContactService>();
+//builder.Services.AddSingleton<IContactService, MemoryContactService>();
 builder.Services.AddSingleton<IDateTimeProvider, CurrentDateTimeProvider>();
 builder.Services.AddSingleton<IPhotoService, MemoryPhotoService>();
+builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddTransient<IContactService, EFContactService>();
 
 
 
