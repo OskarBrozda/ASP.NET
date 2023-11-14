@@ -16,7 +16,7 @@ namespace Lab3___App.Models
         public int Add(Contact book)
         {
             var entity = _context.Contacts.Add(ContactMapper.ToEntity(book));
-            int id = entity.Entity.contactId;
+            int id = entity.Entity.ContactId;
             _context.SaveChanges();
             return id;
         }
@@ -36,12 +36,15 @@ namespace Lab3___App.Models
             return _context.Contacts.Select(e => ContactMapper.FromEntity(e)).ToList();
         }
 
+        public List<OrganizationEntity> FindAllOrganizations()
+        {
+            return _context.Organizations.ToList();
+        }
+
         public Contact? FindById(int id)
         {
             ContactEntity? find = _context.Contacts.Find(id);
             return find == null ? null : ContactMapper.FromEntity(find);
-
-            // return ContactMapper.FromEntity(_context.Contacts.Find(id));
         }
 
         public void Update(Contact book)

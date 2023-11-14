@@ -14,22 +14,27 @@ namespace Data.Entities
     {
         [Column("id")]
         [Key]
-        public int contactId { get; set; }
+        public int ContactId { get; set; }
 
 
         [MaxLength(100)]
         [MinLength(3)]
         [Required]
-        public string first_name { get; set; }
+        public string First_name { get; set; }
         
         
         [MaxLength(100)]
         [MinLength(3)]
         [Required]
-        public string surname { get; set; }
+        public string Surname { get; set; }
 
 
         [Required]
-        public DateTime birth_date { get; set; }
+        public DateTime Birth_date { get; set; }
+
+
+        public OrganizationEntity Organization { get; set; }
+
+        public int? OrganizationId { get; set; }
     }
 }

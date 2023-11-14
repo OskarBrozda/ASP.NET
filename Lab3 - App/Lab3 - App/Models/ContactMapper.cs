@@ -8,10 +8,11 @@ namespace Lab3___App.Models
         {
             return new ContactEntity() 
             {
-                first_name = contact.first_name,
-                surname = contact.surname,
-                birth_date = contact.birth_date,
-                contactId = contact.Id
+                First_name = contact.first_name,
+                Surname = contact.surname,
+                Birth_date = contact.birth_date,
+                ContactId = contact.Id,
+                OrganizationId = contact.OrganizationId
             };
         }
 
@@ -19,10 +20,11 @@ namespace Lab3___App.Models
         {
             return new Contact()
             {
-                first_name = contact.first_name,
-                surname = contact.surname,
-                birth_date = contact.birth_date,
-                Id = contact.contactId
+                first_name = contact.First_name,
+                surname = contact.Surname,
+                birth_date = contact.Birth_date,
+                Id = contact.ContactId,
+                OrganizationId = contact.OrganizationId
             };
         }
     }

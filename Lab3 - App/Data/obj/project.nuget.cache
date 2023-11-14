@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/2XTl6j+hr0x60sLohI2QK14TNNY/nNLQVghVRf2vLGwMgd2muA0dETepoxDxR6kG4qcwQg8+UkBQhGwZe5UrQ==",
+  "dgSpecHash": "Rix5pQbbN7Y34cy48u90JSs92mXOGXHo290WST8pvZPWIgsU9jY56fM6lzqQ1VOLf91lnN97Mqw0yLdOVj75KQ==",
   "success": true,
-  "projectFilePath": "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab3 - App\\data\\Data.csproj",
+  "projectFilePath": "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab3 - App\\Data\\Data.csproj",
   "expectedPackageFiles": [
     "D:\\Users\\oskar.brozda\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "D:\\Users\\oskar.brozda\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.13\\microsoft.data.sqlite.core.7.0.13.nupkg.sha512",

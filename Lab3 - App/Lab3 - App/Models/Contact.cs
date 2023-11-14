@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 
 namespace Lab3___App.Models
@@ -33,5 +35,12 @@ namespace Lab3___App.Models
         [DataType(DataType.Date)]
         [Display(Name = "Data urodzenia")]
         public DateTime birth_date { get; set; }
+
+
+        [Display(Name = "Organizacja")]
+        public int? OrganizationId {get; set; }
+
+        [ValidateNever]
+        public List<SelectListItem> Organizations { get; set; }
     }
 }

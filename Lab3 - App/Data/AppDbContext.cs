@@ -20,6 +20,7 @@ namespace Data
         }
 
         public DbSet<ContactEntity> Contacts { get; set; }
+        public DbSet<OrganizationEntity> Organizations { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -28,10 +29,52 @@ namespace Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ContactEntity>().HasData(
-                new ContactEntity() { contactId = 1, first_name = "Adam", surname = "Kwasny", birth_date = new DateTime(2000, 10, 10) },
-                new ContactEntity() { contactId = 2, first_name = "Ewa", surname = "Malecka", birth_date = new DateTime(1999, 8, 8) }
-            );
+            modelBuilder.Entity<ContactEntity>()
+                .HasOne(c => c.Organization)
+                .WithMany(o => o.Contacts)
+                .HasForeignKey(c => c.OrganizationId);
+
+
+            modelBuilder.Entity<ContactEntity>()
+                .HasData(
+                new OrganizationEntity()
+                {
+                    Id = 1,
+                    Name = "WSEI",
+                    Description = "Uczelnia wyższa w Krakowie"
+                });
+
+            modelBuilder.Entity<ContactEntity>()
+          .HasData(
+            new ContactEntity()
+            {
+                ContactId = 1,
+                First_name = "Adam",
+                Surname = "Kwasny",
+                Birth_date = new DateTime(2000, 10, 10),
+             
+            },
+            new ContactEntity()
+            {
+                ContactId = 2,
+                First_name = "Ewa",
+                Surname = "Malecka",
+                Birth_date = new DateTime(1999, 8, 8),
+               
+            }
+        );
+
+            modelBuilder.Entity<OrganizationEntity>()
+                .OwnsOne(o => o.Adres)
+                .HasData(
+                new
+                {
+                    OrganizationEntityId = 1,
+                    City = "Kraków",
+                    Street = "Św. Filipa 17",
+                    PostalCode = "31-150"
+                }
+                );
         }
     }
 }

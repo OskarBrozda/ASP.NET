@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab3 - App\\data\\Data.csproj": {}
+    "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab3 - App\\Data\\Data.csproj": {}
   },
   "projects": {
-    "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab3 - App\\data\\Data.csproj": {
+    "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab3 - App\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab3 - App\\data\\Data.csproj",
+        "projectUniqueName": "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab3 - App\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab3 - App\\data\\Data.csproj",
+        "projectPath": "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab3 - App\\Data\\Data.csproj",
         "packagesPath": "D:\\Users\\oskar.brozda\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab3 - App\\data\\obj\\",
+        "outputPath": "D:\\Users\\oskar.brozda\\GitHub\\ASP.NET\\Lab3 - App\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "D:\\Users\\oskar.brozda\\AppData\\Roaming\\NuGet\\NuGet.Config",
