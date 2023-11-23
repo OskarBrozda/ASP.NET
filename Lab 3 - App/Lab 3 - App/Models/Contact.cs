@@ -37,7 +37,7 @@ public class Contact
     public string? Note { get; set; }
 
     [Display(Name = "Priorytet")]
-    public Priority Priority { get; set; }
+    public Data.Priority Priority { get; set; }
 
     [Required(ErrorMessage = "Pole \"Data urodzenia\" jest wymagane!")]
     [DataType(DataType.Date)]
