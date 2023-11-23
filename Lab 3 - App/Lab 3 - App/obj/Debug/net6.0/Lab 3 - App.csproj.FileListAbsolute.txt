@@ -1,0 +1,78 @@
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/appsettings.Development.json
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/appsettings.json
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.staticwebassets.runtime.json
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.deps.json
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.runtimeconfig.json
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.dll
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.pdb
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.csproj.AssemblyReference.cache
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.GeneratedMSBuildEditorConfig.editorconfig
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.AssemblyInfoInputs.cache
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.AssemblyInfo.cs
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.csproj.CoreCompileInputs.cache
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.MvcApplicationPartsAssemblyInfo.cache
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.RazorAssemblyInfo.cache
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.RazorAssemblyInfo.cs
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/staticwebassets.build.json
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/staticwebassets.development.json
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/scopedcss/bundle/Lab 3 - App.styles.css
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/scopedcss/projectbundle/Lab 3 - App.bundle.scp.css
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.dll
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/refint/Lab 3 - App.dll
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.pdb
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.genruntimeconfig.cache
+/Users/oskarbrozda/Projekty/Visual Studio/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/ref/Lab 3 - App.dll
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/appsettings.Development.json
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/appsettings.json
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.staticwebassets.runtime.json
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.deps.json
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.runtimeconfig.json
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.dll
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.pdb
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.csproj.AssemblyReference.cache
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.GeneratedMSBuildEditorConfig.editorconfig
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.AssemblyInfoInputs.cache
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.AssemblyInfo.cs
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.csproj.CoreCompileInputs.cache
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.MvcApplicationPartsAssemblyInfo.cache
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.RazorAssemblyInfo.cache
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.RazorAssemblyInfo.cs
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/staticwebassets.build.json
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/staticwebassets.development.json
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/scopedcss/bundle/Lab 3 - App.styles.css
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/scopedcss/projectbundle/Lab 3 - App.bundle.scp.css
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.dll
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/refint/Lab 3 - App.dll
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.pdb
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.genruntimeconfig.cache
+/Users/oskarbrozda/Projekty/Collage/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/ref/Lab 3 - App.dll
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/appsettings.Development.json
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/appsettings.json
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.staticwebassets.runtime.json
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.deps.json
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.runtimeconfig.json
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.dll
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/bin/Debug/net6.0/Lab 3 - App.pdb
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.csproj.AssemblyReference.cache
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.GeneratedMSBuildEditorConfig.editorconfig
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.AssemblyInfoInputs.cache
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.AssemblyInfo.cs
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.csproj.CoreCompileInputs.cache
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.MvcApplicationPartsAssemblyInfo.cache
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.RazorAssemblyInfo.cache
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.RazorAssemblyInfo.cs
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/staticwebassets.build.json
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/staticwebassets.development.json
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/scopedcss/bundle/Lab 3 - App.styles.css
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/scopedcss/projectbundle/Lab 3 - App.bundle.scp.css
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.dll
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/refint/Lab 3 - App.dll
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.pdb
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/Lab 3 - App.genruntimeconfig.cache
+/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/Lab 3 - App/obj/Debug/net6.0/ref/Lab 3 - App.dll

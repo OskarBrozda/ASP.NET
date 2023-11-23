@@ -1,8 +1,0 @@
-﻿using Lab3___App.Models;using Microsoft.AspNetCore.Mvc;namespace Lab3___App.Controllers{    public class PhotoController : Controller    {
-        private readonly IPhotoService _photoService;                public PhotoController(IPhotoService photoService)
-        {
-            _photoService = photoService;
-        }        public IActionResult Gallery()        {            return View(_photoService.FindAll());        }        [HttpGet] // wyświetla formularz        public IActionResult Create() => View();        [HttpPost] // pobiera dane z formularza        public IActionResult Create(Photo model)        {            if (ModelState.IsValid)            {                _photoService.Add(model);                return RedirectToAction("Gallery");            }            else
-            {
-                return View();
-            }        }        [HttpGet]        public IActionResult Update(int id) => View(_photoService.FindById(id));        [HttpPost]        public IActionResult Update(Photo model)        {            if(ModelState.IsValid)            {                _photoService.Update(model);                return RedirectToAction("Gallery");            }            return View();        }        [HttpGet]        public IActionResult Details(int id) => View(_photoService.FindById(id));        [HttpGet]        public IActionResult Delete(int id) => View(_photoService.FindById(id));        [HttpPost]        public IActionResult DeleteConfirmed(int id)        {            _photoService.Delete(id);            return RedirectToAction("Gallery");        }    }}

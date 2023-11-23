@@ -1,0 +1,47 @@
+@using Lab3___App.Models
+@model Contact
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <h2>Szczegółowe dane:</h2>
+            <form asp-controller="Contact" asp-action="Index" method="POST">
+                <div class="mb-2">
+                    <b><label class="form-label" asp-for="Created"></label></b> @Model.Created
+                </div>
+                <div class="mb-2">
+                    <b><label class="form-label" asp-for="Name"></label></b> @Model.Name
+                </div>
+                <div class="mb-2">
+                    <b><label class="form-label" asp-for="Surname"></label></b> @Model.Surname
+                </div>
+                <div class="mb-2">
+                    <b><label class="form-label" asp-for="BirthDate"></label></b> @(DateOnly.FromDateTime(Model.BirthDate))
+                </div>
+                <div class="mb-2">
+                    <b><label class="form-label" asp-for="Phone"></label></b> @Model.Phone
+                </div>
+                <div class="mb-2">
+                    <b><label class="form-label" asp-for="Email"></label></b> @Model.Email
+                </div>
+                <div class="mb-2">
+                    <b><label class="form-label" asp-for="Priority"></label></b> @Model.Priority.GetDisplayName()
+                </div>
+                @if (Model.Note != null)
+                {
+                    <div class="mb-2">
+                        <b><label class="form-label" asp-for="Note"></label></b> @Model.Note
+                    </div>
+                }
+                <div class="mb-3">
+                    <button class="btn btn-outline-primary" type="submit">Wróć</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

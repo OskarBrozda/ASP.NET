@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab 3 - App", "Lab 3 - App\Lab 3 - App.csproj", "{44A25F98-CB88-4235-A312-1A69976DEEB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoApp", "PhotoApp\PhotoApp.csproj", "{BEF65482-5BF7-4EB6-9B4D-E85C06A27B9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44A25F98-CB88-4235-A312-1A69976DEEB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44A25F98-CB88-4235-A312-1A69976DEEB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44A25F98-CB88-4235-A312-1A69976DEEB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A25F98-CB88-4235-A312-1A69976DEEB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEF65482-5BF7-4EB6-9B4D-E85C06A27B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEF65482-5BF7-4EB6-9B4D-E85C06A27B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEF65482-5BF7-4EB6-9B4D-E85C06A27B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEF65482-5BF7-4EB6-9B4D-E85C06A27B9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
