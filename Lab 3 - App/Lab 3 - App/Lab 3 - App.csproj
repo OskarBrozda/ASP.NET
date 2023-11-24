@@ -6,8 +6,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>Lab_3___App</RootNamespace>
     </PropertyGroup>
-    
+
     <ItemGroup>
-        <ProjectReference Include="..\Data\Data.csproj" />
+        <ProjectReference Include="..\Data\Data.csproj"/>
     </ItemGroup>
 </Project>

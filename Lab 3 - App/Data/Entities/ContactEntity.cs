@@ -1,41 +1,27 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
 
 namespace Data.Entities;
 
 [Table("contacts")]
 public class ContactEntity
 {
-    [Key]
-    public int ContactId { get; set; }
-    
-    [MaxLength(50)]
-    [Required]
-    public string Name { get; set; }
-    
-    [MaxLength(50)]
-    [Required]
-    public string Surname { get; set; }
-    
-    [MaxLength(50)]
-    [Required]
-    public string Email { get; set; }
-    
-    [MaxLength(12)]
-    [MinLength(9)]
-    public string Phone {  get; set; }
-    
+    [Key] public int ContactId { get; set; }
+
+    [MaxLength(50)] [Required] public string Name { get; set; }
+
+    [MaxLength(50)] [Required] public string Surname { get; set; }
+
+    [MaxLength(50)] [Required] public string Email { get; set; }
+
+    [MaxLength(12)] [MinLength(9)] public string Phone { get; set; }
+
     public string? Note { get; set; }
-    
+
     public Priority Priority { get; set; }
-    
-    [Column("birth_date")]
-    public DateTime BirthDate { get; set; }
+
+    [Column("BirthDate")] public DateTime BirthDate { get; set; }
+
+    public int OrganizationId { get; set; }
+    public OrganizationEntity? Organization { get; set; }
 }

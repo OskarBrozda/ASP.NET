@@ -1,3 +1,4 @@
+using Data;
 using Lab_3___App.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 //builder.Services.AddSingleton<IContactService, MemoryContactService>();
 builder.Services.AddSingleton<IDateTimeProvider, CurrentDateTimeProvider>();
-builder.Services.AddDbContext<Data.AppDbContext>();
+builder.Services.AddDbContext<AppDbContext>();
 builder.Services.AddTransient<IContactService, EFContactService>();
 
 var app = builder.Build();

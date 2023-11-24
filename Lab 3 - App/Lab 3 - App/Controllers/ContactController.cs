@@ -6,7 +6,7 @@ namespace Lab_3___App.Controllers;
 public class ContactController : Controller
 {
     private readonly IContactService _contactService;
-    private IDateTimeProvider _timeProvider;
+    private readonly IDateTimeProvider _timeProvider;
 
     public ContactController(IContactService contactService, IDateTimeProvider timeProvider)
     {
@@ -34,11 +34,15 @@ public class ContactController : Controller
             _contactService.Add(model);
             return RedirectToAction("Index");
         }
+
         return View(model);
     }
 
     [HttpGet]
-    public IActionResult Edit(int id) => View(_contactService.FindById(id));   
+    public IActionResult Edit(int id)
+    {
+        return View(_contactService.FindById(id));
+    }
 
 
     [HttpPost]
@@ -49,14 +53,21 @@ public class ContactController : Controller
             _contactService.Update(model);
             return RedirectToAction("Index");
         }
+
         return View(model);
     }
 
     [HttpGet]
-    public IActionResult Details(int id) => View(_contactService.FindById(id));
+    public IActionResult Details(int id)
+    {
+        return View(_contactService.FindById(id));
+    }
 
     [HttpGet]
-    public IActionResult Delete(int id) => View(_contactService.FindById(id));
+    public IActionResult Delete(int id)
+    {
+        return View(_contactService.FindById(id));
+    }
 
     [HttpPost]
     public IActionResult DeleteConfirmed(int id)

@@ -7,5 +7,8 @@ public interface IDateTimeProvider
 
 public class CurrentDateTimeProvider : IDateTimeProvider
 {
-    public DateTime GetDateTime() => DateTime.Now;
+    public DateTime GetDateTime()
+    {
+        return DateTime.Now;
+    }
 }

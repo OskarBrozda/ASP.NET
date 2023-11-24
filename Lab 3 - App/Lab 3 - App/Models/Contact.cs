@@ -1,13 +1,15 @@
 using System.ComponentModel.DataAnnotations;
+using Data.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Lab_3___App.Models;
 
 public class Contact
 {
-    [HiddenInput] 
-    public int Id { get; set; }
-    
+    [HiddenInput] public int Id { get; set; }
+
     [HiddenInput]
     [Display(Name = "Utworzono")]
     public DateTime Created { get; set; }
@@ -33,11 +35,9 @@ public class Contact
     [Phone]
     public string Phone { get; set; }
 
-    [Display(Name = "Notatka")]
-    public string? Note { get; set; }
+    [Display(Name = "Notatka")] public string? Note { get; set; }
 
-    [Display(Name = "Priorytet")]
-    public Data.Priority Priority { get; set; }
+    [Display(Name = "Priorytet")] public Data.Priority Priority { get; set; }
 
     [Required(ErrorMessage = "Pole \"Data urodzenia\" jest wymagane!")]
     [DataType(DataType.Date)]
@@ -45,8 +45,14 @@ public class Contact
     [Display(Name = "Data urodzenia")]
     [CustomValidation(typeof(Contact), "ValidateBirthDate")]
     public DateTime BirthDate { get; set; }
+
+    [HiddenInput]
+    public int OrganizationId { get; set; }
     
-    
+    [ValidateNever]
+    public List<SelectListItem> Organizations{ get; set; }
+
+
     public static ValidationResult ValidateBirthDate(DateTime birthDate, ValidationContext validationContext)
     {
         return birthDate > DateTime.Now

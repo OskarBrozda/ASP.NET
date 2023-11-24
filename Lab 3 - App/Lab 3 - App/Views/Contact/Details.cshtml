@@ -12,30 +12,46 @@
             <h2>Szczegółowe dane:</h2>
             <form asp-controller="Contact" asp-action="Index" method="POST">
                 <div class="mb-2">
-                    <b><label class="form-label" asp-for="Created"></label></b> @Model.Created
+                    <b>
+                        <label class="form-label" asp-for="Created"></label>
+                    </b> @Model.Created
                 </div>
                 <div class="mb-2">
-                    <b><label class="form-label" asp-for="Name"></label></b> @Model.Name
+                    <b>
+                        <label class="form-label" asp-for="Name"></label>
+                    </b> @Model.Name
                 </div>
                 <div class="mb-2">
-                    <b><label class="form-label" asp-for="Surname"></label></b> @Model.Surname
+                    <b>
+                        <label class="form-label" asp-for="Surname"></label>
+                    </b> @Model.Surname
                 </div>
                 <div class="mb-2">
-                    <b><label class="form-label" asp-for="BirthDate"></label></b> @(DateOnly.FromDateTime(Model.BirthDate))
+                    <b>
+                        <label class="form-label" asp-for="BirthDate"></label>
+                    </b> @(DateOnly.FromDateTime(Model.BirthDate))
                 </div>
                 <div class="mb-2">
-                    <b><label class="form-label" asp-for="Phone"></label></b> @Model.Phone
+                    <b>
+                        <label class="form-label" asp-for="Phone"></label>
+                    </b> @Model.Phone
                 </div>
                 <div class="mb-2">
-                    <b><label class="form-label" asp-for="Email"></label></b> @Model.Email
+                    <b>
+                        <label class="form-label" asp-for="Email"></label>
+                    </b> @Model.Email
                 </div>
                 <div class="mb-2">
-                    <b><label class="form-label" asp-for="Priority"></label></b> @Model.Priority.GetDisplayName()
+                    <b>
+                        <label class="form-label" asp-for="Priority"></label>
+                    </b> @Model.Priority.GetDisplayName()
                 </div>
                 @if (Model.Note != null)
                 {
                     <div class="mb-2">
-                        <b><label class="form-label" asp-for="Note"></label></b> @Model.Note
+                        <b>
+                            <label class="form-label" asp-for="Note"></label>
+                        </b> @Model.Note
                     </div>
                 }
                 <div class="mb-3">

@@ -6,7 +6,7 @@ public class ContactMapper
 {
     public static Contact FromEntity(ContactEntity entity)
     {
-        return new Contact()
+        return new Contact
         {
             Id = entity.ContactId,
             Name = entity.Name,
@@ -16,12 +16,13 @@ public class ContactMapper
             Note = entity.Note,
             Priority = entity.Priority,
             BirthDate = entity.BirthDate,
+            OrganizationId = entity.OrganizationId
         };
     }
 
     public static ContactEntity ToEntity(Contact model)
     {
-        return new ContactEntity()
+        return new ContactEntity
         {
             ContactId = model.Id,
             Name = model.Name,
@@ -31,6 +32,7 @@ public class ContactMapper
             Note = model.Note,
             Priority = model.Priority,
             BirthDate = model.BirthDate,
+            OrganizationId = model.OrganizationId,
         };
     }
 }
