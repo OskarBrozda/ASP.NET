@@ -41,11 +41,36 @@
                         <label class="form-label" asp-for="Email"></label>
                     </b> @Model.Email
                 </div>
-                <div class="mb-2">
-                    <b>
-                        <label class="form-label" asp-for="Priority"></label>
-                    </b> @Model.Priority.GetDisplayName()
-                </div>
+                @if (@Model.Organizations.FirstOrDefault(o => o.Value == Model.OrganizationId.ToString())?.Text != "--")
+                {
+                    <div class="mb-2">
+                        <b>
+                            <label class="form-label" asp-for="OrganizationId"></label>
+                        </b>
+                        <span>
+                            @Model.Organizations.FirstOrDefault(o => o.Value == Model.OrganizationId.ToString())?.Text
+                        </span>
+                    </div>
+                }
+                @if (Model.Priority == Priority.Urgent)
+                {
+                    <div class="mb-2">
+                        <b>
+                            <label class="form-label" asp-for="Priority"></label>
+                        </b> 
+                        <span class="text-danger">
+                                    @Model.Priority.GetDisplayName()
+                        </span>
+                    </div>
+                }
+                else
+                {
+                    <div class="mb-2">
+                        <b>
+                            <label class="form-label" asp-for="Priority"></label>
+                        </b> @Model.Priority.GetDisplayName()
+                    </div>
+                }
                 @if (Model.Note != null)
                 {
                     <div class="mb-2">

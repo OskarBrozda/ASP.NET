@@ -3,6 +3,7 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231125153602_AddOrganizationsDone")]
+    partial class AddOrganizationsDone
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.13");
@@ -26,9 +29,6 @@ namespace Data.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("TEXT")
                         .HasColumnName("BirthDate");
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -70,7 +70,6 @@ namespace Data.Migrations
                         {
                             ContactId = 1,
                             BirthDate = new DateTime(2007, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "karolos@mail.com",
                             Name = "Oskar",
                             OrganizationId = 2,
@@ -82,7 +81,6 @@ namespace Data.Migrations
                         {
                             ContactId = 2,
                             BirthDate = new DateTime(2008, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "tmurarz@mail.com",
                             Name = "Tomasz",
                             OrganizationId = 3,
@@ -94,7 +92,6 @@ namespace Data.Migrations
                         {
                             ContactId = 3,
                             BirthDate = new DateTime(2000, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "boskazuzia@mail.com",
                             Name = "Zuzanna",
                             OrganizationId = 3,

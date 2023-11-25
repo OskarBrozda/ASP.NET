@@ -1,5 +1,6 @@
 using Lab_3___App.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Lab_3___App.Controllers;
 
@@ -16,14 +17,17 @@ public class ContactController : Controller
 
     public IActionResult Index()
     {
-        return View(_contactService.FindAll());
+        var contacts = _contactService.FindAll();
+        foreach (var contact in contacts)
+        {
+            contact.Organizations = CreateSelectListItem();
+        }
+
+        return View(contacts);
     }
 
     [HttpGet]
-    public IActionResult Create()
-    {
-        return View();
-    }
+    public IActionResult Create() => View(new Contact { Organizations = CreateSelectListItem() });
 
     [HttpPost]
     public IActionResult Create(Contact model)
@@ -33,15 +37,24 @@ public class ContactController : Controller
             model.Created = _timeProvider.GetDateTime();
             _contactService.Add(model);
             return RedirectToAction("Index");
-        }
-
+        }   
+        model.Organizations = CreateSelectListItem();
         return View(model);
     }
 
     [HttpGet]
     public IActionResult Edit(int id)
     {
-        return View(_contactService.FindById(id));
+        var contact = _contactService.FindById(id);
+
+        if (contact == null)
+        {
+            return NotFound();
+        }
+
+        contact.Organizations = CreateSelectListItem();
+
+        return View(contact);
     }
 
 
@@ -60,19 +73,36 @@ public class ContactController : Controller
     [HttpGet]
     public IActionResult Details(int id)
     {
-        return View(_contactService.FindById(id));
+        var contact = _contactService.FindById(id);
+
+        if (contact == null)
+        {
+            return NotFound();
+        }
+
+        contact.Organizations = CreateSelectListItem();
+
+        return View(contact);
     }
 
     [HttpGet]
-    public IActionResult Delete(int id)
-    {
-        return View(_contactService.FindById(id));
-    }
+    public IActionResult Delete(int id) => View(_contactService.FindById(id));
 
     [HttpPost]
     public IActionResult DeleteConfirmed(int id)
     {
         _contactService.Delete(id);
         return RedirectToAction("Index");
+    }
+    
+    private List<SelectListItem> CreateSelectListItem()
+    {
+        var items = _contactService.FindAllOrganizations()
+            .Select(e => new SelectListItem()
+            {
+                Text = e.Title,
+                Value = e.OrganizationId.ToString()
+            }).ToList();
+        return items;
     }
 }

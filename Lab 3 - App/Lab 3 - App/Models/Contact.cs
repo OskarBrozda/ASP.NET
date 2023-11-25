@@ -37,7 +37,7 @@ public class Contact
 
     [Display(Name = "Notatka")] public string? Note { get; set; }
 
-    [Display(Name = "Priorytet")] public Data.Priority Priority { get; set; }
+    [Display(Name = "Priorytet")] public Priority Priority { get; set; }
 
     [Required(ErrorMessage = "Pole \"Data urodzenia\" jest wymagane!")]
     [DataType(DataType.Date)]
@@ -46,7 +46,7 @@ public class Contact
     [CustomValidation(typeof(Contact), "ValidateBirthDate")]
     public DateTime BirthDate { get; set; }
 
-    [HiddenInput]
+    [Display(Name = "Firma")]
     public int OrganizationId { get; set; }
     
     [ValidateNever]

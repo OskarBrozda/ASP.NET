@@ -1,4 +1,6 @@
 using Data;
+using Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Lab_3___App.Models;
 
@@ -32,15 +34,27 @@ public class EFContactService : IContactService
     public void Update(Contact contact)
     {
         _context.Contacts.Update(ContactMapper.ToEntity(contact));
+        _context.SaveChanges();
     }
 
     public List<Contact> FindAll()
     {
-        return _context.Contacts.Select(e => ContactMapper.FromEntity(e)).ToList();
+        return _context.Contacts
+            .Include(c => c.Organization)
+            .Select(e => ContactMapper.FromEntity(e))
+            .ToList();
     }
+
 
     public Contact? FindById(int id)
     {
         return ContactMapper.FromEntity(_context.Contacts.Find(id));
+    }
+    
+    public List<OrganizationEntity> FindAllOrganizations()
+    {
+        return _context.Organizations
+            .Include(o => o.Contacts)
+            .ToList();
     }
 }

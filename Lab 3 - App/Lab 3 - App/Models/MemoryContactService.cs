@@ -1,3 +1,5 @@
+// using Data.Entities;
+//
 // namespace Lab_3___App.Models;
 //
 // public class MemoryContactService : IContactService
@@ -53,9 +55,14 @@
 //         return _items[id];
 //     }
 //
+//     public List<OrganizationEntity> FindAllOrganizations()
+//     {
+//         throw new NotImplementedException();
+//     }
+//
 //     public void Update(Contact item)
 //     {
 //         _items[item.Id] = item;
 //     }
 // }
-
+//

@@ -7,6 +7,8 @@ namespace Data.Entities;
 public class ContactEntity
 {
     [Key] public int ContactId { get; set; }
+    
+    public DateTime Created { get; set; }
 
     [MaxLength(50)] [Required] public string Name { get; set; }
 
@@ -18,7 +20,7 @@ public class ContactEntity
 
     public string? Note { get; set; }
 
-    public Priority Priority { get; set; }
+    public int Priority { get; set; }
 
     [Column("BirthDate")] public DateTime BirthDate { get; set; }
 

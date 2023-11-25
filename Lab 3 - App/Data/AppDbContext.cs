@@ -70,17 +70,17 @@ public class AppDbContext : DbContext
             new ContactEntity
             {
                 ContactId = 1, Name = "Oskar", Surname = "Karolczyk", BirthDate = new DateTime(2007, 12, 24),
-                Email = "karolos@mail.com", Phone = "123123123", Priority = Priority.High, OrganizationId = 2
+                Email = "karolos@mail.com", Phone = "123123123", Priority = 1, OrganizationId = 2
             },
             new ContactEntity
             {
                 ContactId = 2, Name = "Tomasz", Surname = "Murawski", BirthDate = new DateTime(2008, 08, 01),
-                Email = "tmurarz@mail.com", Phone = "091912424", Priority = Priority.Normal, OrganizationId = 3
+                Email = "tmurarz@mail.com", Phone = "091912424", Priority = 2, OrganizationId = 3
             },
             new ContactEntity
             {
                 ContactId = 3, Name = "Zuzanna", Surname = "Boska", BirthDate = new DateTime(2000, 01, 19),
-                Email = "boskazuzia@mail.com", Phone = "678998786", Priority = Priority.Low, OrganizationId = 3
+                Email = "boskazuzia@mail.com", Phone = "678998786", Priority = 3, OrganizationId = 3
             }
         );
 

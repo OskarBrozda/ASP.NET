@@ -36,6 +36,10 @@
                     <span asp-validation-for="Phone" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
+                    <label class="form-label" asp-for="OrganizationId"></label>
+                    <select class="form-control" asp-for="OrganizationId" asp-items="@Model.Organizations"></select>
+                </div>
+                <div class="mb-3">
                     <label class="form-label" asp-for="Priority"></label>
                     <select class="form-control" asp-for="Priority" asp-items="@Html.GetEnumSelectList<Priority>()"></select>
                 </div>

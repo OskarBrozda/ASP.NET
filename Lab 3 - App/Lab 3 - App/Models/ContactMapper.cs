@@ -9,12 +9,13 @@ public class ContactMapper
         return new Contact
         {
             Id = entity.ContactId,
+            Created = entity.Created,
             Name = entity.Name,
             Surname = entity.Surname,
             Email = entity.Email,
             Phone = entity.Phone,
             Note = entity.Note,
-            Priority = entity.Priority,
+            Priority = (Priority)entity.Priority,
             BirthDate = entity.BirthDate,
             OrganizationId = entity.OrganizationId
         };
@@ -25,12 +26,13 @@ public class ContactMapper
         return new ContactEntity
         {
             ContactId = model.Id,
+            Created = model.Created,
             Name = model.Name,
             Surname = model.Surname,
             Email = model.Email,
             Phone = model.Phone,
             Note = model.Note,
-            Priority = model.Priority,
+            Priority = (int)model.Priority,
             BirthDate = model.BirthDate,
             OrganizationId = model.OrganizationId,
         };
