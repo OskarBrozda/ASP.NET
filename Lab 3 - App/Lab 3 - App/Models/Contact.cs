@@ -57,6 +57,7 @@ public class Contact
     {
         return birthDate > DateTime.Now
             ? new ValidationResult("Data urodzenia nie może być z przyszłości.", new[] { validationContext.MemberName })
-            : ValidationResult.Success;
+            : birthDate.Year <= 1900 ? new ValidationResult("No tak stary raczej nie jest...", new[] { validationContext.MemberName })
+                : ValidationResult.Success;
     }
 }

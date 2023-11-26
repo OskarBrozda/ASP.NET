@@ -1,10 +1,12 @@
 using Data.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace Data;
 
-public class AppDbContext : DbContext
+public class AppDbContext : IdentityDbContext<IdentityUser>
 {
     public AppDbContext()
     {
@@ -25,6 +27,73 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+        var passwordHasher = new PasswordHasher<IdentityUser>();
+        
+        var adminRole = new IdentityRole
+            { 
+                Name = "admin", 
+                NormalizedName = "ADMIN", 
+                Id = Guid.NewGuid().ToString(), 
+            };
+        adminRole.ConcurrencyStamp = adminRole.Id;
+        
+        var userRole = new IdentityRole
+            { 
+               Name = "user", 
+               NormalizedName = "USER", 
+               Id = Guid.NewGuid().ToString()
+            };
+        userRole.ConcurrencyStamp = userRole.Id;
+        
+        modelBuilder.Entity<IdentityRole>().HasData(
+            adminRole,
+            userRole
+        );
+        
+        var admin = new IdentityUser
+        {
+            Id = Guid.NewGuid().ToString(),
+            Email = "oskar@wsei.edu.pl",
+            NormalizedEmail = "OSKAR@WSEI.EDU.PL",
+            EmailConfirmed = true,
+            UserName = "oskar",
+            NormalizedUserName = "OSKAR",
+        };
+        
+        var user = new IdentityUser
+        {
+            Id = Guid.NewGuid().ToString(),
+            Email = "zuzia@wsei.edu.pl",
+            NormalizedEmail = "ZUZIA@WSEI.EDU.PL",
+            EmailConfirmed = true,
+            UserName = "zuzanna",
+            NormalizedUserName = "ZUZANNA",
+        };
+        
+        admin.PasswordHash = passwordHasher.HashPassword(admin, "zaq1@WSX");
+        user.PasswordHash = passwordHasher.HashPassword(user, "xsw2!QAZ");
+        
+        modelBuilder.Entity<IdentityUser>()
+            .HasData(
+            admin,
+            user
+        );
+        
+        modelBuilder.Entity<IdentityUserRole<string>>()
+            .HasData(
+            new IdentityUserRole<string>
+            {
+                RoleId = adminRole.Id, UserId = admin.Id
+            },
+            new IdentityUserRole<string>
+            {
+                RoleId = userRole.Id, UserId = user.Id
+            }
+        );
+        
+        
+        
         modelBuilder.Entity<OrganizationEntity>()
             .OwnsOne(e => e.Address);
 
@@ -37,31 +106,19 @@ public class AppDbContext : DbContext
             .HasData(
                 new OrganizationEntity
                 {
-                    OrganizationId = 1,
-                    Title = "--",
-                    Nip = 0,
-                    Regon = 0
+                    OrganizationId = 1, Title = "--", Nip = 0, Regon = 0
                 },
                 new OrganizationEntity
                 {
-                    OrganizationId = 2,
-                    Title = "WSEI",
-                    Nip = 6762158990,
-                    Regon = 357191420
+                    OrganizationId = 2, Title = "WSEI", Nip = 6762158990, Regon = 357191420
                 },
                 new OrganizationEntity
                 {
-                    OrganizationId = 3,
-                    Title = "RAKSO",
-                    Nip = 1357895472,
-                    Regon = 367891434
+                    OrganizationId = 3, Title = "RAKSO", Nip = 1357895472, Regon = 367891434
                 },
                 new OrganizationEntity
                 {
-                    OrganizationId = 4,
-                    Title = "Złoty kłos",
-                    Nip = 3456789091,
-                    Regon = 872358792
+                    OrganizationId = 4, Title = "Złoty kłos", Nip = 3456789091, Regon = 872358792
                 }
             );
 
@@ -84,6 +141,7 @@ public class AppDbContext : DbContext
             }
         );
 
+        
         modelBuilder.Entity<OrganizationEntity>()
             .OwnsOne(e => e.Address)
             .HasData(
