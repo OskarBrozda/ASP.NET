@@ -32,17 +32,17 @@ public class AppDbContext : IdentityDbContext<IdentityUser>
         
         var adminRole = new IdentityRole
             { 
+                Id = Guid.NewGuid().ToString(),
                 Name = "admin", 
-                NormalizedName = "ADMIN", 
-                Id = Guid.NewGuid().ToString(), 
+                NormalizedName = "ADMIN"
             };
         adminRole.ConcurrencyStamp = adminRole.Id;
         
         var userRole = new IdentityRole
             { 
+               Id = Guid.NewGuid().ToString(),
                Name = "user", 
-               NormalizedName = "USER", 
-               Id = Guid.NewGuid().ToString()
+               NormalizedName = "USER"
             };
         userRole.ConcurrencyStamp = userRole.Id;
         

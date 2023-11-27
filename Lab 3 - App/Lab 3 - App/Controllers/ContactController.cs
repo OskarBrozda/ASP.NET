@@ -1,9 +1,12 @@
+using System.Security.Claims;
 using Lab_3___App.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Lab_3___App.Controllers;
 
+[Authorize(Roles = "admin")]
 public class ContactController : Controller
 {
     private readonly IContactService _contactService;
@@ -15,6 +18,7 @@ public class ContactController : Controller
         _timeProvider = timeProvider;
     }
 
+    [AllowAnonymous]
     public IActionResult Index()
     {
         var contacts = _contactService.FindAll();
