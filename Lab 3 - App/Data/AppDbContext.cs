@@ -110,15 +110,15 @@ public class AppDbContext : IdentityDbContext<IdentityUser>
                 },
                 new OrganizationEntity
                 {
-                    OrganizationId = 2, Title = "WSEI", Nip = 6762158990, Regon = 357191420
+                    OrganizationId = 2, Title = "WSEI", Description = "Szkoła wysza", Nip= 6762158990, Regon = 357191420
                 },
                 new OrganizationEntity
                 {
-                    OrganizationId = 3, Title = "RAKSO", Nip = 1357895472, Regon = 367891434
+                    OrganizationId = 3, Title = "RAKSO", Description = "Działalnośc własna", Nip = 1357895472, Regon = 367891434
                 },
                 new OrganizationEntity
                 {
-                    OrganizationId = 4, Title = "Złoty kłos", Nip = 3456789091, Regon = 872358792
+                    OrganizationId = 4, Title = "Złoty kłos", Description = "Piekarnia", Nip = 3456789091, Regon = 872358792
                 }
             );
 
@@ -147,23 +147,22 @@ public class AppDbContext : IdentityDbContext<IdentityUser>
             .HasData(
                 new
                 {
-                    OrganizationEntityOrganizationId = 1, City = "none", Street = "none",
-                    PostalCode = "00-000", Region = "none"
+                    OrganizationEntityOrganizationId = 1, City = "none", Street = "none", HomeNr = "none", PostalCode = "00-000", Region = "none", Country = "none"
                 },
                 new
                 {
-                    OrganizationEntityOrganizationId = 2, City = "Kraków", Street = "Św. Filipa 17",
-                    PostalCode = "31-150", Region = "małopolska"
+                    OrganizationEntityOrganizationId = 2, City = "Kraków", Street = "Św. Filipa", HomeNr = "17",
+                    PostalCode = "31-150", Region = "Małopolska", Country = "Polska"
                 },
                 new
                 {
-                    OrganizationEntityOrganizationId = 3, City = "Kraków", Street = "Krowoderska 45/6",
-                    PostalCode = "42-400", Region = "małopolska"
+                    OrganizationEntityOrganizationId = 3, City = "Kraków", Street = "Krowoderska", HomeNr = "46", ApartamentNr = 6,
+                    PostalCode = "42-400", Region = "Małopolska", Country = "Polska"
                 },
                 new
                 {
-                    OrganizationEntityOrganizationId = 4, City = "Katowice", Street = "Piłsudskiego 99E",
-                    PostalCode = "32-120", Region = "śląsk"
+                    OrganizationEntityOrganizationId = 4, City = "Katowice", Street = "Piłsudskiego", HomeNr = "99E",
+                    PostalCode = "32-120", Region = "Śląsk", Country = "Polska"
                 }
             );
     }

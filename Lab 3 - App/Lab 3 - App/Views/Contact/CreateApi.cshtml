@@ -1,0 +1,84 @@
+@model Contact
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <h2>Podaj dane użytkownika:</h2>
+            <form asp-controller="Contact" asp-action="CreateApi" method="POST">
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Name"></label>
+                    <input class="form-control" asp-for="Name"/>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Surname"></label>
+                    <input class="form-control" asp-for="Surname"/>
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="BirthDate"></label>
+                    <input class="form-control" asp-for="BirthDate"/>
+                    <span asp-validation-for="BirthDate" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Email"></label>
+                    <input class="form-control" asp-for="Email"/>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Phone"></label>
+                    <input class="form-control" asp-for="Phone"/>
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="OrganizationId"></label>
+                    <input class="form-control" type="text" id="filter"/>
+                    <select class="form-control" id="OrganizationId"></select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Priority"></label>
+                    <select class="form-control" asp-for="Priority" asp-items="@Html.GetEnumSelectList<Priority>()"></select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Note"></label>
+                    <input class="form-control" asp-for="Note"/>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-outline-secondary" type="submit" asp-action="Index">Wróć</button>
+                    <button class="btn btn-outline-success" type="submit">Dodaj</button>
+                </div>
+            </form>
+            
+            @section Scripts
+            {
+                <script>
+                    let select = document.getElementById("OrganizationId");
+                    let filter = document.getElementById("filter");
+                    
+                    filter.onchange = function () {
+                        if (filter.value.lenght == 0) {
+                            return;
+                        }
+                        fetch(`/api/organizations?q=${filter.value}`)
+                            .then(response => response.json())
+                            .then(json => {
+                                select.innerHTML = "";
+                                for (let item of json) {
+                                    const option = document.createElement('option');
+                                    option.setAttribute('value', item.Id);
+                                    option.innerText = item.title;
+                                    select.appendChild(option);
+                                }
+                            })
+                    };
+                </script>
+            }
+            
+        </div>
+    </div>
+</div>

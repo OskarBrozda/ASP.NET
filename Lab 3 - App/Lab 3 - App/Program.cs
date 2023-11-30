@@ -14,6 +14,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddTransient<IContactService, EFContactService>();
+builder.Services.AddTransient<IOrganizationService, EFOrganizationService>();
 builder.Services.AddSingleton<IDateTimeProvider, CurrentDateTimeProvider>();
 builder.Services.AddMemoryCache();                        // dodać
 builder.Services.AddSession();                            // dodać    

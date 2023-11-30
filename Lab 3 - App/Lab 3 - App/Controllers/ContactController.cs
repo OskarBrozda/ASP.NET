@@ -45,6 +45,22 @@ public class ContactController : Controller
         model.Organizations = CreateSelectListItem();
         return View(model);
     }
+    
+    [HttpGet]
+    public IActionResult CreateApi() => View();
+
+    [HttpPost]
+    public IActionResult CreateApi(Contact model)
+    {
+        if (ModelState.IsValid)
+        {
+            model.Created = _timeProvider.GetDateTime();
+            _contactService.Add(model);
+            return RedirectToAction("Index");
+        }   
+        model.Organizations = CreateSelectListItem();
+        return View(model);
+    }
 
     [HttpGet]
     public IActionResult Edit(int id)

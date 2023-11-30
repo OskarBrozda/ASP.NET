@@ -110,6 +110,9 @@ namespace Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
                     b.Property<long>("Nip")
                         .HasColumnType("INTEGER");
 
@@ -135,6 +138,7 @@ namespace Data.Migrations
                         new
                         {
                             OrganizationId = 2,
+                            Description = "Szkoła wysza",
                             Nip = 6762158990L,
                             Regon = 357191420L,
                             Title = "WSEI"
@@ -142,6 +146,7 @@ namespace Data.Migrations
                         new
                         {
                             OrganizationId = 3,
+                            Description = "Działalnośc własna",
                             Nip = 1357895472L,
                             Regon = 367891434L,
                             Title = "RAKSO"
@@ -149,6 +154,7 @@ namespace Data.Migrations
                         new
                         {
                             OrganizationId = 4,
+                            Description = "Piekarnia",
                             Nip = 3456789091L,
                             Regon = 872358792L,
                             Title = "Złoty kłos"
@@ -183,15 +189,15 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "703715d3-9c29-421f-bb86-fc3594658354",
-                            ConcurrencyStamp = "703715d3-9c29-421f-bb86-fc3594658354",
+                            Id = "96e7699b-de2b-4dba-84ee-e2aa9319e264",
+                            ConcurrencyStamp = "96e7699b-de2b-4dba-84ee-e2aa9319e264",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "dbee72c7-63cd-4f49-9235-3149be2686a4",
-                            ConcurrencyStamp = "dbee72c7-63cd-4f49-9235-3149be2686a4",
+                            Id = "d5ad53a5-c13a-4dfc-a758-58eae5f41e6a",
+                            ConcurrencyStamp = "d5ad53a5-c13a-4dfc-a758-58eae5f41e6a",
                             Name = "user",
                             NormalizedName = "USER"
                         });
@@ -286,33 +292,33 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "267491b2-c8a1-4088-90a9-86a3dc37203f",
+                            Id = "c697e872-3e9a-4c46-a4c2-3db68b5ec4dd",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c4f6df59-c0c3-4aa8-acd9-3222dea53609",
+                            ConcurrencyStamp = "f273a700-11cf-41a1-a3c7-c8c9b5618c6e",
                             Email = "oskar@wsei.edu.pl",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "OSKAR@WSEI.EDU.PL",
                             NormalizedUserName = "OSKAR",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEme1aD9RctUzQafUSWcNV68sFP1/PlCv4wot97GDBCWF0R8ITtsfyAgNKWOFQXSkw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEN7SAfW6ysf50S3NmzEoRfpRSrldYIMjWZgnEOfQQbBKPZNplLEujqVZwcf5OkmhFA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d16d891c-c3b2-47f7-b252-972f9feea3ab",
+                            SecurityStamp = "4ac8bf29-c1ba-45ef-8058-7055883f4e9c",
                             TwoFactorEnabled = false,
                             UserName = "oskar"
                         },
                         new
                         {
-                            Id = "7d6b10df-0bdc-4584-8770-ee4e6e300471",
+                            Id = "b0c0c2f5-a369-4738-ad43-bc100a430bd2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0d6a18f3-dd24-48c9-83a5-13fc88e89670",
+                            ConcurrencyStamp = "ee1de59e-b31c-400b-b0d7-feee6bf956b1",
                             Email = "zuzia@wsei.edu.pl",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ZUZIA@WSEI.EDU.PL",
                             NormalizedUserName = "ZUZANNA",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKDAb9hR4tUDSoXsn3OkGE7HNVfu5JQaq/t8FdfaszPfqXGob1g+i4JkSsX1lYcr/A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEN+e2GeAGXRRnbFZBt9vbS35K1aqCZAvxV+RQ3qqB+mH+dr54+KlcXAO0wdI2/poBQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "cff4584c-4553-40d7-87d3-8bb3f7e45839",
+                            SecurityStamp = "b0c4b22d-e575-406d-96c3-b650040114d7",
                             TwoFactorEnabled = false,
                             UserName = "zuzanna"
                         });
@@ -380,13 +386,13 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "267491b2-c8a1-4088-90a9-86a3dc37203f",
-                            RoleId = "703715d3-9c29-421f-bb86-fc3594658354"
+                            UserId = "c697e872-3e9a-4c46-a4c2-3db68b5ec4dd",
+                            RoleId = "96e7699b-de2b-4dba-84ee-e2aa9319e264"
                         },
                         new
                         {
-                            UserId = "7d6b10df-0bdc-4584-8770-ee4e6e300471",
-                            RoleId = "dbee72c7-63cd-4f49-9235-3149be2686a4"
+                            UserId = "b0c0c2f5-a369-4738-ad43-bc100a430bd2",
+                            RoleId = "d5ad53a5-c13a-4dfc-a758-58eae5f41e6a"
                         });
                 });
 
@@ -427,7 +433,18 @@ namespace Data.Migrations
                             b1.Property<int>("OrganizationEntityOrganizationId")
                                 .HasColumnType("INTEGER");
 
+                            b1.Property<int?>("ApartamentNr")
+                                .HasColumnType("INTEGER");
+
                             b1.Property<string>("City")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Country")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("HomeNr")
                                 .IsRequired()
                                 .HasColumnType("TEXT");
 
@@ -455,6 +472,8 @@ namespace Data.Migrations
                                 {
                                     OrganizationEntityOrganizationId = 1,
                                     City = "none",
+                                    Country = "none",
+                                    HomeNr = "none",
                                     PostalCode = "00-000",
                                     Region = "none",
                                     Street = "none"
@@ -463,29 +482,37 @@ namespace Data.Migrations
                                 {
                                     OrganizationEntityOrganizationId = 2,
                                     City = "Kraków",
+                                    Country = "Polska",
+                                    HomeNr = "17",
                                     PostalCode = "31-150",
-                                    Region = "małopolska",
-                                    Street = "Św. Filipa 17"
+                                    Region = "Małopolska",
+                                    Street = "Św. Filipa"
                                 },
                                 new
                                 {
                                     OrganizationEntityOrganizationId = 3,
+                                    ApartamentNr = 6,
                                     City = "Kraków",
+                                    Country = "Polska",
+                                    HomeNr = "46",
                                     PostalCode = "42-400",
-                                    Region = "małopolska",
-                                    Street = "Krowoderska 45/6"
+                                    Region = "Małopolska",
+                                    Street = "Krowoderska"
                                 },
                                 new
                                 {
                                     OrganizationEntityOrganizationId = 4,
                                     City = "Katowice",
+                                    Country = "Polska",
+                                    HomeNr = "99E",
                                     PostalCode = "32-120",
-                                    Region = "śląsk",
-                                    Street = "Piłsudskiego 99E"
+                                    Region = "Śląsk",
+                                    Street = "Piłsudskiego"
                                 });
                         });
 
-                    b.Navigation("Address");
+                    b.Navigation("Address")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

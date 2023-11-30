@@ -1,0 +1,51 @@
+@using Lab3___App.Models
+@model Organization
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <h2>Szczegółowe dane:</h2>
+            <form asp-controller="Organization" asp-action="Index" method="POST">
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="Title"></label>
+                    </b> @Model.Title
+                </div>
+                 @if (Model.Description != null)
+                 {
+                     <div class="mb-2">
+                         <b>
+                             <label class="form-label" asp-for="Description"></label>
+                         </b> @Model.Description
+                     </div>
+                 }
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="Regon"></label>
+                    </b> @Model.Regon
+                </div>
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="Nip"></label>
+                    </b> @Model.Nip
+                </div>
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="Address"></label>
+                    </b>    
+                        <br/> @Model.Address.Street @Model.Address.HomeNr @if(@Model.Address.ApartamentNr != null) { <span> / </span> @Model.Address.ApartamentNr}  
+                        <br/> @Model.Address.PostalCode @Model.Address.City 
+                        <br/> @Model.Address.Region, @Model.Address.Country 
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-outline-primary" type="submit">Wróć</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

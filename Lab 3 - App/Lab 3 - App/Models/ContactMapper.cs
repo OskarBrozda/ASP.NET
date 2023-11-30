@@ -2,7 +2,7 @@ using Data.Entities;
 
 namespace Lab_3___App.Models;
 
-public class ContactMapper
+public abstract class ContactMapper
 {
     public static Contact FromEntity(ContactEntity entity)
     {

@@ -14,22 +14,23 @@ public class Contact
     [Display(Name = "Utworzono")]
     public DateTime Created { get; set; }
 
+    [RegularExpression("[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+", ErrorMessage = "Błędny format")]
     [Required(ErrorMessage = "Proszę podać imię!")]
     [Display(Name = "Imię")]
     public string Name { get; set; }
 
-
+    [RegularExpression("[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+", ErrorMessage = "Błędny format")]
     [Required(ErrorMessage = "Proszę podać nazwisko!")]
     [Display(Name = "Nazwisko")]
     public string Surname { get; set; }
 
-    [RegularExpression(".+\\@.+\\.[a-z]{2,3}")]
+    [RegularExpression(".+\\@.+\\.[a-z]{2,3}", ErrorMessage = "Błędny format")]
     [Required(ErrorMessage = "Proszę podać poprawny email!")]
     [Display(Name = "Email")]
     [EmailAddress]
     public string Email { get; set; }
 
-    [RegularExpression("[0-9]{3,15}")]
+    [RegularExpression("[0-9]{3,15}", ErrorMessage = "Błędny format")]
     [Required(ErrorMessage = "Proszę podać poprawny numer telefonu!")]
     [Display(Name = "Numer telefonu")]
     [Phone]
@@ -57,7 +58,7 @@ public class Contact
     {
         return birthDate > DateTime.Now
             ? new ValidationResult("Data urodzenia nie może być z przyszłości.", new[] { validationContext.MemberName })
-            : birthDate.Year <= 1900 ? new ValidationResult("No tak stary raczej nie jest...", new[] { validationContext.MemberName })
+            : birthDate.Year <= 1900 ? new ValidationResult("Proszę podać datę urodzenia!", new[] { validationContext.MemberName })
                 : ValidationResult.Success;
     }
 }
