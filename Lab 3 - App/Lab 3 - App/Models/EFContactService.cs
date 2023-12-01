@@ -45,6 +45,20 @@ public class EFContactService : IContactService
             .ToList();
     }
 
+    public PagingList<Contact> FindPage(int page, int size)
+    {
+        int totalCount = _context.Contacts.Count();
+        var pagingList = PagingList<Contact>.Create(null, totalCount, page, size);
+        var data = _context.Contacts
+            .OrderBy(c => c.Name)
+            .Skip((pagingList.Number - 1) * pagingList.Size)
+            .Take(pagingList.Size)
+            .Select(ContactMapper.FromEntity)
+            .ToList();
+        pagingList.Data = data;
+        return pagingList;
+    }
+
 
     public Contact? FindById(int id)
     {

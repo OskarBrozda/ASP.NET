@@ -29,6 +29,12 @@ public class ContactController : Controller
 
         return View(contacts);
     }
+    
+    public IActionResult PagedIndex(int page = 1, int size = 2 )
+    {
+        ViewBag.PageSize = size;
+        return View(_contactService.FindPage(page, size));
+    }
 
     [HttpGet]
     public IActionResult Create() => View(new Contact { Organizations = CreateSelectListItem() });

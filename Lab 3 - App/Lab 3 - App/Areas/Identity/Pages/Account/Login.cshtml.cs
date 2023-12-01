@@ -66,7 +66,7 @@ namespace Lab_3___App.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required(ErrorMessage = "Pole wymagane")]
             [EmailAddress]
             public string Email { get; set; }
 
@@ -74,7 +74,7 @@ namespace Lab_3___App.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required(ErrorMessage = "Pole wymagane")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
