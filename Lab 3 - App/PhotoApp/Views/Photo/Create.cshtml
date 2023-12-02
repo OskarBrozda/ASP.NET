@@ -25,7 +25,7 @@
     <div class="row justify-content-md-center">
         <div class="col-6">
             <h2>Podaj dane zdjęcia:</h2>
-            <form asp-controller="Photo" asp-action="CreateApi" method="POST">
+            <form asp-controller="Photo" asp-action="Create" method="POST">
                 <div class="mb-3">
                     <label class="form-label" asp-for="Description"></label>
                     <input class="form-control" asp-for="Description"/>
@@ -44,9 +44,9 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label asp-for="AuthorId"></label>
-                    <input class="form-control" type="text" id="filter"/>
-                    <select class="form-control" id="AuthorId" asp-for="AuthorId"></select>
+                    <label class="form-label" asp-for="AuthorId"></label>
+                    @* <input class="form-control" type="text" id="filter"/> *@
+                    <select class="form-control" asp-for="AuthorId" asp-items="@Model.Author"></select>
                 </div>
                 <div class="d-flex mb-3">
                     <div class="select-field custom-margin-right">
@@ -65,30 +65,30 @@
                 </div>
             </form>
             
-            @section Scripts
-            {
-                <script>
-                    let select = document.getElementById("AuthorId");
-                    let filter = document.getElementById("filter");
-                    
-                    filter.onchange = function () {
-                        if (filter.value.length === 0) {
-                            return;
-                        }
-                        fetch(`/api/authors?q=${filter.value}`)
-                            .then(response => response.json())
-                            .then(json => {
-                                select.innerHTML = "";
-                                for (let item of json) {
-                                    const option = document.createElement('option');
-                                    option.setAttribute('value', item.authorId);
-                                    option.innerText = `${item.name} ${item.surname}`;
-                                    select.appendChild(option);
-                                }
-                            })
-                    };
-                </script>
-            }
+            @* @section Scripts *@
+            @* { *@
+            @*     <script> *@
+            @*         let select = document.getElementById("AuthorId"); *@
+            @*         let filter = document.getElementById("filter"); *@
+            @*          *@
+            @*         filter.onchange = function () { *@
+            @*             if (filter.value.length === 0) { *@
+            @*                 return; *@
+            @*             } *@
+            @*             fetch(`/api/authors?q=${filter.value}`) *@
+            @*                 .then(response => response.json()) *@
+            @*                 .then(json => { *@
+            @*                     select.innerHTML = ""; *@
+            @*                     for (let item of json) { *@
+            @*                         const option = document.createElement('option'); *@
+            @*                         option.setAttribute('value', item.authorId); *@
+            @*                         option.innerText = `${item.name} ${item.surname}`; *@
+            @*                         select.appendChild(option); *@
+            @*                     } *@
+            @*                 }) *@
+            @*         }; *@
+            @*     </script> *@
+            @* } *@
         </div>
     </div>
 </div>

@@ -25,20 +25,20 @@ public class PhotoController : Controller
         return View(photos);
     }
     
-    // [HttpGet]
-    // public IActionResult Create() => View(new Photo() { Author = CreateSelectListItem() });
-    //
-    // [HttpPost]
-    // public IActionResult Create(Photo model)
-    // {
-    //     if (ModelState.IsValid)
-    //     {
-    //         _photoService.Add(model);
-    //         return RedirectToAction("Gallery");
-    //     }   
-    //     model.Author = CreateSelectListItem();
-    //     return View(model);
-    // }
+    [HttpGet]
+    public IActionResult Create() => View(new Photo() { Author = CreateSelectListItem() });
+    
+    [HttpPost]
+    public IActionResult Create(Photo model)
+    {
+        if (ModelState.IsValid)
+        {
+            _photoService.Add(model);
+            return RedirectToAction("Gallery");
+        }   
+        model.Author = CreateSelectListItem();
+        return View(model);
+    }
 
     [HttpGet]
     public IActionResult CreateApi() => View();

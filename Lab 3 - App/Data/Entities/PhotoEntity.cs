@@ -13,11 +13,11 @@ public class PhotoEntity
     [MaxLength(100)] [MinLength(3)] public string Description { get; set; }
 
     [MaxLength(100)] [MinLength(3)] [Required] public string Camera { get; set; }
-    public int AuthorId { get; set; }
-
+    
     public int Definition { get; set; }
     
     public int Format { get; set; }
     
+    public int AuthorId { get; set; }
     public AuthorEntity? Authors { get; set; }
 }
