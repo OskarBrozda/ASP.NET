@@ -1,0 +1,53 @@
+@using PhotoApp.Models
+@model Photo
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <h2>Szczegółowe dane:</h2>
+            <form asp-controller="Photo" asp-action="Gallery" method="POST">
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="Description"></label>
+                    </b> @Model.Description
+                </div>
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="Camera"></label>
+                    </b> @Model.Camera
+                </div>
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="Date_time"></label>
+                    </b> @Model.Date_time
+                </div>
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="AuthorId"></label>
+                    </b>
+                    <span>
+                         @Model.Author.FirstOrDefault(o => o.Value == Model.AuthorId.ToString())?.Text
+                    </span>
+                </div>
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="Definition"></label>
+                    </b> @Model.Definition.GetDisplayName()
+                </div>
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="Format"></label>
+                    </b> @Model.Format.GetDisplayName()
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-outline-primary" type="submit">Wróć</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -16,6 +16,8 @@ public class AppDbContext : IdentityDbContext<IdentityUser>
     }
 
     public DbSet<ContactEntity> Contacts { get; set; }
+    public DbSet<PhotoEntity> Photos { get; set; }
+    public DbSet<AuthorEntity> Authors { get; set; }
     public DbSet<OrganizationEntity> Organizations { get; set; }
 
     private string DbPath { get; }
@@ -140,7 +142,6 @@ public class AppDbContext : IdentityDbContext<IdentityUser>
                 Email = "boskazuzia@mail.com", Phone = "678998786", Priority = 3, OrganizationId = 3
             }
         );
-
         
         modelBuilder.Entity<OrganizationEntity>()
             .OwnsOne(e => e.Address)
@@ -162,6 +163,85 @@ public class AppDbContext : IdentityDbContext<IdentityUser>
                 new
                 {
                     OrganizationEntityOrganizationId = 4, City = "Katowice", Street = "Piłsudskiego", HomeNr = "99E",
+                    PostalCode = "32-120", Region = "Śląsk", Country = "Polska"
+                }
+            );
+        
+        
+        
+        modelBuilder.Entity<AuthorEntity>()
+            .OwnsOne(e => e.Address);
+
+        modelBuilder.Entity<PhotoEntity>()
+            .HasOne(e => e.Authors)
+            .WithMany(a => a.Photos)
+            .HasForeignKey(e => e.AuthorId);
+
+        modelBuilder.Entity<AuthorEntity>()
+            .HasData(
+                new AuthorEntity
+                {
+                    AuthorId = 1, Name = "Adam", Surname = "Kwaśny", Email = "akwasny@wp.pl", Note = "student"
+                },
+                new AuthorEntity
+                {
+                    AuthorId = 2, Name = "Tomasz", Surname = "Surówka", Email = "tsur@wp.pl", Note = "praktykant"
+                },
+                new AuthorEntity
+                {
+                    AuthorId = 3, Name = "Mariola", Surname = "Lubicz", Email = "majalub@wp.pl", Note = "fotograf ślubny"
+                },
+                new AuthorEntity
+                {
+                    AuthorId = 4, Name = "Łukasz", Surname = "Radwan", Email = "lrdw@wp.pl", Note = "fotograf natury"
+                }
+            );
+
+
+        modelBuilder.Entity<PhotoEntity>().HasData(
+            new PhotoEntity
+            {
+                PhotoId = 1, Date_time = new DateTime(2008, 8, 1, 12, 59, 16), Description = "Zdjęcie kwiatka",
+                Camera = "Nikon", AuthorId = 3, Definition = 2, Format = 4
+            },
+            new PhotoEntity
+            {
+                PhotoId = 2, Date_time = new DateTime(2018, 7, 11, 10, 9, 11), Description = "Zdjęcie pary młodej",
+                Camera = "Canon", AuthorId = 3, Definition = 6, Format = 1
+            },
+            new PhotoEntity
+            {
+                PhotoId = 3, Date_time = new DateTime(1998, 11, 11, 11, 10, 9), Description = "Zdjęcie Nissana GTR",
+                Camera = "Nikon", AuthorId = 1, Definition = 7, Format = 2
+            },
+            new PhotoEntity
+            {
+                PhotoId = 4, Date_time = new DateTime(2012, 2, 07, 23, 15, 34), Description = "Zdjęcie willi",
+                Camera = "Sony", AuthorId = 4, Definition = 3, Format = 5
+            }
+        );
+        
+        modelBuilder.Entity<AuthorEntity>()
+            .OwnsOne(e => e.Address)
+            .HasData(
+                new
+                {
+                    AuthorEntityAuthorId = 1, City = "Poznań", Street = "Pomorska", HomeNr = "22",
+                    PostalCode = "42-152", Region = "Wielkopolska", Country = "Polska"
+                },
+                new
+                {
+                    AuthorEntityAuthorId = 2, City = "Kraków", Street = "Św. Filipa", HomeNr = "17",
+                    PostalCode = "31-150", Region = "Małopolska", Country = "Polska"
+                },
+                new
+                {
+                    AuthorEntityAuthorId = 3, City = "Kraków", Street = "Krowoderska", HomeNr = "46", ApartamentNr = 6,
+                    PostalCode = "42-400", Region = "Małopolska", Country = "Polska"
+                },
+                new
+                {
+                    AuthorEntityAuthorId = 4, City = "Katowice", Street = "Piłsudskiego", HomeNr = "99E",
                     PostalCode = "32-120", Region = "Śląsk", Country = "Polska"
                 }
             );

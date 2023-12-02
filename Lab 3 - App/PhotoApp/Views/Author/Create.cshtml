@@ -1,0 +1,92 @@
+@model Author
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    .custom-margin-right {
+        margin-right: 20px; 
+    }
+    
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <h2>Podaj dane autora:</h2>
+            <form asp-controller="Author" asp-action="Create" method="POST">
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Name"></label>
+                    <input class="form-control" asp-for="Name"/>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Surname"></label>
+                    <input class="form-control" asp-for="Surname"/>
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Email"></label>
+                    <input class="form-control" asp-for="Email"/>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Note"></label>
+                    <input class="form-control" asp-for="Note"/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Address.Street"></label>
+                    <input class="form-control" asp-for="Address.Street"/>
+                    <span asp-validation-for="Address.Street" class="text-danger"></span>
+                </div>
+                <div class="d-flex mb-3">
+                    <div class="custom-margin-right">
+                        <label class="form-label" asp-for="Address.HomeNr"></label>
+                        <input class="form-control" asp-for="Address.HomeNr"/>
+                        <span asp-validation-for="Address.HomeNr" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label class="form-label" asp-for="Address.ApartamentNr"></label>
+                        <input class="form-control" asp-for="Address.ApartamentNr"/>
+                        <span asp-validation-for="Address.ApartamentNr" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="d-flex mb-3">
+                    <div class="custom-margin-right">
+                        <label class="form-label" asp-for="Address.PostalCode"></label>
+                        <input class="form-control" asp-for="Address.PostalCode" placeholder="00-000"/>
+                        <span asp-validation-for="Address.PostalCode" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label class="form-label" asp-for="Address.City"></label>
+                        <input class="form-control" asp-for="Address.City"/>
+                        <span asp-validation-for="Address.City" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="d-flex mb-3">
+                    <div class="custom-margin-right">
+                        <label class="form-label" asp-for="Address.Region"></label>
+                        <input class="form-control" asp-for="Address.Region"/>
+                        <span asp-validation-for="Address.Region" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label class="form-label" asp-for="Address.Country"></label>
+                        <input class="form-control" asp-for="Address.Country"/>
+                        <span asp-validation-for="Address.Country" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="buttons mb-3">
+                    <button class="btn btn-outline-secondary" type="submit" asp-action="Index">Wróć</button>
+                    <button class="btn btn-outline-secondary" type="reset">Wyczyść</button>
+                    <button class="btn btn-outline-success" type="submit">Dodaj</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

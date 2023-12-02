@@ -1,0 +1,24 @@
+@model Photo
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <h2>Potwierdź usunięcie</h2>
+            <form asp-controller="Photo" asp-action="DeleteConfirmed" method="POST">
+                <input asp-for="PhotoId"/>
+                <p>Czy na pewno chcesz usunąć zdjęcie "<b>@Model.Description</b>"?
+                    <br/>Identyfikator zdjęcia: <b>@Model.PhotoId</b>.</p>
+                <div class="mb-3">
+                    <button class="btn btn-outline-danger" type="submit">Tak</button>
+                    <button class="btn btn-outline-primary" type="submit" asp-controller="Photo" asp-action="Gallery">Nie</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

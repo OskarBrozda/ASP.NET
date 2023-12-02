@@ -1,7 +1,13 @@
+using Data;
+using PhotoApp.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddTransient<IPhotoService, EFPhotoService>();
+builder.Services.AddTransient<IAuthorService, EFAuthorService>();
 
 var app = builder.Build();
 
@@ -22,6 +28,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     "default",
-    "{controller=Home}/{action=Index}/{id?}");
+    "{controller=Photo}/{action=Gallery}/{id?}");
 
 app.Run();

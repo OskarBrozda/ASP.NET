@@ -1,0 +1,51 @@
+@using PhotoApp.Models
+@model Author
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <h2>Szczegółowe dane:</h2>
+            <form asp-controller="Author" asp-action="Index" method="POST">
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="Name"></label>
+                    </b> @Model.Name
+                </div>
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="Surname"></label>
+                    </b> @Model.Surname
+                </div>
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="Email"></label>
+                    </b> @Model.Email
+                </div>
+                 @if (Model.Note != null)
+                 {
+                     <div class="mb-2">
+                         <b>
+                             <label class="form-label" asp-for="Note"></label>
+                         </b> @Model.Note
+                     </div>
+                 }
+                <div class="mb-2">
+                    <b>
+                        <label class="form-label" asp-for="Address"></label>
+                    </b>    
+                    <br/> @Model.Address.Street @Model.Address.HomeNr @if(@Model.Address.ApartamentNr != null) { <span> / </span> @Model.Address.ApartamentNr}  
+                    <br/> @Model.Address.PostalCode @Model.Address.City 
+                    <br/> @Model.Address.Region, @Model.Address.Country 
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-outline-primary" type="submit">Wróć</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

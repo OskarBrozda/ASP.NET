@@ -61,7 +61,7 @@
                     let filter = document.getElementById("filter");
                     
                     filter.onchange = function () {
-                        if (filter.value.lenght == 0) {
+                        if (filter.value.length === 0) {
                             return;
                         }
                         fetch(`/api/organizations?q=${filter.value}`)
