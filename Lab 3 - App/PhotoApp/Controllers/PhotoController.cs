@@ -1,9 +1,12 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using PhotoApp.Models;
 
 namespace PhotoApp.Controllers;
 
+
+[Authorize(Roles = "admin")]
 public class PhotoController : Controller
 {
     private readonly IPhotoService _photoService;
@@ -13,7 +16,7 @@ public class PhotoController : Controller
         _photoService = photoService;
     }
     
-    
+    [AllowAnonymous]
     public IActionResult Gallery()
     {
         var photos = _photoService.FindAll();
@@ -23,21 +26,6 @@ public class PhotoController : Controller
         }
 
         return View(photos);
-    }
-    
-    [HttpGet]
-    public IActionResult Create() => View(new Photo() { Author = CreateSelectListItem() });
-    
-    [HttpPost]
-    public IActionResult Create(Photo model)
-    {
-        if (ModelState.IsValid)
-        {
-            _photoService.Add(model);
-            return RedirectToAction("Gallery");
-        }   
-        model.Author = CreateSelectListItem();
-        return View(model);
     }
 
     [HttpGet]

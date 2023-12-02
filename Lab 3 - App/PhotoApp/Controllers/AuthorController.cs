@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PhotoApp.Models;
 
 namespace PhotoApp.Controllers;
 
+[Authorize(Roles = "admin")]
 public class AuthorController : Controller
 {
     private readonly IAuthorService _authorService;
