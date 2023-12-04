@@ -10,4 +10,5 @@ public interface IPhotoService
     List<Photo> FindAll();
     Photo? FindById(int id);
     List<AuthorEntity> FindAllAuthors();
+    public PagingList<Photo> FindPage(int page, int size);
 }

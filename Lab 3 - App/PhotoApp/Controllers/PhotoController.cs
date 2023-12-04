@@ -27,6 +27,11 @@ public class PhotoController : Controller
 
         return View(photos);
     }
+    
+    public IActionResult PagedGallery([FromQuery]int page = 1,[FromQuery] int size = 5) 
+    { 
+        return View(_photoService.FindPage(page, size)); 
+    }
 
     [HttpGet]
     public IActionResult CreateApi() => View();

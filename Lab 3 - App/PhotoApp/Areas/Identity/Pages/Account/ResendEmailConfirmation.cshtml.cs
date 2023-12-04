@@ -64,7 +64,7 @@ namespace PhotoApp.Areas.Identity.Pages.Account
             var user = await _userManager.FindByEmailAsync(Input.Email);
             if (user == null)
             {
-                ModelState.AddModelError(string.Empty, "Verification email sent. Please check your email.");
+                ModelState.AddModelError(string.Empty, "E-mail weryfikacyjny został wysłany. Proszę sprawdzić email.");
                 return Page();
             }
 
@@ -79,9 +79,9 @@ namespace PhotoApp.Areas.Identity.Pages.Account
             await _emailSender.SendEmailAsync(
                 Input.Email,
                 "Confirm your email",
-                $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                $"Prosze potwierdzić swoje konto <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>klikając tutaj</a>.");
 
-            ModelState.AddModelError(string.Empty, "Verification email sent. Please check your email.");
+            ModelState.AddModelError(string.Empty, "E-mail weryfikacyjny został wysłany. Proszę sprawdzić email.");
             return Page();
         }
     }

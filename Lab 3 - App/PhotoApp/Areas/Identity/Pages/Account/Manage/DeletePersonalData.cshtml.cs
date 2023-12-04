@@ -81,7 +81,7 @@ namespace PhotoApp.Areas.Identity.Pages.Account.Manage
             {
                 if (!await _userManager.CheckPasswordAsync(user, Input.Password))
                 {
-                    ModelState.AddModelError(string.Empty, "Incorrect password.");
+                    ModelState.AddModelError(string.Empty, "Niepoprawne hasło.");
                     return Page();
                 }
             }
@@ -90,12 +90,12 @@ namespace PhotoApp.Areas.Identity.Pages.Account.Manage
             var userId = await _userManager.GetUserIdAsync(user);
             if (!result.Succeeded)
             {
-                throw new InvalidOperationException($"Unexpected error occurred deleting user.");
+                throw new InvalidOperationException($"Wystąpił nieoczekiwany błąd podczas usuwania użytkownika.");
             }
 
             await _signInManager.SignOutAsync();
 
-            _logger.LogInformation("User with ID '{UserId}' deleted themselves.", userId);
+            _logger.LogInformation("Uytkownik o ID '{UserId}' sam się usunął.", userId);
 
             return Redirect("~/");
         }

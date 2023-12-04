@@ -13,6 +13,20 @@ public class EFPhotoService : IPhotoService
         _context = context;
     }
     
+    public PagingList<Photo> FindPage(int page, int size) 
+    { 
+        int totalCount = _context.Contacts.Count();
+        var pagingList = PagingList<Photo>.Create(null, totalCount, page, size);
+        var data = _context.Photos
+            .OrderBy(c => c.Description)
+            .Skip((pagingList.Number - 1) * pagingList.Size)
+            .Take(pagingList.Size)
+            .Select(PhotoMapper.FromEntity)
+            .ToList();
+        pagingList.Data = data;
+        return pagingList;
+    }
+    
     public int Add(Photo photo)
     {
         var entity = _context.Photos.Add(PhotoMapper.ToEntity(photo));
