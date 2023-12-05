@@ -13,6 +13,8 @@ public abstract class PhotoMapper
             Description = entity.Description,
             Camera = entity.Camera,
             AuthorId = entity.AuthorId,
+            PhotoFile = entity.PhotoFile,
+            PhotoUrl = entity.PhotoUrl,
             Definition = (Definition)entity.Definition,
             Format = (Format)entity.Format
         };
@@ -27,6 +29,8 @@ public abstract class PhotoMapper
             Description = model.Description,
             Camera = model.Camera,
             AuthorId = model.AuthorId,
+            PhotoFile = model.PhotoFile,
+            PhotoUrl = model.PhotoUrl,
             Definition = (int)model.Definition,
             Format = (int)model.Format
         };

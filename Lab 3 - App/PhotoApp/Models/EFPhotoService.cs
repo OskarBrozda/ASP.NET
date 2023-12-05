@@ -15,12 +15,12 @@ public class EFPhotoService : IPhotoService
     
     public PagingList<Photo> FindPage(int page, int size) 
     { 
-        int totalCount = _context.Contacts.Count();
+        int totalCount = _context.Photos.Count();
         var pagingList = PagingList<Photo>.Create(null, totalCount, page, size);
         var data = _context.Photos
             .OrderBy(c => c.Description)
             .Skip((pagingList.Number - 1) * pagingList.Size)
-            .Take(pagingList.Size)
+            .Take(pagingList.Size).AsEnumerable()
             .Select(PhotoMapper.FromEntity)
             .ToList();
         pagingList.Data = data;

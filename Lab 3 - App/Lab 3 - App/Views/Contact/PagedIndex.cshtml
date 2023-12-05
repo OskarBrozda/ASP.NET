@@ -54,7 +54,10 @@
                     }
                 </td>
                 <td>
-                    @item.Organizations.FirstOrDefault(o => o.Value == item.OrganizationId.ToString())?.Text
+                    @if (item != null && item.Organizations != null && item.OrganizationId != null)
+                    {
+                        @item.Organizations.FirstOrDefault(o => o.Value == item.OrganizationId.ToString())?.Text
+                    }
                 </td>
                 <td>
                     <a class="btn btn-outline-primary"

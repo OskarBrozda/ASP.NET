@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http;
 
 namespace Data.Entities;
 
@@ -19,5 +20,10 @@ public class PhotoEntity
     public int Format { get; set; }
     
     public int AuthorId { get; set; }
+    
+    [NotMapped]
+    public IFormFile? PhotoFile { get; set; }
+
+    public string? PhotoUrl { get; set; }
     public AuthorEntity? Authors { get; set; }
 }

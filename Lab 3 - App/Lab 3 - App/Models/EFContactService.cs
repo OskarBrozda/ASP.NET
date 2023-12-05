@@ -53,6 +53,7 @@ public class EFContactService : IContactService
             .OrderBy(c => c.Name)
             .Skip((pagingList.Number - 1) * pagingList.Size)
             .Take(pagingList.Size)
+            .Include(c => c.Organization)
             .Select(ContactMapper.FromEntity)
             .ToList();
         pagingList.Data = data;

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "X6SlCzB8goOwjUAcZhIxV5dVmExhaLfb0jExYlBXFFE=",
+  "Hash": "/Im9wYMJq0lAOdPC6C3hYU0NFstyW/3sZNdei//4DUo=",
   "Source": "PhotoApp",
   "BasePath": "_content/PhotoApp",
   "Mode": "Default",
@@ -1071,6 +1071,23 @@
       "OriginalItemSpec": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/obj/Debug/net7.0/scopedcss/projectbundle/PhotoApp.bundle.scp.css"
     },
     {
+      "Identity": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/.DS_Store",
+      "SourceId": "PhotoApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/",
+      "BasePath": "_content/PhotoApp",
+      "RelativePath": ".DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/.DS_Store"
+    },
+    {
       "Identity": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/css/site.css",
       "SourceId": "PhotoApp",
       "SourceType": "Discovered",
@@ -2089,6 +2106,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/photos_folder/592c3205-8a59-43d6-82bc-b8f9902266d4_Kombinatory.png",
+      "SourceId": "PhotoApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/",
+      "BasePath": "_content/PhotoApp",
+      "RelativePath": "photos_folder/592c3205-8a59-43d6-82bc-b8f9902266d4_Kombinatory.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/photos_folder/592c3205-8a59-43d6-82bc-b8f9902266d4_Kombinatory.png"
     }
   ]
 }

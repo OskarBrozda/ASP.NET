@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/PhotoApp.bundle.scp.css"
     },
     {
+      "Id": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
       "Id": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
@@ -243,6 +247,10 @@
     {
       "Id": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/lib/jquery/dist/jquery.min.map",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/photos_folder/592c3205-8a59-43d6-82bc-b8f9902266d4_Kombinatory.png",
+      "PackagePath": "staticwebassets/photos_folder/592c3205-8a59-43d6-82bc-b8f9902266d4_Kombinatory.png"
     },
     {
       "Id": "obj/Debug/net7.0/staticwebassets/msbuild.PhotoApp.Microsoft.AspNetCore.StaticWebAssets.props",
