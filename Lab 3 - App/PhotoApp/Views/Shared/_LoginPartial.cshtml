@@ -6,21 +6,21 @@
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
-    <li class="log-item">
-        <a id="manage" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Witaj <b>@UserManager.GetUserName(User)</b>!</a>
+    <li class="log-item underline ">
+        <a class="helloUser" id="manage" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Witaj <b class="userName">@UserManager.GetUserName(User)</b>!</a>
     </li>
     <li class="log-item">
-        <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Gallery", "Photo", new { area = "" })">
-            <button type="submit">Wyloguj</button>
+        <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("PagedGallery", "Photo", new { area = "" })">
+            <button class="underline" type="submit">Wyloguj</button>
         </form>
     </li>
 }
 else
 {
-    <li class="log-item">
+    <li class="log-item underline helloUser">
         <a asp-area="Identity" asp-page="/Account/Register">Rejestracja</a>
     </li>
-    <li class="log-item">
+    <li class="log-item underline helloUser">
         <a asp-area="Identity" asp-page="/Account/Login">Logowanie</a>
     </li>
 }

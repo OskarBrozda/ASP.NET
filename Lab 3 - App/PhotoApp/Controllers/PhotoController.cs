@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using NuGet.DependencyResolver;
 using PhotoApp.Models;
 
 namespace PhotoApp.Controllers;
@@ -19,26 +20,8 @@ public class PhotoController : Controller
     }
     
     [AllowAnonymous]
-    public IActionResult Gallery()
-    {
-        var photos = _photoService.FindAll();
-        foreach (var photo in photos)
-        {
-            photo.Author = CreateSelectListItem();
-        }
-
-        return View(photos);
-    }
-    
-    [AllowAnonymous]
-    public IActionResult PagedGallery([FromQuery]int page = 1,[FromQuery] int size = 5) 
+    public IActionResult PagedGallery([FromQuery]int page = 1,[FromQuery] int size = 6) 
     { 
-        var photos = _photoService.FindAll();
-        foreach (var photo in photos)
-        {
-            photo.Author = CreateSelectListItem();
-        }
-        
         return View(_photoService.FindPage(page, size)); 
     }
 
@@ -59,12 +42,12 @@ public class PhotoController : Controller
                 model.PhotoUrl = "/" + folder;
                 string serverFolder = Path.Combine(_webHostEnvironment.WebRootPath, folder);
 
-                await model.PhotoFile.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
+                model.PhotoFile.CopyTo(new FileStream(serverFolder, FileMode.Create));
             }
+            model.Author = CreateSelectListItem();
             _photoService.Add(model); 
-            return RedirectToAction("Gallery");
+            return RedirectToAction("PagedGallery");
         }   
-        model.Author = CreateSelectListItem();
         return View(model);
     }
     
@@ -91,9 +74,9 @@ public class PhotoController : Controller
         if (ModelState.IsValid)
         {
             _photoService.Update(model);
-            return RedirectToAction("Gallery");
+            return RedirectToAction("PagedGallery");
         }
-
+        
         return View(model);
     }
     
@@ -122,7 +105,7 @@ public class PhotoController : Controller
     public IActionResult DeleteConfirmed(Photo photo)
     {
         _photoService.Delete(photo.PhotoId);
-        return RedirectToAction("Gallery");
+        return RedirectToAction("PagedGallery");
     }
     
     private List<SelectListItem> CreateSelectListItem()

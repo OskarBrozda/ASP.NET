@@ -1,5 +1,6 @@
 using Data;
 using Data.Entities;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lab_3___App.Models;
@@ -49,13 +50,19 @@ public class EFContactService : IContactService
     {
         int totalCount = _context.Contacts.Count();
         var pagingList = PagingList<Contact>.Create(null, totalCount, page, size);
+        var organization = _context.Organizations.ToList();
         var data = _context.Contacts
             .OrderBy(c => c.Name)
             .Skip((pagingList.Number - 1) * pagingList.Size)
             .Take(pagingList.Size)
             .Include(c => c.Organization)
-            .Select(ContactMapper.FromEntity)
+            .Select(e => ContactMapper.FromEntity(e))
             .ToList();
+        
+        foreach (var photo in data)
+        {
+            photo.Organizations = organization.Select(a => new SelectListItem { Value = a.OrganizationId.ToString(), Text = a.Title }).ToList();
+        }
         pagingList.Data = data;
         return pagingList;
     }

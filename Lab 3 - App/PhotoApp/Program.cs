@@ -41,6 +41,6 @@ app.MapRazorPages();                                     // dodać
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Photo}/{action=Gallery}/{id?}");
+    pattern: "{controller=Photo}/{action=PagedGallery}/{id?}");
 
 app.Run();

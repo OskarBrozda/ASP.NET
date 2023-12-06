@@ -249,8 +249,36 @@
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
     },
     {
-      "Id": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/photos_folder/592c3205-8a59-43d6-82bc-b8f9902266d4_Kombinatory.png",
-      "PackagePath": "staticwebassets/photos_folder/592c3205-8a59-43d6-82bc-b8f9902266d4_Kombinatory.png"
+      "Id": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/photos_folder/13d4cfb0-cbda-41eb-86ea-0189734e4d2e_img3.jpg",
+      "PackagePath": "staticwebassets/photos_folder/13d4cfb0-cbda-41eb-86ea-0189734e4d2e_img3.jpg"
+    },
+    {
+      "Id": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/photos_folder/341107fe-5751-4e0b-a86c-7ae0966aca74_img1.jpg",
+      "PackagePath": "staticwebassets/photos_folder/341107fe-5751-4e0b-a86c-7ae0966aca74_img1.jpg"
+    },
+    {
+      "Id": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/photos_folder/4d14fc5a-12cb-4664-b338-6cc50ceebf19_hobby3.jpg",
+      "PackagePath": "staticwebassets/photos_folder/4d14fc5a-12cb-4664-b338-6cc50ceebf19_hobby3.jpg"
+    },
+    {
+      "Id": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/photos_folder/6c6dd6af-be9f-4a5c-833e-d23fd4dfa1e8_hobby2.jpg",
+      "PackagePath": "staticwebassets/photos_folder/6c6dd6af-be9f-4a5c-833e-d23fd4dfa1e8_hobby2.jpg"
+    },
+    {
+      "Id": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/photos_folder/819561ac-1822-4869-a975-cf6b2fce4615_hobby1.jpg",
+      "PackagePath": "staticwebassets/photos_folder/819561ac-1822-4869-a975-cf6b2fce4615_hobby1.jpg"
+    },
+    {
+      "Id": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/photos_folder/a7aa6c69-ab73-4dde-81ad-e8f533637a05_photo1.png",
+      "PackagePath": "staticwebassets/photos_folder/a7aa6c69-ab73-4dde-81ad-e8f533637a05_photo1.png"
+    },
+    {
+      "Id": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/photos_folder/f57b7596-a337-48d4-8769-eaa277d68e98_hobby4.jpg",
+      "PackagePath": "staticwebassets/photos_folder/f57b7596-a337-48d4-8769-eaa277d68e98_hobby4.jpg"
+    },
+    {
+      "Id": "/Users/oskarbrozda/GitHub/ASP.NET/Lab 3 - App/PhotoApp/wwwroot/photos_folder/fa3bac1c-7efa-47f8-affd-f5963f9b8114_pic3.jpg",
+      "PackagePath": "staticwebassets/photos_folder/fa3bac1c-7efa-47f8-affd-f5963f9b8114_pic3.jpg"
     },
     {
       "Id": "obj/Debug/net7.0/staticwebassets/msbuild.PhotoApp.Microsoft.AspNetCore.StaticWebAssets.props",

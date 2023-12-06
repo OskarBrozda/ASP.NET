@@ -1,0 +1,16 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1982a660_002Db198_002D4737_002Dbedc_002D5922ec4d0e57/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="IndexTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::B87119FB-BED0-4A9B-8CFB-8BEA13D9A6C5::net7.0::Lab_9___Test.ContactControllerTest.IndexTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=48e1c547_002D87ff_002D4549_002Da38c_002De9869b3ca1d4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="IndexTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::B87119FB-BED0-4A9B-8CFB-8BEA13D9A6C5::net7.0::Lab_9___Test.ContactControllerTest.IndexTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f378494b_002D8a11_002D4c80_002D9d77_002D2a9c69f603de/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="IndexTest #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::B87119FB-BED0-4A9B-8CFB-8BEA13D9A6C5::net7.0::Lab_9___Test.ContactControllerTest.IndexTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

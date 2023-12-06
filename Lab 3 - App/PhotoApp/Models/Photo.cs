@@ -49,7 +49,7 @@ public class Photo
     [Display(Name = "Wczytaj zdjęcie")]
     public IFormFile PhotoFile { get; set; }
     
-    public string PhotoUrl { get; set; }
+    public string? PhotoUrl { get; set; }
     
     public static ValidationResult ValidateDateTime(DateTime date_time, ValidationContext validationContext)
     {

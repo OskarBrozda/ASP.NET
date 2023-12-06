@@ -5,44 +5,89 @@
 @{
 }
 
-<div class="container">
+<div class="addingView">
     <div class="row justify-content-md-center">
         <div class="col-6">
             <h2>Edytuj dane zdjęcia:</h2>
-            <form asp-controller="Photo" asp-action="Update" method="POST">
-                 <input type="hidden" asp-for="PhotoId" />
+            <form class="createForm" enctype="multipart/form-data" asp-controller="Photo" asp-action="Update" method="POST">
+                <input type="hidden" asp-for="PhotoId" />
                 <div class="mb-3">
                     <label class="form-label" asp-for="Description"></label>
                     <input class="form-control" asp-for="Description"/>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
+                @* <div class="mb-3"> *@
+                @*     <label asp-for="PhotoFile" class="form-label"></label> *@
+                @*     <input asp-for="PhotoFile" class="form-control" value="@Model.PhotoUrl"/> *@
+                @*     <span asp-validation-for="PhotoFile" class="text-danger"></span> *@
+                @* </div> *@
                 <div class="mb-3">
-                    <label class="form-label" asp-for="Camera"></label>
-                    <input class="form-control" asp-for="Camera"/>
-                    <span asp-validation-for="Camera" class="text-danger"></span>
+                    <label asp-for="PhotoFile" class="form-label">Obecne zdjęcie</label>
+                    <img src="@Model.PhotoUrl" class="img-thumbnail" alt="Obecne zdjęcie" />
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" asp-for="Date_time"></label>
-                    <input class="form-control" asp-for="Date_time" value="@Model.Date_time.ToString("yyyy-MM-ddTHH:mm")"/>
-                    <span asp-validation-for="Date_time" class="text-danger"></span>
+                    <label asp-for="PhotoFile" class="form-label">Nowe zdjęcie</label>
+                    <input asp-for="PhotoFile" class="form-control" />
+                    <span asp-validation-for="PhotoFile" class="text-danger"></span>
+                </div>
+                <div class="d-flex mb-3">
+                    <div class="select-field custom-margin-right">
+                        <label class="form-label" asp-for="Camera"></label>
+                        <input class="form-control" asp-for="Camera"/>
+                        <span asp-validation-for="Camera" class="text-danger"></span>
+                    </div>
+                    <div class="select-field">
+                        <label class="form-label" asp-for="Date_time"></label>
+                        <input class="form-control" asp-for="Date_time" value="@Model.Date_time.ToString("yyyy-MM-ddTHH:mm")"/>
+                        <span asp-validation-for="Date_time" class="text-danger"></span>
+                    </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" asp-for="AuthorId"></label>
+                    <label asp-for="AuthorId"></label>
+                    <input class="form-control" type="text" id="filter"/>                  
                     <select class="form-control" asp-for="AuthorId" asp-items="@Model.Author"></select>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label" asp-for="Definition"></label>
-                    <select class="form-control" asp-for="Definition" asp-items="@Html.GetEnumSelectList<Definition>()"></select>
+                <div class="d-flex mb-3">
+                    <div class="select-field custom-margin-right">
+                        <label class="form-label" asp-for="Definition"></label>
+                        <select class="form-control" asp-for="Definition" asp-items="@Html.GetEnumSelectList<Definition>()"></select>
+                    </div>
+                    <div class="select-field">
+                        <label class="form-label" asp-for="Format"></label>
+                        <select class="form-control" asp-for="Format" asp-items="@Html.GetEnumSelectList<Format>()"></select>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label" asp-for="Format"></label>
-                    <select class="form-control" asp-for="Format" asp-items="@Html.GetEnumSelectList<Format>()"></select>
-                </div>
-                <div class="mb-3">
-                    <button class="btn btn-outline-secondary" type="submit" asp-action="Gallery">Wróć</button>
-                    <button class="btn btn-outline-success" type="submit">Zapisz</button>
+                <div class="buttons mb-3">
+                    <button class="btn btn-outline-secondary backBtn" type="submit" asp-action="PagedGallery">Wróć</button>
+                    <button class="btn btn-outline-success createBtn" type="submit">Zapisz</button>
                 </div>
             </form>
+            
+            
+            @section Scripts
+            {
+                <script>
+                                let select = document.getElementById("AuthorId");
+                                let filter = document.getElementById("filter");
+                                
+                                filter.onchange = function () {
+                                    if (filter.value.length === 0) {
+                                        return;
+                                    }
+                                    fetch(`/api/authors?q=${filter.value}`)
+                                        .then(response => response.json())
+                                        .then(json => {
+                                            select.innerHTML = "";
+                                            for (let item of json) {
+                                                const option = document.createElement('option');
+                                                option.setAttribute('value', item.authorId);
+                                                option.innerText = `${item.name} ${item.surname}`;
+                                                select.appendChild(option);
+                                            }
+                                        })
+                                };
+                            </script>
+            }
         </div>
     </div>
 </div>

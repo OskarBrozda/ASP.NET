@@ -1,5 +1,6 @@
 using Data;
 using Data.Entities;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace PhotoApp.Models;
@@ -17,12 +18,18 @@ public class EFPhotoService : IPhotoService
     { 
         int totalCount = _context.Photos.Count();
         var pagingList = PagingList<Photo>.Create(null, totalCount, page, size);
+        var authors = _context.Authors.ToList();
         var data = _context.Photos
-            .OrderBy(c => c.Description)
+            .OrderBy(c => c.Date_time)
             .Skip((pagingList.Number - 1) * pagingList.Size)
-            .Take(pagingList.Size).AsEnumerable()
-            .Select(PhotoMapper.FromEntity)
+            .Take(pagingList.Size)
+            .Include(c=>c.Authors)
+            .Select(e => PhotoMapper.FromEntity(e))
             .ToList();
+        foreach (var photo in data)
+        {
+            photo.Author = authors.Select(a => new SelectListItem { Value = a.AuthorId.ToString(), Text = $"{a.Name} {a.Surname}" }).ToList();
+        }
         pagingList.Data = data;
         return pagingList;
     }

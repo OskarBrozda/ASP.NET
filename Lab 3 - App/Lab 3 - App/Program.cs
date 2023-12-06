@@ -33,7 +33,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseMiddleware<LastVisitCookie>();
 app.UseAuthentication();                                 // dodać
 app.UseAuthorization();                                  // dodać
 app.UseSession();                                        // dodać 

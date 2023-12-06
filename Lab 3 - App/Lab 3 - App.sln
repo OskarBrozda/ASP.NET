@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoApp", "PhotoApp\PhotoA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{525B39AB-19D6-461D-9A0B-9294B4DF8E7B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab 9 - Test", "Lab 9 - Test\Lab 9 - Test.csproj", "{B87119FB-BED0-4A9B-8CFB-8BEA13D9A6C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{525B39AB-19D6-461D-9A0B-9294B4DF8E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{525B39AB-19D6-461D-9A0B-9294B4DF8E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{525B39AB-19D6-461D-9A0B-9294B4DF8E7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B87119FB-BED0-4A9B-8CFB-8BEA13D9A6C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B87119FB-BED0-4A9B-8CFB-8BEA13D9A6C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B87119FB-BED0-4A9B-8CFB-8BEA13D9A6C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B87119FB-BED0-4A9B-8CFB-8BEA13D9A6C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

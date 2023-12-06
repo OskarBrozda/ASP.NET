@@ -3,6 +3,7 @@ using Lab_3___App.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Diagnostics;
 
 namespace Lab_3___App.Controllers;
 
@@ -27,12 +28,14 @@ public class ContactController : Controller
             contact.Organizations = CreateSelectListItem();
         }
 
+        ViewData["visit"] = HttpContext.Session.GetString(LastVisitCookie.CookieName);
         return View(contacts);
     }
+
     
-    public IActionResult PagedIndex(int page = 1, int size = 2 )
+    public IActionResult PagedIndex(int page = 1, int size = 3 )
     {
-        ViewBag.PageSize = size;
+        ViewData["visit"] = Response.HttpContext.Items[LastVisitCookie.CookieName];
         return View(_contactService.FindPage(page, size));
     }
 
