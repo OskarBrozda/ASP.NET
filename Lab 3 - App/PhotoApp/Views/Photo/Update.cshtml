@@ -13,7 +13,7 @@
         </div>
         <div class="editInfo">
             <h2>Edytuj dane zdjęcia:</h2>
-            <form class="createForm" enctype="multipart/form-data" asp-controller="Photo" asp-action="Update" method="POST">
+            <form class="createForm" asp-controller="Photo" asp-action="Update" method="POST">
                 <input type="hidden" asp-for="PhotoId"/>
                 <div class="mb-3">
                     <label class="form-label" asp-for="Description"></label>
@@ -40,7 +40,7 @@
                 <div class="mb-3">
                     <label asp-for="AuthorId"></label>
                     <input class="form-control" type="text" id="filter"/>
-                    <select class="form-control" asp-for="AuthorId" asp-items="@Model.Author"></select>
+                    <select class="form-control" id="AuthorId" asp-for="AuthorId" asp-items="@Model.Author"></select>
                 </div>
                 <div class="d-flex mb-3">
                     <div class="select-field custom-margin-right">

@@ -8,12 +8,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigrations : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(name: "AspNetRoles");
+            migrationBuilder.DropTable("AspNetRoles");
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -28,7 +28,7 @@ namespace Data.Migrations
                     table.PrimaryKey("PK_AspNetRoles", x => x.Id);
                 });
 
-            migrationBuilder.DropTable(name: "AspNetUsers");
+            migrationBuilder.DropTable("AspNetUsers");
             migrationBuilder.CreateTable(
                 name: "AspNetUsers",
                 columns: table => new
@@ -53,8 +53,8 @@ namespace Data.Migrations
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
                 });
-            
-            migrationBuilder.DropTable(name: "authors");
+
+            migrationBuilder.DropTable("authors");
             migrationBuilder.CreateTable(
                 name: "authors",
                 columns: table => new
@@ -78,7 +78,7 @@ namespace Data.Migrations
                     table.PrimaryKey("PK_authors", x => x.AuthorId);
                 });
 
-            migrationBuilder.DropTable(name: "organizations");
+            migrationBuilder.DropTable("organizations");
             migrationBuilder.CreateTable(
                 name: "organizations",
                 columns: table => new
@@ -102,7 +102,7 @@ namespace Data.Migrations
                     table.PrimaryKey("PK_organizations", x => x.OrganizationId);
                 });
 
-            migrationBuilder.DropTable(name: "AspNetRoleClaims");
+            migrationBuilder.DropTable("AspNetRoleClaims");
             migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
@@ -124,7 +124,7 @@ namespace Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.DropTable(name: "AspNetUserClaims");
+            migrationBuilder.DropTable("AspNetUserClaims");
             migrationBuilder.CreateTable(
                 name: "AspNetUserClaims",
                 columns: table => new
@@ -146,7 +146,7 @@ namespace Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.DropTable(name: "AspNetUserLogins");
+            migrationBuilder.DropTable("AspNetUserLogins");
             migrationBuilder.CreateTable(
                 name: "AspNetUserLogins",
                 columns: table => new
@@ -167,7 +167,7 @@ namespace Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.DropTable(name: "AspNetUserRoles");
+            migrationBuilder.DropTable("AspNetUserRoles");
             migrationBuilder.CreateTable(
                 name: "AspNetUserRoles",
                 columns: table => new
@@ -192,7 +192,7 @@ namespace Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.DropTable(name: "AspNetUserTokens");
+            migrationBuilder.DropTable("AspNetUserTokens");
             migrationBuilder.CreateTable(
                 name: "AspNetUserTokens",
                 columns: table => new
@@ -213,7 +213,7 @@ namespace Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.DropTable(name: "photos");
+            migrationBuilder.DropTable("photos");
             migrationBuilder.CreateTable(
                 name: "photos",
                 columns: table => new
@@ -239,7 +239,7 @@ namespace Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.DropTable(name: "contacts");
+            migrationBuilder.DropTable("contacts");
             migrationBuilder.CreateTable(
                 name: "contacts",
                 columns: table => new
@@ -272,8 +272,8 @@ namespace Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "1cc0c5bd-9438-4397-96c6-07fed42eab8b", "1cc0c5bd-9438-4397-96c6-07fed42eab8b", "user", "USER" },
-                    { "597aa562-1ee5-46c3-9ac9-ef1c603eb2af", "597aa562-1ee5-46c3-9ac9-ef1c603eb2af", "admin", "ADMIN" }
+                    { "4eff5f6f-11d6-4a75-a2f8-e49e8bcf0fd1", "4eff5f6f-11d6-4a75-a2f8-e49e8bcf0fd1", "admin", "ADMIN" },
+                    { "ee12adda-468e-4e63-9cef-48e4fbc468dd", "ee12adda-468e-4e63-9cef-48e4fbc468dd", "user", "USER" }
                 });
 
             migrationBuilder.InsertData(
@@ -281,8 +281,8 @@ namespace Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "1d9d16b9-0de3-479c-89e3-7cf4e1b0e3f8", 0, "63997260-9506-40b5-9d96-6b6ee4b53477", "oskar@wsei.edu.pl", true, false, null, "OSKAR@WSEI.EDU.PL", "OSKAR", "AQAAAAIAAYagAAAAEPHM2PrljPKc8MzA1cYNetLiLmfiZPwSzyE46F16ot2ilnL8Um6Y8Po6llJWNuuoRA==", null, false, "16ff4c9e-8422-4022-9927-876c2070f863", false, "oskar" },
-                    { "b72f7702-286c-468e-9472-c9f03cd0ae44", 0, "7025e963-deeb-4ebf-81b4-a8179b40e4e7", "zuzia@wsei.edu.pl", true, false, null, "ZUZIA@WSEI.EDU.PL", "ZUZANNA", "AQAAAAIAAYagAAAAEEIxWgqjp2qBNibu+RUpWA2hJfTLXVEyBUmoSqnxCxuPdVQ3z1ilYrqC2b7rKLDFSw==", null, false, "c09d57c9-35a0-4969-b9ce-10a758e91e94", false, "zuzanna" }
+                    { "1c4002de-d34c-4ec9-87d4-a776ed817896", 0, "861db507-d8bf-4494-9f49-aab31a292975", "oskar@wsei.edu.pl", true, false, null, "OSKAR@WSEI.EDU.PL", "OSKAR", "AQAAAAIAAYagAAAAECp2XLyhqAaSU+wymrTffqY323d5aeknYeyHRoHDZfOs1PvC8OU6C6VmNdH8eIS08Q==", null, false, "b63cdd95-9e3b-48f6-a9a5-fc1c7c17a31d", false, "oskar" },
+                    { "82afbb7b-5ad8-4151-b49a-e2f49fb4d876", 0, "f7279548-b9ba-439e-9e06-577672a13070", "zuzia@wsei.edu.pl", true, false, null, "ZUZIA@WSEI.EDU.PL", "ZUZANNA", "AQAAAAIAAYagAAAAENRLn00WvL03GlB729NejOY0pGMyn6R77vsxNhtQC+wC54ExBivAPQSRutx+lVuj0Q==", null, false, "9caf0cfb-505a-47bf-ae94-5b5952914f7b", false, "zuzanna" }
                 });
 
             migrationBuilder.InsertData(
@@ -312,8 +312,8 @@ namespace Data.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "597aa562-1ee5-46c3-9ac9-ef1c603eb2af", "1d9d16b9-0de3-479c-89e3-7cf4e1b0e3f8" },
-                    { "1cc0c5bd-9438-4397-96c6-07fed42eab8b", "b72f7702-286c-468e-9472-c9f03cd0ae44" }
+                    { "4eff5f6f-11d6-4a75-a2f8-e49e8bcf0fd1", "1c4002de-d34c-4ec9-87d4-a776ed817896" },
+                    { "ee12adda-468e-4e63-9cef-48e4fbc468dd", "82afbb7b-5ad8-4151-b49a-e2f49fb4d876" }
                 });
 
             migrationBuilder.InsertData(
@@ -331,10 +331,13 @@ namespace Data.Migrations
                 columns: new[] { "PhotoId", "AuthorId", "Camera", "Date_time", "Definition", "Description", "Format", "PhotoUrl" },
                 values: new object[,]
                 {
-                    { 1, 3, "Nikon", new DateTime(2008, 8, 1, 12, 59, 16, 0, DateTimeKind.Unspecified), 2, "Zdjęcie kwiatka", 4, "https://westerncamp.pl/wp-content/uploads/2023/10/tatry-1080x675.jpg" },
-                    { 2, 3, "Canon", new DateTime(2018, 7, 11, 10, 9, 11, 0, DateTimeKind.Unspecified), 6, "Zdjęcie pary młodej", 1, "https://bi.im-g.pl/im/20/19/1b/z28415520AMP,Puszczyk-zwyczajny.jpg" },
-                    { 3, 1, "Nikon", new DateTime(1998, 11, 11, 11, 10, 9, 0, DateTimeKind.Unspecified), 7, "Zdjęcie Nissana GTR", 2, "https://zieloniwpodrozy.pl/wp-content/uploads/2015/06/Zdjęcie-wykonane-o-świcie-na-Połoninie-Caryńskiej-podczas-naszej-krótkiej-wycieczki-w-Bieszczady..jpg" },
-                    { 4, 4, "Sony", new DateTime(2012, 2, 7, 23, 15, 34, 0, DateTimeKind.Unspecified), 3, "Zdjęcie willi", 5, "https://szefsmaku.pl/wp-content/uploads/2019/02/sniadanie-to-podstawa.jpg" }
+                    { 1, 3, "Nikon", new DateTime(2008, 8, 1, 12, 59, 16, 0, DateTimeKind.Unspecified), 2, "Pejzaż górski", 4, "https://westerncamp.pl/wp-content/uploads/2023/10/tatry-1080x675.jpg" },
+                    { 2, 3, "Canon", new DateTime(2018, 7, 11, 10, 9, 11, 0, DateTimeKind.Unspecified), 6, "Sowa", 1, "https://bi.im-g.pl/im/20/19/1b/z28415520AMP,Puszczyk-zwyczajny.jpg" },
+                    { 3, 1, "Nikon", new DateTime(1998, 11, 11, 11, 10, 9, 0, DateTimeKind.Unspecified), 7, "Znak górski", 2, "https://zieloniwpodrozy.pl/wp-content/uploads/2015/06/Zdjęcie-wykonane-o-świcie-na-Połoninie-Caryńskiej-podczas-naszej-krótkiej-wycieczki-w-Bieszczady..jpg" },
+                    { 4, 4, "Sony", new DateTime(2012, 2, 7, 23, 15, 34, 0, DateTimeKind.Unspecified), 3, "Śniadanie", 5, "https://szefsmaku.pl/wp-content/uploads/2019/02/sniadanie-to-podstawa.jpg" },
+                    { 5, 3, "Iphone", new DateTime(2000, 1, 1, 13, 10, 35, 0, DateTimeKind.Unspecified), 4, "Kotek", 3, "https://img.redro.pl/obrazy/czarny-dlugowlosy-kot-700-204992097.jpg" },
+                    { 6, 2, "screen", new DateTime(2019, 4, 9, 10, 14, 44, 0, DateTimeKind.Unspecified), 6, "Szpic miniaturowy", 2, "https://ocdn.eu/pulscms-transforms/1/-LUk9kqTURBXy83ZTRmYjIyNmI0YWUxZDZlZjg2OWM4ZTFjY2YxNDE5My5qcGVnk5UDzQHIzQEKzQnszQWVkwXNBLDNAqSTCaY2ZTQwMzgG3gABoTAB/marzy-ci-sie-bezproblemowy-pies-poznaj-rasy-ktore-nie-sprawia-duzo-klopotu.jpeg" },
+                    { 7, 2, "Nokia", new DateTime(2017, 11, 12, 2, 1, 3, 0, DateTimeKind.Unspecified), 2, "College", 1, "https://educat.study/wp-content/uploads/2023/09/4585094076_902c32b4cf_b.jpg" }
                 });
 
             migrationBuilder.CreateIndex(

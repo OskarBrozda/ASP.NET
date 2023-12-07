@@ -417,3 +417,33 @@ input{
 .custom-margin-right {
     margin-right: 20px;
 }
+
+
+
+
+
+/*   LOGIN & REGISTER PAGES     */
+.regLogBtns{
+    background-color: transparent;
+    border-color: white;
+}
+
+.regLogBtns:hover{
+    color: white;
+    background-color: purple;
+    border-color: white;
+}
+.registerLink{
+    color:white;
+    margin-top: 10px;
+    font-size: 12px;
+    border: none;
+    text-decoration: underline;
+}
+.registerLink:hover{
+    background-color: transparent;
+    color: #ff00ff;
+}
+#registerForm{
+    width: 25%;
+}

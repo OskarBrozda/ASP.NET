@@ -117,8 +117,6 @@ public class PhotoController : Controller
     [HttpPost]
     public IActionResult DeleteConfirmed(Photo photo)
     {
-        string serverFolder = Path.Combine(_webHostEnvironment.WebRootPath, photo.PhotoUrl.TrimStart('/'));
-        System.IO.File.Delete(serverFolder);
         _photoService.Delete(photo.PhotoId);
         return RedirectToAction("PagedGallery");
     }

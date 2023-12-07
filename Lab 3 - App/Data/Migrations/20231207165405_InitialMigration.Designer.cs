@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231207111516_InitialMigrations")]
-    partial class InitialMigrations
+    [Migration("20231207165405_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -270,7 +270,7 @@ namespace Data.Migrations
                             Camera = "Nikon",
                             Date_time = new DateTime(2008, 8, 1, 12, 59, 16, 0, DateTimeKind.Unspecified),
                             Definition = 2,
-                            Description = "Zdjęcie kwiatka",
+                            Description = "Pejzaż górski",
                             Format = 4,
                             PhotoUrl = "https://westerncamp.pl/wp-content/uploads/2023/10/tatry-1080x675.jpg"
                         },
@@ -281,7 +281,7 @@ namespace Data.Migrations
                             Camera = "Canon",
                             Date_time = new DateTime(2018, 7, 11, 10, 9, 11, 0, DateTimeKind.Unspecified),
                             Definition = 6,
-                            Description = "Zdjęcie pary młodej",
+                            Description = "Sowa",
                             Format = 1,
                             PhotoUrl = "https://bi.im-g.pl/im/20/19/1b/z28415520AMP,Puszczyk-zwyczajny.jpg"
                         },
@@ -292,7 +292,7 @@ namespace Data.Migrations
                             Camera = "Nikon",
                             Date_time = new DateTime(1998, 11, 11, 11, 10, 9, 0, DateTimeKind.Unspecified),
                             Definition = 7,
-                            Description = "Zdjęcie Nissana GTR",
+                            Description = "Znak górski",
                             Format = 2,
                             PhotoUrl = "https://zieloniwpodrozy.pl/wp-content/uploads/2015/06/Zdjęcie-wykonane-o-świcie-na-Połoninie-Caryńskiej-podczas-naszej-krótkiej-wycieczki-w-Bieszczady..jpg"
                         },
@@ -303,9 +303,42 @@ namespace Data.Migrations
                             Camera = "Sony",
                             Date_time = new DateTime(2012, 2, 7, 23, 15, 34, 0, DateTimeKind.Unspecified),
                             Definition = 3,
-                            Description = "Zdjęcie willi",
+                            Description = "Śniadanie",
                             Format = 5,
                             PhotoUrl = "https://szefsmaku.pl/wp-content/uploads/2019/02/sniadanie-to-podstawa.jpg"
+                        },
+                        new
+                        {
+                            PhotoId = 5,
+                            AuthorId = 3,
+                            Camera = "Iphone",
+                            Date_time = new DateTime(2000, 1, 1, 13, 10, 35, 0, DateTimeKind.Unspecified),
+                            Definition = 4,
+                            Description = "Kotek",
+                            Format = 3,
+                            PhotoUrl = "https://img.redro.pl/obrazy/czarny-dlugowlosy-kot-700-204992097.jpg"
+                        },
+                        new
+                        {
+                            PhotoId = 6,
+                            AuthorId = 2,
+                            Camera = "screen",
+                            Date_time = new DateTime(2019, 4, 9, 10, 14, 44, 0, DateTimeKind.Unspecified),
+                            Definition = 6,
+                            Description = "Szpic miniaturowy",
+                            Format = 2,
+                            PhotoUrl = "https://ocdn.eu/pulscms-transforms/1/-LUk9kqTURBXy83ZTRmYjIyNmI0YWUxZDZlZjg2OWM4ZTFjY2YxNDE5My5qcGVnk5UDzQHIzQEKzQnszQWVkwXNBLDNAqSTCaY2ZTQwMzgG3gABoTAB/marzy-ci-sie-bezproblemowy-pies-poznaj-rasy-ktore-nie-sprawia-duzo-klopotu.jpeg"
+                        },
+                        new
+                        {
+                            PhotoId = 7,
+                            AuthorId = 2,
+                            Camera = "Nokia",
+                            Date_time = new DateTime(2017, 11, 12, 2, 1, 3, 0, DateTimeKind.Unspecified),
+                            Definition = 2,
+                            Description = "College",
+                            Format = 1,
+                            PhotoUrl = "https://educat.study/wp-content/uploads/2023/09/4585094076_902c32b4cf_b.jpg"
                         });
                 });
 
@@ -337,15 +370,15 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "597aa562-1ee5-46c3-9ac9-ef1c603eb2af",
-                            ConcurrencyStamp = "597aa562-1ee5-46c3-9ac9-ef1c603eb2af",
+                            Id = "4eff5f6f-11d6-4a75-a2f8-e49e8bcf0fd1",
+                            ConcurrencyStamp = "4eff5f6f-11d6-4a75-a2f8-e49e8bcf0fd1",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "1cc0c5bd-9438-4397-96c6-07fed42eab8b",
-                            ConcurrencyStamp = "1cc0c5bd-9438-4397-96c6-07fed42eab8b",
+                            Id = "ee12adda-468e-4e63-9cef-48e4fbc468dd",
+                            ConcurrencyStamp = "ee12adda-468e-4e63-9cef-48e4fbc468dd",
                             Name = "user",
                             NormalizedName = "USER"
                         });
@@ -440,33 +473,33 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1d9d16b9-0de3-479c-89e3-7cf4e1b0e3f8",
+                            Id = "1c4002de-d34c-4ec9-87d4-a776ed817896",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "63997260-9506-40b5-9d96-6b6ee4b53477",
+                            ConcurrencyStamp = "861db507-d8bf-4494-9f49-aab31a292975",
                             Email = "oskar@wsei.edu.pl",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "OSKAR@WSEI.EDU.PL",
                             NormalizedUserName = "OSKAR",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPHM2PrljPKc8MzA1cYNetLiLmfiZPwSzyE46F16ot2ilnL8Um6Y8Po6llJWNuuoRA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECp2XLyhqAaSU+wymrTffqY323d5aeknYeyHRoHDZfOs1PvC8OU6C6VmNdH8eIS08Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "16ff4c9e-8422-4022-9927-876c2070f863",
+                            SecurityStamp = "b63cdd95-9e3b-48f6-a9a5-fc1c7c17a31d",
                             TwoFactorEnabled = false,
                             UserName = "oskar"
                         },
                         new
                         {
-                            Id = "b72f7702-286c-468e-9472-c9f03cd0ae44",
+                            Id = "82afbb7b-5ad8-4151-b49a-e2f49fb4d876",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7025e963-deeb-4ebf-81b4-a8179b40e4e7",
+                            ConcurrencyStamp = "f7279548-b9ba-439e-9e06-577672a13070",
                             Email = "zuzia@wsei.edu.pl",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ZUZIA@WSEI.EDU.PL",
                             NormalizedUserName = "ZUZANNA",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEIxWgqjp2qBNibu+RUpWA2hJfTLXVEyBUmoSqnxCxuPdVQ3z1ilYrqC2b7rKLDFSw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENRLn00WvL03GlB729NejOY0pGMyn6R77vsxNhtQC+wC54ExBivAPQSRutx+lVuj0Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c09d57c9-35a0-4969-b9ce-10a758e91e94",
+                            SecurityStamp = "9caf0cfb-505a-47bf-ae94-5b5952914f7b",
                             TwoFactorEnabled = false,
                             UserName = "zuzanna"
                         });
@@ -534,13 +567,13 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "1d9d16b9-0de3-479c-89e3-7cf4e1b0e3f8",
-                            RoleId = "597aa562-1ee5-46c3-9ac9-ef1c603eb2af"
+                            UserId = "1c4002de-d34c-4ec9-87d4-a776ed817896",
+                            RoleId = "4eff5f6f-11d6-4a75-a2f8-e49e8bcf0fd1"
                         },
                         new
                         {
-                            UserId = "b72f7702-286c-468e-9472-c9f03cd0ae44",
-                            RoleId = "1cc0c5bd-9438-4397-96c6-07fed42eab8b"
+                            UserId = "82afbb7b-5ad8-4151-b49a-e2f49fb4d876",
+                            RoleId = "ee12adda-468e-4e63-9cef-48e4fbc468dd"
                         });
                 });
 
