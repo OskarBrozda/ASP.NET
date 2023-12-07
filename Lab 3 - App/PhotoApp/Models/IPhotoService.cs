@@ -1,4 +1,5 @@
 using Data.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace PhotoApp.Models;
 

@@ -6,58 +6,79 @@
 }
 <div class="colorWhite">
      <div class="title">
-            <h2 class="center">
-                <a class="btn btn-outline-secondary addBtn" asp-controller="Author" asp-action="Create">Dodaj autora</a>
-            </h2>
-            <h3 class="allPhotosText">SPIS AUTRÓW</h3>
+         <h2 class="center">
+              @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+              {
+                  <a class="btn btn-outline-secondary addBtn" asp-controller="Author" asp-action="Create">Dodaj autora</a>
+              }
+         </h2>
+            <h3 class="allPhotosText">SPIS AUTORÓW</h3>
             <p class="flex-grow-1"></p>
         </div>
     <table class="table colorWhite">
         <tr>
-            <th>
+            <th class="mb-2 text-uppercase">
                 @Html.DisplayNameFor(model => model[0].Name)
             </th>
-            <th>
+            <th class="mb-2 text-uppercase">
                 @Html.DisplayNameFor(model => model[0].Surname)
             </th>
-            <th>
+            <th class="mb-2 text-uppercase">
                 @Html.DisplayNameFor(model => model[0].Address.City)
             </th>
-            <th>
+            <th class="mb-2 text-uppercase">
                 Akcje
             </th>
         </tr>
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td class="mb-2">
                     @item.Name
                 </td>
-                <td>
+                <td class="mb-2">
                     @item.Surname
                 </td>
-                <td>
+                <td class="mb-2">
                     @item.Address.City
                 </td>
-                <td>
-                    <a class="btn btn-outline-primary"
-                       asp-action="Update"
-                       asp-controller="Author"
-                       asp-route-id=@item.AuthorId>
-                        Edytuj
-                    </a>
-                    <a class="btn btn-outline-info"
-                       asp-action="Details"
-                       asp-controller="Author"
-                       asp-route-id=@item.AuthorId>
-                        Szczegóły
-                    </a>
-                    <a class="btn btn-outline-danger"
-                       asp-action="Delete"
-                       asp-controller="Author"
-                       asp-route-id=@item.AuthorId>
-                        Usuń
-                    </a>
+                <td class="mb-2">
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                    {
+                        <a class="btn btn-outline-primary"
+                           asp-action="Update"
+                           asp-controller="Author"
+                           asp-route-id=@item.AuthorId>
+                            Edytuj
+                        </a>
+                    }
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                    {
+                        <a class="btn btn-outline-info"
+                           asp-action="Details"
+                           asp-controller="Author"
+                           asp-route-id=@item.AuthorId>
+                            Szczegóły
+                        </a>
+                    }
+                    else if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="btn btn-outline-info addBtn"
+                           asp-action="Details"
+                           asp-controller="Author"
+                           asp-route-id=@item.AuthorId>
+                            Szczegóły
+                        </a>
+                    }
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                    {
+                        <a class="btn btn-outline-danger"
+                           asp-action="Delete"
+                           asp-controller="Author"
+                           asp-route-id=@item.AuthorId>
+                            Usuń
+                        </a>
+                    }
                 </td>
             </tr>
         }

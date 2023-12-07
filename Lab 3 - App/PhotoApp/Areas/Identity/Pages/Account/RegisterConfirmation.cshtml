@@ -4,17 +4,17 @@
     ViewData["Title"] = "Potwierdzenie rejestracji";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 class="colorWhite">@ViewData["Title"]</h1>
 @{
     if (@Model.DisplayConfirmAccountLink)
     {
-<p>
+<p class="colorWhite">
     Normalnie wyłałbym emaila do potwierdzenia, ale jeszcze tego nie umiem, więc poprostu <a id="confirm-link" href="@Model.EmailConfirmationUrl">kliknij tutaj</a>, aby potwierdzić swoje konto.
 </p>
     }
     else
     {
-<p>
+<p class="colorWhite">
         Proszę potwierdzić adres email. Sprawdź swoją skrzynkę elektroniczną.
 </p>
     }

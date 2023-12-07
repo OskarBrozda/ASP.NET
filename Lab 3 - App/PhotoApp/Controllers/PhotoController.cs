@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using NuGet.DependencyResolver;
 using PhotoApp.Models;
 
 namespace PhotoApp.Controllers;
@@ -10,12 +9,10 @@ namespace PhotoApp.Controllers;
 
 public class PhotoController : Controller
 {
-    public IWebHostEnvironment _webHostEnvironment;
     private readonly IPhotoService _photoService;
 
-    public PhotoController(IPhotoService photoService, IWebHostEnvironment webHostEnvironment)
+    public PhotoController(IPhotoService photoService)
     {
-        _webHostEnvironment = webHostEnvironment;
         _photoService = photoService;
     }
     

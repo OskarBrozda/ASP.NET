@@ -1,0 +1,70 @@
+@model List<PhotoApp.Controllers.UserWithRolesViewModel>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="colorWhite mt-4">
+    <table class="table colorWhite">
+        <tr>
+            <th class="mb-2">
+               IDENTYFIKATOR
+            </th>
+            <th class="mb-2">
+                IMIĘ
+            </th>
+            <th class="mb-2">
+                E-MAIL
+            </th>
+            <th class="mb-2">
+                ROLA
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="mb-2">
+                    @item.UserId
+                </td>
+                <td class="mb-2">
+                    @if (item.UserName.Contains('@'))
+                    {
+                        <p>
+                            @item.UserName.ToLower()
+                        </p>
+                    }
+                    else
+                    {
+                        <p>
+                            @string.Concat(char.ToUpper(item.UserName[0]), item.UserName.Substring(1).ToLower())
+                        </p>
+                    }
+                </td>
+                <td class="mb-2">
+                    @item.UserEmail.ToLower()
+                </td>
+                <td class="mb-2">
+                    @if (string.Join(", ", item.Roles) == "admin")
+                    {
+                        <p class="roleAdmin">
+                            Administrator
+                        </p>
+                    }
+                    else if (string.Join(", ", item.Roles) == "user")
+                    {
+                        <p class="roleUser">
+                            Użytkownik
+                        </p>
+                    }
+                    else
+                    {
+                        <p class="roleNoOne">
+                            Brak roli
+                        </p>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+</div>

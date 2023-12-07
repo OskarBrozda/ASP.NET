@@ -4,7 +4,7 @@ using PhotoApp.Models;
 
 namespace PhotoApp.Controllers;
 
-[Authorize(Roles = "admin")]
+
 public class AuthorController : Controller
 {
     private readonly IAuthorService _authorService;
@@ -16,9 +16,11 @@ public class AuthorController : Controller
     
     public IActionResult Index() => View(_authorService.FindAll());
 
+    [Authorize(Roles = "admin")]
     [HttpGet]
     public IActionResult Create() => View(new Author());
 
+    [Authorize(Roles = "admin")]
     [HttpPost]
     public IActionResult Create(Author model)
     {
@@ -30,10 +32,11 @@ public class AuthorController : Controller
         return View(model);
     }
 
+    [Authorize(Roles = "admin")]
     [HttpGet]
     public IActionResult Update(int id) => View(_authorService.FindById(id));
 
-
+    [Authorize(Roles = "admin")]
     [HttpPost]
     public IActionResult Update(Author model)
     {
@@ -45,12 +48,15 @@ public class AuthorController : Controller
         return View(model);
     }
 
+    [Authorize]
     [HttpGet]
     public IActionResult Details(int id) => View(_authorService.FindById(id));
 
+    [Authorize(Roles = "admin")]
     [HttpGet]
     public IActionResult Delete(int id) => View(_authorService.FindById(id));
 
+    [Authorize(Roles = "admin")]
     [HttpPost]
     public IActionResult DeleteConfirmed(Author model)
     {

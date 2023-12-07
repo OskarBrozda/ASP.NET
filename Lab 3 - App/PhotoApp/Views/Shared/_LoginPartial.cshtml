@@ -7,7 +7,20 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <li class="log-item underline ">
-        <a class="helloUser" id="manage" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Witaj <b class="userName">@UserManager.GetUserName(User)</b>!</a>
+        <a class="helloUser" id="manage" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+            @if (UserManager.GetUserName(User).Contains('@'))
+            {
+                <span>
+                    Witaj <b class="userName">@UserManager.GetUserName(User).Substring(0, UserManager.GetUserName(User).IndexOf('@'))</b>!
+                </span>
+            }
+            else
+            {
+                <span>
+                    Witaj <b class="userName">@UserManager.GetUserName(User)</b>!
+                </span>
+            }
+        </a>
     </li>
     <li class="log-item">
         <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("PagedGallery", "Photo", new { area = "" })">

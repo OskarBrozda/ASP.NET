@@ -27,7 +27,7 @@ body {
     display: block;
     font-weight: bold;
     color: purple !important;
-    font-size: 25px !important;
+    font-size: 25px;
     width: 130px;
     cursor: default;
 }
@@ -139,7 +139,7 @@ input:is([type="button"], [type="submit"], [type="reset"]), input[type="file"]::
     font-family: Comic Sans MS, Comic Sans, cursive;
     text-transform: uppercase;
     color: white;  
-    letter-spacing: 2px;
+    letter-spacing: 8px;
 }
 
 .detailsBtn{
@@ -163,6 +163,7 @@ input:is([type="button"], [type="submit"], [type="reset"]), input[type="file"]::
 .addBtn:hover{
     background-color: purple;
     border-color: white;
+    color:white;
 }
 .backBtn:hover{
     color: #fff;
@@ -396,7 +397,9 @@ input{
 .colorWhite{
     color:white;
 }
-
+.table > :not(caption) > * > * {
+    line-height: 35px;
+}
 
 
 
@@ -447,3 +450,42 @@ input{
 #registerForm{
     width: 25%;
 }
+
+
+
+
+
+
+/*    USER PAGE    */
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: purple;
+}
+.nav-link:focus, .nav-link:hover {
+    color: white;
+}
+.col-md-9 h3,
+.col-md-6 p{
+    color:white;
+}
+.btn-check{
+    color: white;
+    background-color: purple;
+    border-color: white;
+}
+
+.btn-primary {
+    color: white;
+    background-color: transparent;
+    border-color: purple;
+}
+
+.btn-primary:hover {
+    color: white;
+    background-color: purple;
+    border-color: white;
+}
+
+.roleAdmin{
+    color: red;
+}
+
