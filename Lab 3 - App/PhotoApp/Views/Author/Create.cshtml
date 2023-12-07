@@ -5,18 +5,7 @@
 @{
 }
 
-<style>
-    .custom-margin-right {
-        margin-right: 20px; 
-    }
-    
-    .buttons{
-        display: flex;
-        justify-content: space-between;
-    }
-</style>
-
-<div class="container">
+<div class="container colorWhite">
     <div class="row justify-content-md-center">
         <div class="col-6">
             <h2>Podaj dane autora:</h2>
@@ -82,9 +71,9 @@
                     </div>
                 </div>
                 <div class="buttons mb-3">
-                    <button class="btn btn-outline-secondary" type="submit" asp-action="Index">Wróć</button>
-                    <button class="btn btn-outline-secondary" type="reset">Wyczyść</button>
-                    <button class="btn btn-outline-success" type="submit">Dodaj</button>
+                    <button class="btn btn-outline-secondary backBtn" type="submit" asp-action="Index">Wróć</button>
+                    <button class="btn btn-outline-secondary clearBtn" type="reset">Wyczyść</button>
+                    <button class="btn btn-outline-success addBtn" type="submit">Dodaj</button>
                 </div>
             </form>
         </div>

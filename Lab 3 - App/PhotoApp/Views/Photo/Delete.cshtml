@@ -6,17 +6,17 @@
 @{
 }
 
-<div class="container">
+<div class="containerDelete">
     <div class="row justify-content-md-center">
         <div class="col-6">
             <h2>Potwierdź usunięcie</h2>
             <form asp-controller="Photo" asp-action="DeleteConfirmed" method="POST">
-                <input asp-for="PhotoId"/>
-                <p>Czy na pewno chcesz usunąć zdjęcie "<b>@Model.Description</b>"?
-                    <br/>Identyfikator zdjęcia: <b>@Model.PhotoId</b>.</p>
-                <div class="mb-3">
-                    <button class="btn btn-outline-danger" type="submit">Tak</button>
-                    <button class="btn btn-outline-primary" type="submit" asp-controller="Photo" asp-action="PagedGallery">Nie</button>
+                <input type="hidden" asp-for="PhotoId"/>
+                <p>Czy na pewno chcesz usunąć zdjęcie "<b>@Model.Description</b>", którego autorem jest <b>@Model.Author.FirstOrDefault(o => o.Value == Model.AuthorId.ToString())?.Text</b>?
+                    <br/><br/>Identyfikator zdjęcia: <b>@Model.PhotoId</b>.</p>
+                <div class="mb-3 buttons">
+                    <button class="btn btn-outline-primary backBtn" type="submit" asp-controller="Photo" asp-action="PagedGallery">Nie</button>
+                    <button class="btn btn-outline-danger btnDelete" type="submit">Tak, usuwam</button>
                 </div>
             </form>
         </div>

@@ -6,45 +6,104 @@
 @{
 }
 
-<div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col-6">
-            <h2>Szczegółowe dane:</h2>
+<div class="container colorWhite center">
+    
+    @* <div class="row justify-content-md-center"> *@
+    @*     <div class="col-6"> *@
+    @*         <h2>Szczegółowe dane:</h2> *@
+    @*         <form asp-controller="Author" asp-action="Index" method="POST"> *@
+    @*             <div class="mb-2"> *@
+    @*                 <b> *@
+    @*                     <label class="form-label" asp-for="Name"></label> *@
+    @*                 </b> @Model.Name *@
+    @*             </div> *@
+    @*             <div class="mb-2"> *@
+    @*                 <b> *@
+    @*                     <label class="form-label" asp-for="Surname"></label> *@
+    @*                 </b> @Model.Surname *@
+    @*             </div> *@
+    @*             <div class="mb-2"> *@
+    @*                 <b> *@
+    @*                     <label class="form-label" asp-for="Email"></label> *@
+    @*                 </b> @Model.Email *@
+    @*             </div> *@
+    @*             @if (Model.Note != null) *@
+    @*             { *@
+    @*                 <div class="mb-2"> *@
+    @*                     <b> *@
+    @*                         <label class="form-label" asp-for="Note"></label> *@
+    @*                     </b> @Model.Note *@
+    @*                 </div> *@
+    @*             } *@
+    @*             <div class="mb-2"> *@
+    @*                 <b> *@
+    @*                     <label class="form-label" asp-for="Address"></label> *@
+    @*                 </b>     *@
+    @*                 <br/> @Model.Address.Street @Model.Address.HomeNr @if(@Model.Address.ApartamentNr != null) { <span> / </span> @Model.Address.ApartamentNr}   *@
+    @*                 <br/> @Model.Address.PostalCode @Model.Address.City  *@
+    @*                 <br/> @Model.Address.Region, @Model.Address.Country  *@
+    @*             </div> *@
+    @*             <div class="mb-3"> *@
+    @*                 <button class="btn btn-outline-primary backBtn" type="submit">Wróć</button> *@
+    @*             </div> *@
+    @*         </form> *@
+    @*     </div> *@
+    @* </div> *@
+
+    <div class="detailsInfo w-50">
+        <div class="szczeg_infor">
+            <h2>Szczegółowe dane</h2>
+        </div>
+        <div class="info">
+            <div class="asp-display">
+                <form asp-controller="Photo">
+                    <div class="mb-2">
+                        <b>
+                            <label class="form-label" asp-for="Name"></label>
+                        </b>
+                    </div>
+                    <div class="mb-2">
+                        <b>
+                            <label class="form-label" asp-for="Surname"></label>
+                        </b>
+                    </div>
+                    <div class="mb-2">
+                        <b>
+                            <label class="form-label" asp-for="Email"></label>
+                        </b>
+                    </div>
+                    <div class="mb-2 border-0">
+                        <b>
+                            <label class="form-label" asp-for="Address"></label>
+                        </b>
+                    </div>
+                </form>
+            </div>
+            <div class="asp-values">
+                <div class="mb-2">
+                    @Model.Name
+                </div>
+                <div class="mb-2">
+                    @Model.Surname
+                </div>
+                <div class="mb-2">
+                    @Model.Email
+                </div>
+                <div class="mb-2">
+                    <br/> @Model.Address.Street @Model.Address.HomeNr
+                    @if (@Model.Address.ApartamentNr != null)
+                    {
+                        <span> / </span>
+                        @Model.Address.ApartamentNr
+                    }
+                    <br/> @Model.Address.PostalCode @Model.Address.City
+                    <br/> @Model.Address.Region, @Model.Address.Country
+                </div>
+            </div>
+        </div>
+        <div class="btnback mt-3">
             <form asp-controller="Author" asp-action="Index" method="POST">
-                <div class="mb-2">
-                    <b>
-                        <label class="form-label" asp-for="Name"></label>
-                    </b> @Model.Name
-                </div>
-                <div class="mb-2">
-                    <b>
-                        <label class="form-label" asp-for="Surname"></label>
-                    </b> @Model.Surname
-                </div>
-                <div class="mb-2">
-                    <b>
-                        <label class="form-label" asp-for="Email"></label>
-                    </b> @Model.Email
-                </div>
-                 @if (Model.Note != null)
-                 {
-                     <div class="mb-2">
-                         <b>
-                             <label class="form-label" asp-for="Note"></label>
-                         </b> @Model.Note
-                     </div>
-                 }
-                <div class="mb-2">
-                    <b>
-                        <label class="form-label" asp-for="Address"></label>
-                    </b>    
-                    <br/> @Model.Address.Street @Model.Address.HomeNr @if(@Model.Address.ApartamentNr != null) { <span> / </span> @Model.Address.ApartamentNr}  
-                    <br/> @Model.Address.PostalCode @Model.Address.City 
-                    <br/> @Model.Address.Region, @Model.Address.Country 
-                </div>
-                <div class="mb-3">
-                    <button class="btn btn-outline-primary" type="submit">Wróć</button>
-                </div>
+                <button class="btn btn-outline-secondary backBtn" type="submit" asp-action="Index">Wróć</button>
             </form>
         </div>
     </div>

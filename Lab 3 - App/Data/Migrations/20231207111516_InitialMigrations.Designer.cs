@@ -11,14 +11,74 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231126201914_AddIdentity2")]
-    partial class AddIdentity2
+    [Migration("20231207111516_InitialMigrations")]
+    partial class InitialMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.13");
+
+            modelBuilder.Entity("Data.Entities.AuthorEntity", b =>
+                {
+                    b.Property<int>("AuthorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("AuthorId");
+
+                    b.ToTable("authors");
+
+                    b.HasData(
+                        new
+                        {
+                            AuthorId = 1,
+                            Email = "akwasny@wp.pl",
+                            Name = "Adam",
+                            Note = "student",
+                            Surname = "Kwaśny"
+                        },
+                        new
+                        {
+                            AuthorId = 2,
+                            Email = "tsur@wp.pl",
+                            Name = "Tomasz",
+                            Note = "praktykant",
+                            Surname = "Surówka"
+                        },
+                        new
+                        {
+                            AuthorId = 3,
+                            Email = "majalub@wp.pl",
+                            Name = "Mariola",
+                            Note = "fotograf ślubny",
+                            Surname = "Lubicz"
+                        },
+                        new
+                        {
+                            AuthorId = 4,
+                            Email = "lrdw@wp.pl",
+                            Name = "Łukasz",
+                            Note = "fotograf natury",
+                            Surname = "Radwan"
+                        });
+                });
 
             modelBuilder.Entity("Data.Entities.ContactEntity", b =>
                 {
@@ -113,6 +173,9 @@ namespace Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
                     b.Property<long>("Nip")
                         .HasColumnType("INTEGER");
 
@@ -138,6 +201,7 @@ namespace Data.Migrations
                         new
                         {
                             OrganizationId = 2,
+                            Description = "Szkoła wysza",
                             Nip = 6762158990L,
                             Regon = 357191420L,
                             Title = "WSEI"
@@ -145,6 +209,7 @@ namespace Data.Migrations
                         new
                         {
                             OrganizationId = 3,
+                            Description = "Działalnośc własna",
                             Nip = 1357895472L,
                             Regon = 367891434L,
                             Title = "RAKSO"
@@ -152,9 +217,95 @@ namespace Data.Migrations
                         new
                         {
                             OrganizationId = 4,
+                            Description = "Piekarnia",
                             Nip = 3456789091L,
                             Regon = 872358792L,
                             Title = "Złoty kłos"
+                        });
+                });
+
+            modelBuilder.Entity("Data.Entities.PhotoEntity", b =>
+                {
+                    b.Property<int>("PhotoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Camera")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("Date_time")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Definition")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Format")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("PhotoUrl")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PhotoId");
+
+                    b.HasIndex("AuthorId");
+
+                    b.ToTable("photos");
+
+                    b.HasData(
+                        new
+                        {
+                            PhotoId = 1,
+                            AuthorId = 3,
+                            Camera = "Nikon",
+                            Date_time = new DateTime(2008, 8, 1, 12, 59, 16, 0, DateTimeKind.Unspecified),
+                            Definition = 2,
+                            Description = "Zdjęcie kwiatka",
+                            Format = 4,
+                            PhotoUrl = "https://westerncamp.pl/wp-content/uploads/2023/10/tatry-1080x675.jpg"
+                        },
+                        new
+                        {
+                            PhotoId = 2,
+                            AuthorId = 3,
+                            Camera = "Canon",
+                            Date_time = new DateTime(2018, 7, 11, 10, 9, 11, 0, DateTimeKind.Unspecified),
+                            Definition = 6,
+                            Description = "Zdjęcie pary młodej",
+                            Format = 1,
+                            PhotoUrl = "https://bi.im-g.pl/im/20/19/1b/z28415520AMP,Puszczyk-zwyczajny.jpg"
+                        },
+                        new
+                        {
+                            PhotoId = 3,
+                            AuthorId = 1,
+                            Camera = "Nikon",
+                            Date_time = new DateTime(1998, 11, 11, 11, 10, 9, 0, DateTimeKind.Unspecified),
+                            Definition = 7,
+                            Description = "Zdjęcie Nissana GTR",
+                            Format = 2,
+                            PhotoUrl = "https://zieloniwpodrozy.pl/wp-content/uploads/2015/06/Zdjęcie-wykonane-o-świcie-na-Połoninie-Caryńskiej-podczas-naszej-krótkiej-wycieczki-w-Bieszczady..jpg"
+                        },
+                        new
+                        {
+                            PhotoId = 4,
+                            AuthorId = 4,
+                            Camera = "Sony",
+                            Date_time = new DateTime(2012, 2, 7, 23, 15, 34, 0, DateTimeKind.Unspecified),
+                            Definition = 3,
+                            Description = "Zdjęcie willi",
+                            Format = 5,
+                            PhotoUrl = "https://szefsmaku.pl/wp-content/uploads/2019/02/sniadanie-to-podstawa.jpg"
                         });
                 });
 
@@ -186,15 +337,15 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "703715d3-9c29-421f-bb86-fc3594658354",
-                            ConcurrencyStamp = "703715d3-9c29-421f-bb86-fc3594658354",
+                            Id = "597aa562-1ee5-46c3-9ac9-ef1c603eb2af",
+                            ConcurrencyStamp = "597aa562-1ee5-46c3-9ac9-ef1c603eb2af",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "dbee72c7-63cd-4f49-9235-3149be2686a4",
-                            ConcurrencyStamp = "dbee72c7-63cd-4f49-9235-3149be2686a4",
+                            Id = "1cc0c5bd-9438-4397-96c6-07fed42eab8b",
+                            ConcurrencyStamp = "1cc0c5bd-9438-4397-96c6-07fed42eab8b",
                             Name = "user",
                             NormalizedName = "USER"
                         });
@@ -289,33 +440,33 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "267491b2-c8a1-4088-90a9-86a3dc37203f",
+                            Id = "1d9d16b9-0de3-479c-89e3-7cf4e1b0e3f8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c4f6df59-c0c3-4aa8-acd9-3222dea53609",
+                            ConcurrencyStamp = "63997260-9506-40b5-9d96-6b6ee4b53477",
                             Email = "oskar@wsei.edu.pl",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "OSKAR@WSEI.EDU.PL",
                             NormalizedUserName = "OSKAR",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEme1aD9RctUzQafUSWcNV68sFP1/PlCv4wot97GDBCWF0R8ITtsfyAgNKWOFQXSkw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPHM2PrljPKc8MzA1cYNetLiLmfiZPwSzyE46F16ot2ilnL8Um6Y8Po6llJWNuuoRA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d16d891c-c3b2-47f7-b252-972f9feea3ab",
+                            SecurityStamp = "16ff4c9e-8422-4022-9927-876c2070f863",
                             TwoFactorEnabled = false,
                             UserName = "oskar"
                         },
                         new
                         {
-                            Id = "7d6b10df-0bdc-4584-8770-ee4e6e300471",
+                            Id = "b72f7702-286c-468e-9472-c9f03cd0ae44",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0d6a18f3-dd24-48c9-83a5-13fc88e89670",
+                            ConcurrencyStamp = "7025e963-deeb-4ebf-81b4-a8179b40e4e7",
                             Email = "zuzia@wsei.edu.pl",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ZUZIA@WSEI.EDU.PL",
                             NormalizedUserName = "ZUZANNA",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKDAb9hR4tUDSoXsn3OkGE7HNVfu5JQaq/t8FdfaszPfqXGob1g+i4JkSsX1lYcr/A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEIxWgqjp2qBNibu+RUpWA2hJfTLXVEyBUmoSqnxCxuPdVQ3z1ilYrqC2b7rKLDFSw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "cff4584c-4553-40d7-87d3-8bb3f7e45839",
+                            SecurityStamp = "c09d57c9-35a0-4969-b9ce-10a758e91e94",
                             TwoFactorEnabled = false,
                             UserName = "zuzanna"
                         });
@@ -383,13 +534,13 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "267491b2-c8a1-4088-90a9-86a3dc37203f",
-                            RoleId = "703715d3-9c29-421f-bb86-fc3594658354"
+                            UserId = "1d9d16b9-0de3-479c-89e3-7cf4e1b0e3f8",
+                            RoleId = "597aa562-1ee5-46c3-9ac9-ef1c603eb2af"
                         },
                         new
                         {
-                            UserId = "7d6b10df-0bdc-4584-8770-ee4e6e300471",
-                            RoleId = "dbee72c7-63cd-4f49-9235-3149be2686a4"
+                            UserId = "b72f7702-286c-468e-9472-c9f03cd0ae44",
+                            RoleId = "1cc0c5bd-9438-4397-96c6-07fed42eab8b"
                         });
                 });
 
@@ -412,6 +563,95 @@ namespace Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Data.Entities.AuthorEntity", b =>
+                {
+                    b.OwnsOne("Data.Address", "Address", b1 =>
+                        {
+                            b1.Property<int>("AuthorEntityAuthorId")
+                                .HasColumnType("INTEGER");
+
+                            b1.Property<int?>("ApartamentNr")
+                                .HasColumnType("INTEGER");
+
+                            b1.Property<string>("City")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Country")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("HomeNr")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("PostalCode")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Region")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Street")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.HasKey("AuthorEntityAuthorId");
+
+                            b1.ToTable("authors");
+
+                            b1.WithOwner()
+                                .HasForeignKey("AuthorEntityAuthorId");
+
+                            b1.HasData(
+                                new
+                                {
+                                    AuthorEntityAuthorId = 1,
+                                    City = "Poznań",
+                                    Country = "Polska",
+                                    HomeNr = "22",
+                                    PostalCode = "42-152",
+                                    Region = "Wielkopolska",
+                                    Street = "Pomorska"
+                                },
+                                new
+                                {
+                                    AuthorEntityAuthorId = 2,
+                                    City = "Kraków",
+                                    Country = "Polska",
+                                    HomeNr = "17",
+                                    PostalCode = "31-150",
+                                    Region = "Małopolska",
+                                    Street = "Św. Filipa"
+                                },
+                                new
+                                {
+                                    AuthorEntityAuthorId = 3,
+                                    ApartamentNr = 6,
+                                    City = "Kraków",
+                                    Country = "Polska",
+                                    HomeNr = "46",
+                                    PostalCode = "42-400",
+                                    Region = "Małopolska",
+                                    Street = "Krowoderska"
+                                },
+                                new
+                                {
+                                    AuthorEntityAuthorId = 4,
+                                    City = "Katowice",
+                                    Country = "Polska",
+                                    HomeNr = "99E",
+                                    PostalCode = "32-120",
+                                    Region = "Śląsk",
+                                    Street = "Piłsudskiego"
+                                });
+                        });
+
+                    b.Navigation("Address")
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Data.Entities.ContactEntity", b =>
                 {
                     b.HasOne("Data.Entities.OrganizationEntity", "Organization")
@@ -430,7 +670,18 @@ namespace Data.Migrations
                             b1.Property<int>("OrganizationEntityOrganizationId")
                                 .HasColumnType("INTEGER");
 
+                            b1.Property<int?>("ApartamentNr")
+                                .HasColumnType("INTEGER");
+
                             b1.Property<string>("City")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Country")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("HomeNr")
                                 .IsRequired()
                                 .HasColumnType("TEXT");
 
@@ -458,6 +709,8 @@ namespace Data.Migrations
                                 {
                                     OrganizationEntityOrganizationId = 1,
                                     City = "none",
+                                    Country = "none",
+                                    HomeNr = "none",
                                     PostalCode = "00-000",
                                     Region = "none",
                                     Street = "none"
@@ -466,29 +719,48 @@ namespace Data.Migrations
                                 {
                                     OrganizationEntityOrganizationId = 2,
                                     City = "Kraków",
+                                    Country = "Polska",
+                                    HomeNr = "17",
                                     PostalCode = "31-150",
-                                    Region = "małopolska",
-                                    Street = "Św. Filipa 17"
+                                    Region = "Małopolska",
+                                    Street = "Św. Filipa"
                                 },
                                 new
                                 {
                                     OrganizationEntityOrganizationId = 3,
+                                    ApartamentNr = 6,
                                     City = "Kraków",
+                                    Country = "Polska",
+                                    HomeNr = "46",
                                     PostalCode = "42-400",
-                                    Region = "małopolska",
-                                    Street = "Krowoderska 45/6"
+                                    Region = "Małopolska",
+                                    Street = "Krowoderska"
                                 },
                                 new
                                 {
                                     OrganizationEntityOrganizationId = 4,
                                     City = "Katowice",
+                                    Country = "Polska",
+                                    HomeNr = "99E",
                                     PostalCode = "32-120",
-                                    Region = "śląsk",
-                                    Street = "Piłsudskiego 99E"
+                                    Region = "Śląsk",
+                                    Street = "Piłsudskiego"
                                 });
                         });
 
-                    b.Navigation("Address");
+                    b.Navigation("Address")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Data.Entities.PhotoEntity", b =>
+                {
+                    b.HasOne("Data.Entities.AuthorEntity", "Authors")
+                        .WithMany("Photos")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Authors");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -540,6 +812,11 @@ namespace Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Data.Entities.AuthorEntity", b =>
+                {
+                    b.Navigation("Photos");
                 });
 
             modelBuilder.Entity("Data.Entities.OrganizationEntity", b =>

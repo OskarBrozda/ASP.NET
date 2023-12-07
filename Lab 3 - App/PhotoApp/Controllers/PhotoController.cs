@@ -35,15 +35,15 @@ public class PhotoController : Controller
     {
         if (ModelState.IsValid)
         {
-            if (model.PhotoFile != null)
-            {
-                string folder = "photos_folder/";
-                folder += Guid.NewGuid().ToString() + "_" + model.PhotoFile.FileName;
-                model.PhotoUrl = "/" + folder;
-                string serverFolder = Path.Combine(_webHostEnvironment.WebRootPath, folder);
-
-                model.PhotoFile.CopyTo(new FileStream(serverFolder, FileMode.Create));
-            }
+            //     if (model.PhotoFile != null)
+            //     {
+            //         string folder = "photos_folder/";
+            //         folder += Guid.NewGuid().ToString() + "_" + model.PhotoFile.FileName;
+            //         model.PhotoUrl = "/" + folder;
+            //         string serverFolder = Path.Combine(_webHostEnvironment.WebRootPath, folder);
+            //
+            //         model.PhotoFile.CopyTo(new FileStream(serverFolder, FileMode.Create));
+            //     }
             model.Author = CreateSelectListItem();
             _photoService.Add(model); 
             return RedirectToAction("PagedGallery");
@@ -76,7 +76,7 @@ public class PhotoController : Controller
             _photoService.Update(model);
             return RedirectToAction("PagedGallery");
         }
-        
+
         return View(model);
     }
     
@@ -98,12 +98,27 @@ public class PhotoController : Controller
 
     [Authorize(Roles = "admin")]
     [HttpGet]
-    public IActionResult Delete(int id) => View(_photoService.FindById(id));
+    public IActionResult Delete(int id)
+    {
+        var photo = _photoService.FindById(id);
+
+        if (photo == null)
+        {
+            return NotFound();
+        }
+
+        photo.Author = CreateSelectListItem();
+
+        return View(photo);
+    }
+    
     
     [Authorize(Roles = "admin")]
     [HttpPost]
     public IActionResult DeleteConfirmed(Photo photo)
     {
+        string serverFolder = Path.Combine(_webHostEnvironment.WebRootPath, photo.PhotoUrl.TrimStart('/'));
+        System.IO.File.Delete(serverFolder);
         _photoService.Delete(photo.PhotoId);
         return RedirectToAction("PagedGallery");
     }

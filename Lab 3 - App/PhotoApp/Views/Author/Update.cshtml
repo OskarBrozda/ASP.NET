@@ -5,16 +5,10 @@
 @{
 }
 
-<style>
-    .custom-margin-right {
-        margin-right: 20px; 
-    }
-</style>
-
-<div class="container">
+<div class="container colorWhite">
     <div class="row justify-content-md-center">
         <div class="col-6">
-            <h2>Edutuj dane autora:</h2>
+            <h2>Edytuj dane autora:</h2>
             <form asp-controller="Author" asp-action="Update" method="POST">
                 <input type="hidden" asp-for="AuthorId" />
                 <div class="mb-3">
@@ -77,9 +71,9 @@
                         <span asp-validation-for="Address.Country" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="mb-3">
-                    <button class="btn btn-outline-secondary" type="submit" asp-action="Index">Wróć</button>
-                    <button class="btn btn-outline-success" type="submit">Zapisz</button>
+                <div class="buttons mb-3">
+                    <button class="btn btn-outline-secondary backBtn" type="submit" asp-action="Index">Wróć</button>
+                    <button class="btn btn-outline-success addBtn" type="submit">Zapisz</button>
                 </div>
             </form>
         </div>

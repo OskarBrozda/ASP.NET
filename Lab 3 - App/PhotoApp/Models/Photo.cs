@@ -46,10 +46,9 @@ public class Photo
     [Display(Name = "Format")] 
     public Format Format { get; set; }
     
-    [Display(Name = "Wczytaj zdjęcie")]
-    public IFormFile PhotoFile { get; set; }
-    
-    public string? PhotoUrl { get; set; }
+    [Display(Name = "Link do zdjęcia")]
+    [Required(ErrorMessage = "Proszę podać link do zdjęcia.")]
+    public string PhotoUrl { get; set; }
     
     public static ValidationResult ValidateDateTime(DateTime date_time, ValidationContext validationContext)
     {

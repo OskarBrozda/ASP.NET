@@ -202,22 +202,22 @@ public class AppDbContext : IdentityDbContext<IdentityUser>
             new PhotoEntity
             {
                 PhotoId = 1, Date_time = new DateTime(2008, 8, 1, 12, 59, 16), Description = "Zdjęcie kwiatka",
-                Camera = "Nikon", AuthorId = 3, Definition = 2, Format = 4
+                Camera = "Nikon", AuthorId = 3, Definition = 2, Format = 4 , PhotoUrl = "https://westerncamp.pl/wp-content/uploads/2023/10/tatry-1080x675.jpg"
             },
             new PhotoEntity
             {
                 PhotoId = 2, Date_time = new DateTime(2018, 7, 11, 10, 9, 11), Description = "Zdjęcie pary młodej",
-                Camera = "Canon", AuthorId = 3, Definition = 6, Format = 1
+                Camera = "Canon", AuthorId = 3, Definition = 6, Format = 1, PhotoUrl = "https://bi.im-g.pl/im/20/19/1b/z28415520AMP,Puszczyk-zwyczajny.jpg"
             },
             new PhotoEntity
             {
                 PhotoId = 3, Date_time = new DateTime(1998, 11, 11, 11, 10, 9), Description = "Zdjęcie Nissana GTR",
-                Camera = "Nikon", AuthorId = 1, Definition = 7, Format = 2
+                Camera = "Nikon", AuthorId = 1, Definition = 7, Format = 2, PhotoUrl = "https://zieloniwpodrozy.pl/wp-content/uploads/2015/06/Zdjęcie-wykonane-o-świcie-na-Połoninie-Caryńskiej-podczas-naszej-krótkiej-wycieczki-w-Bieszczady..jpg"
             },
             new PhotoEntity
             {
                 PhotoId = 4, Date_time = new DateTime(2012, 2, 07, 23, 15, 34), Description = "Zdjęcie willi",
-                Camera = "Sony", AuthorId = 4, Definition = 3, Format = 5
+                Camera = "Sony", AuthorId = 4, Definition = 3, Format = 5, PhotoUrl = "https://szefsmaku.pl/wp-content/uploads/2019/02/sniadanie-to-podstawa.jpg"
             }
         );
         

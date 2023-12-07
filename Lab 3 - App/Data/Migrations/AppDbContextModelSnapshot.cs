@@ -250,6 +250,7 @@ namespace Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("PhotoUrl")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("PhotoId");
@@ -267,7 +268,8 @@ namespace Data.Migrations
                             Date_time = new DateTime(2008, 8, 1, 12, 59, 16, 0, DateTimeKind.Unspecified),
                             Definition = 2,
                             Description = "Zdjęcie kwiatka",
-                            Format = 4
+                            Format = 4,
+                            PhotoUrl = "https://westerncamp.pl/wp-content/uploads/2023/10/tatry-1080x675.jpg"
                         },
                         new
                         {
@@ -277,7 +279,8 @@ namespace Data.Migrations
                             Date_time = new DateTime(2018, 7, 11, 10, 9, 11, 0, DateTimeKind.Unspecified),
                             Definition = 6,
                             Description = "Zdjęcie pary młodej",
-                            Format = 1
+                            Format = 1,
+                            PhotoUrl = "https://bi.im-g.pl/im/20/19/1b/z28415520AMP,Puszczyk-zwyczajny.jpg"
                         },
                         new
                         {
@@ -287,7 +290,8 @@ namespace Data.Migrations
                             Date_time = new DateTime(1998, 11, 11, 11, 10, 9, 0, DateTimeKind.Unspecified),
                             Definition = 7,
                             Description = "Zdjęcie Nissana GTR",
-                            Format = 2
+                            Format = 2,
+                            PhotoUrl = "https://zieloniwpodrozy.pl/wp-content/uploads/2015/06/Zdjęcie-wykonane-o-świcie-na-Połoninie-Caryńskiej-podczas-naszej-krótkiej-wycieczki-w-Bieszczady..jpg"
                         },
                         new
                         {
@@ -297,7 +301,8 @@ namespace Data.Migrations
                             Date_time = new DateTime(2012, 2, 7, 23, 15, 34, 0, DateTimeKind.Unspecified),
                             Definition = 3,
                             Description = "Zdjęcie willi",
-                            Format = 5
+                            Format = 5,
+                            PhotoUrl = "https://szefsmaku.pl/wp-content/uploads/2019/02/sniadanie-to-podstawa.jpg"
                         });
                 });
 
@@ -329,15 +334,15 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a9a231bd-fada-4381-a52d-ac8e31c31e58",
-                            ConcurrencyStamp = "a9a231bd-fada-4381-a52d-ac8e31c31e58",
+                            Id = "597aa562-1ee5-46c3-9ac9-ef1c603eb2af",
+                            ConcurrencyStamp = "597aa562-1ee5-46c3-9ac9-ef1c603eb2af",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "6395590a-ce0a-4593-a3c6-205965bfe4a4",
-                            ConcurrencyStamp = "6395590a-ce0a-4593-a3c6-205965bfe4a4",
+                            Id = "1cc0c5bd-9438-4397-96c6-07fed42eab8b",
+                            ConcurrencyStamp = "1cc0c5bd-9438-4397-96c6-07fed42eab8b",
                             Name = "user",
                             NormalizedName = "USER"
                         });
@@ -432,33 +437,33 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d976ba39-2a6b-43b1-ad5a-9b8c87fe821f",
+                            Id = "1d9d16b9-0de3-479c-89e3-7cf4e1b0e3f8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3bff8b0c-b26b-4fd6-91ee-955d00b095e4",
+                            ConcurrencyStamp = "63997260-9506-40b5-9d96-6b6ee4b53477",
                             Email = "oskar@wsei.edu.pl",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "OSKAR@WSEI.EDU.PL",
                             NormalizedUserName = "OSKAR",
-                            PasswordHash = "AQAAAAIAAYagAAAAECjh/pPIP6zMgPREiQcBN2+QaMLeb1opTKd8PF1ZehlouO9OcDwZG0T66N2Sc+gtwg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPHM2PrljPKc8MzA1cYNetLiLmfiZPwSzyE46F16ot2ilnL8Um6Y8Po6llJWNuuoRA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2360883e-eaae-4e09-a285-da9d23774e86",
+                            SecurityStamp = "16ff4c9e-8422-4022-9927-876c2070f863",
                             TwoFactorEnabled = false,
                             UserName = "oskar"
                         },
                         new
                         {
-                            Id = "1e293fd3-9289-4c69-a07e-13e13f64d403",
+                            Id = "b72f7702-286c-468e-9472-c9f03cd0ae44",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6f4ce065-5015-4b7e-8e76-9f8b6a60763f",
+                            ConcurrencyStamp = "7025e963-deeb-4ebf-81b4-a8179b40e4e7",
                             Email = "zuzia@wsei.edu.pl",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ZUZIA@WSEI.EDU.PL",
                             NormalizedUserName = "ZUZANNA",
-                            PasswordHash = "AQAAAAIAAYagAAAAEISonyOO1ortw/JSPLf6hl29cP3reuWXaXT7zXOjnQZfqgXCn+R4hOoapRBmQyphXg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEIxWgqjp2qBNibu+RUpWA2hJfTLXVEyBUmoSqnxCxuPdVQ3z1ilYrqC2b7rKLDFSw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "80eacd03-6954-4935-ac29-1cf487a3e68e",
+                            SecurityStamp = "c09d57c9-35a0-4969-b9ce-10a758e91e94",
                             TwoFactorEnabled = false,
                             UserName = "zuzanna"
                         });
@@ -526,13 +531,13 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "d976ba39-2a6b-43b1-ad5a-9b8c87fe821f",
-                            RoleId = "a9a231bd-fada-4381-a52d-ac8e31c31e58"
+                            UserId = "1d9d16b9-0de3-479c-89e3-7cf4e1b0e3f8",
+                            RoleId = "597aa562-1ee5-46c3-9ac9-ef1c603eb2af"
                         },
                         new
                         {
-                            UserId = "1e293fd3-9289-4c69-a07e-13e13f64d403",
-                            RoleId = "6395590a-ce0a-4593-a3c6-205965bfe4a4"
+                            UserId = "b72f7702-286c-468e-9472-c9f03cd0ae44",
+                            RoleId = "1cc0c5bd-9438-4397-96c6-07fed42eab8b"
                         });
                 });
 
