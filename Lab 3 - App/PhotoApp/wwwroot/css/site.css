@@ -29,7 +29,7 @@ body {
     color: purple !important;
     font-size: 25px;
     width: 130px;
-    cursor: default;
+    cursor: pointer;
 }
 
 .navbar {
@@ -338,10 +338,34 @@ input{
 }
 
 .detailsPhoto{
+    position: relative;
     margin-top: 50px;
     margin-right: 60px;
     border: 2px solid white;
 }
+
+.downloadBtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0; 
+    background-color: rgb(128, 128, 128);
+    text-transform: uppercase;
+    font-size: 50px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    color: white !important; 
+    text-shadow: purple -2px -2px, purple 2px -2px, purple 2px 2px, purple -2px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.detailsPhoto:hover .downloadBtn {
+    opacity: 0.5;
+}
+
 .detailsPhoto img{
     width: 100%;
 }

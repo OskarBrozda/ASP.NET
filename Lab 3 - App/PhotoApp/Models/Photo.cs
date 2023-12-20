@@ -39,7 +39,7 @@ public class Photo
     public List<SelectListItem> Author{ get; set; }
 
 
-    [Display(Name = "Rozdzielczość")] 
+    [Display(Name = "Rozdzielczość (px)")] 
     public Definition Definition { get; set; }
 
 

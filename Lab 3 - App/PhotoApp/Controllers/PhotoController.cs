@@ -1,3 +1,4 @@
+using System.Net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -32,15 +33,6 @@ public class PhotoController : Controller
     {
         if (ModelState.IsValid)
         {
-            //     if (model.PhotoFile != null)
-            //     {
-            //         string folder = "photos_folder/";
-            //         folder += Guid.NewGuid().ToString() + "_" + model.PhotoFile.FileName;
-            //         model.PhotoUrl = "/" + folder;
-            //         string serverFolder = Path.Combine(_webHostEnvironment.WebRootPath, folder);
-            //
-            //         model.PhotoFile.CopyTo(new FileStream(serverFolder, FileMode.Create));
-            //     }
             model.Author = CreateSelectListItem();
             _photoService.Add(model); 
             return RedirectToAction("PagedGallery");
@@ -117,6 +109,29 @@ public class PhotoController : Controller
         _photoService.Delete(photo.PhotoId);
         return RedirectToAction("PagedGallery");
     }
+    
+    
+    [Authorize]
+    public IActionResult Download(int id)
+    {
+        var photo = _photoService.FindById(id);
+
+        if (photo == null)
+        {
+            return NotFound();
+        }
+
+        byte[] fileContents;
+        using (var webClient = new WebClient())
+        {
+            fileContents = webClient.DownloadData(photo.PhotoUrl);
+        }
+
+        string fileName = $"{photo.Description}_{photo.PhotoId}_Brozda.jpg";
+        string contentType = "image/jpeg";
+        return File(fileContents, contentType, fileName);
+    }
+
     
     private List<SelectListItem> CreateSelectListItem()
     {
