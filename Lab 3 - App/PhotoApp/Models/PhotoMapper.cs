@@ -15,7 +15,8 @@ public abstract class PhotoMapper
             AuthorId = entity.AuthorId,
             PhotoUrl = entity.PhotoUrl,
             Definition = (Definition)entity.Definition,
-            Format = (Format)entity.Format
+            Format = (Format)entity.Format,
+            Love = entity.Love
         };
     }
 
@@ -30,7 +31,8 @@ public abstract class PhotoMapper
             AuthorId = model.AuthorId,
             PhotoUrl = model.PhotoUrl,
             Definition = (int)model.Definition,
-            Format = (int)model.Format
+            Format = (int)model.Format,
+            Love = model.Love
         };
     }
 }

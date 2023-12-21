@@ -13,7 +13,7 @@ namespace Data.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable("AspNetRoles");
+            migrationBuilder.Sql("DROP TABLE IF EXISTS AspNetRoles");
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -28,7 +28,7 @@ namespace Data.Migrations
                     table.PrimaryKey("PK_AspNetRoles", x => x.Id);
                 });
 
-            migrationBuilder.DropTable("AspNetUsers");
+            migrationBuilder.Sql("DROP TABLE IF EXISTS AspNetUsers");
             migrationBuilder.CreateTable(
                 name: "AspNetUsers",
                 columns: table => new
@@ -54,7 +54,7 @@ namespace Data.Migrations
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
                 });
 
-            migrationBuilder.DropTable("authors");
+            migrationBuilder.Sql("DROP TABLE IF EXISTS authors");
             migrationBuilder.CreateTable(
                 name: "authors",
                 columns: table => new
@@ -78,7 +78,7 @@ namespace Data.Migrations
                     table.PrimaryKey("PK_authors", x => x.AuthorId);
                 });
 
-            migrationBuilder.DropTable("organizations");
+            migrationBuilder.Sql("DROP TABLE IF EXISTS organizations");
             migrationBuilder.CreateTable(
                 name: "organizations",
                 columns: table => new
@@ -102,7 +102,7 @@ namespace Data.Migrations
                     table.PrimaryKey("PK_organizations", x => x.OrganizationId);
                 });
 
-            migrationBuilder.DropTable("AspNetRoleClaims");
+            migrationBuilder.Sql("DROP TABLE IF EXISTS AspNetRoleClaims");
             migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
@@ -124,7 +124,7 @@ namespace Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.DropTable("AspNetUserClaims");
+            migrationBuilder.Sql("DROP TABLE IF EXISTS AspNetUserClaims");
             migrationBuilder.CreateTable(
                 name: "AspNetUserClaims",
                 columns: table => new
@@ -146,7 +146,7 @@ namespace Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.DropTable("AspNetUserLogins");
+            migrationBuilder.Sql("DROP TABLE IF EXISTS AspNetUserLogins");
             migrationBuilder.CreateTable(
                 name: "AspNetUserLogins",
                 columns: table => new
@@ -167,7 +167,7 @@ namespace Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.DropTable("AspNetUserRoles");
+            migrationBuilder.Sql("DROP TABLE IF EXISTS AspNetUserRoles");
             migrationBuilder.CreateTable(
                 name: "AspNetUserRoles",
                 columns: table => new
@@ -192,7 +192,7 @@ namespace Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.DropTable("AspNetUserTokens");
+            migrationBuilder.Sql("DROP TABLE IF EXISTS AspNetUserTokens");
             migrationBuilder.CreateTable(
                 name: "AspNetUserTokens",
                 columns: table => new
@@ -213,7 +213,7 @@ namespace Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.DropTable("photos");
+            migrationBuilder.Sql("DROP TABLE IF EXISTS photos");
             migrationBuilder.CreateTable(
                 name: "photos",
                 columns: table => new
@@ -226,7 +226,8 @@ namespace Data.Migrations
                     Definition = table.Column<int>(type: "INTEGER", nullable: false),
                     Format = table.Column<int>(type: "INTEGER", nullable: false),
                     AuthorId = table.Column<int>(type: "INTEGER", nullable: false),
-                    PhotoUrl = table.Column<string>(type: "TEXT", nullable: false)
+                    PhotoUrl = table.Column<string>(type: "TEXT", nullable: false),
+                    Love = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -239,7 +240,7 @@ namespace Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.DropTable("contacts");
+            migrationBuilder.Sql("DROP TABLE IF EXISTS contacts");
             migrationBuilder.CreateTable(
                 name: "contacts",
                 columns: table => new
@@ -272,8 +273,8 @@ namespace Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "4eff5f6f-11d6-4a75-a2f8-e49e8bcf0fd1", "4eff5f6f-11d6-4a75-a2f8-e49e8bcf0fd1", "admin", "ADMIN" },
-                    { "ee12adda-468e-4e63-9cef-48e4fbc468dd", "ee12adda-468e-4e63-9cef-48e4fbc468dd", "user", "USER" }
+                    { "1e083dbd-f018-455e-b5b9-a309e1bd2613", "1e083dbd-f018-455e-b5b9-a309e1bd2613", "user", "USER" },
+                    { "ed192f30-9146-44cf-af35-ca747de699da", "ed192f30-9146-44cf-af35-ca747de699da", "admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
@@ -281,8 +282,8 @@ namespace Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "1c4002de-d34c-4ec9-87d4-a776ed817896", 0, "861db507-d8bf-4494-9f49-aab31a292975", "oskar@wsei.edu.pl", true, false, null, "OSKAR@WSEI.EDU.PL", "OSKAR", "AQAAAAIAAYagAAAAECp2XLyhqAaSU+wymrTffqY323d5aeknYeyHRoHDZfOs1PvC8OU6C6VmNdH8eIS08Q==", null, false, "b63cdd95-9e3b-48f6-a9a5-fc1c7c17a31d", false, "oskar" },
-                    { "82afbb7b-5ad8-4151-b49a-e2f49fb4d876", 0, "f7279548-b9ba-439e-9e06-577672a13070", "zuzia@wsei.edu.pl", true, false, null, "ZUZIA@WSEI.EDU.PL", "ZUZANNA", "AQAAAAIAAYagAAAAENRLn00WvL03GlB729NejOY0pGMyn6R77vsxNhtQC+wC54ExBivAPQSRutx+lVuj0Q==", null, false, "9caf0cfb-505a-47bf-ae94-5b5952914f7b", false, "zuzanna" }
+                    { "61ae0669-417d-4fe3-a918-14046c99e7b7", 0, "ce3fdef7-3149-492a-9358-48a32e3d12a8", "zuzia@wsei.edu.pl", true, false, null, "ZUZIA@WSEI.EDU.PL", "ZUZANNA", "AQAAAAIAAYagAAAAEIFIWZDIv0J5SksClaHCn4EC+pcKurC6mm2nOPJLXmPE+knsDcIrnLLVaSgS9OvO5w==", null, false, "a5fec36b-1b01-48be-8537-672179d46b31", false, "zuzanna" },
+                    { "ee776100-9a00-43d9-bccc-8edae0042523", 0, "8b32130d-2e9e-4798-990c-5c5dfbbbf249", "oskar@wsei.edu.pl", true, false, null, "OSKAR@WSEI.EDU.PL", "OSKAR", "AQAAAAIAAYagAAAAEFVPNpYuo41R/1Pwg0Td4YSWcfqFzHK1YjaD79B+PvvfotB0/KsDYJEa0Ur9Qb8H7A==", null, false, "b5fb94a0-3b20-4de2-bd8b-8c6c17a65707", false, "oskar" }
                 });
 
             migrationBuilder.InsertData(
@@ -312,8 +313,8 @@ namespace Data.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "4eff5f6f-11d6-4a75-a2f8-e49e8bcf0fd1", "1c4002de-d34c-4ec9-87d4-a776ed817896" },
-                    { "ee12adda-468e-4e63-9cef-48e4fbc468dd", "82afbb7b-5ad8-4151-b49a-e2f49fb4d876" }
+                    { "1e083dbd-f018-455e-b5b9-a309e1bd2613", "61ae0669-417d-4fe3-a918-14046c99e7b7" },
+                    { "ed192f30-9146-44cf-af35-ca747de699da", "ee776100-9a00-43d9-bccc-8edae0042523" }
                 });
 
             migrationBuilder.InsertData(
@@ -328,16 +329,16 @@ namespace Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "photos",
-                columns: new[] { "PhotoId", "AuthorId", "Camera", "Date_time", "Definition", "Description", "Format", "PhotoUrl" },
+                columns: new[] { "PhotoId", "AuthorId", "Camera", "Date_time", "Definition", "Description", "Format", "Love", "PhotoUrl" },
                 values: new object[,]
                 {
-                    { 1, 3, "Nikon", new DateTime(2008, 8, 1, 12, 59, 16, 0, DateTimeKind.Unspecified), 2, "Pejzaż górski", 4, "https://westerncamp.pl/wp-content/uploads/2023/10/tatry-1080x675.jpg" },
-                    { 2, 3, "Canon", new DateTime(2018, 7, 11, 10, 9, 11, 0, DateTimeKind.Unspecified), 6, "Sowa", 1, "https://bi.im-g.pl/im/20/19/1b/z28415520AMP,Puszczyk-zwyczajny.jpg" },
-                    { 3, 1, "Nikon", new DateTime(1998, 11, 11, 11, 10, 9, 0, DateTimeKind.Unspecified), 7, "Znak górski", 2, "https://zieloniwpodrozy.pl/wp-content/uploads/2015/06/Zdjęcie-wykonane-o-świcie-na-Połoninie-Caryńskiej-podczas-naszej-krótkiej-wycieczki-w-Bieszczady..jpg" },
-                    { 4, 4, "Sony", new DateTime(2012, 2, 7, 23, 15, 34, 0, DateTimeKind.Unspecified), 3, "Śniadanie", 5, "https://szefsmaku.pl/wp-content/uploads/2019/02/sniadanie-to-podstawa.jpg" },
-                    { 5, 3, "Iphone", new DateTime(2000, 1, 1, 13, 10, 35, 0, DateTimeKind.Unspecified), 4, "Kotek", 3, "https://img.redro.pl/obrazy/czarny-dlugowlosy-kot-700-204992097.jpg" },
-                    { 6, 2, "screen", new DateTime(2019, 4, 9, 10, 14, 44, 0, DateTimeKind.Unspecified), 6, "Szpic miniaturowy", 2, "https://ocdn.eu/pulscms-transforms/1/-LUk9kqTURBXy83ZTRmYjIyNmI0YWUxZDZlZjg2OWM4ZTFjY2YxNDE5My5qcGVnk5UDzQHIzQEKzQnszQWVkwXNBLDNAqSTCaY2ZTQwMzgG3gABoTAB/marzy-ci-sie-bezproblemowy-pies-poznaj-rasy-ktore-nie-sprawia-duzo-klopotu.jpeg" },
-                    { 7, 2, "Nokia", new DateTime(2017, 11, 12, 2, 1, 3, 0, DateTimeKind.Unspecified), 2, "College", 1, "https://educat.study/wp-content/uploads/2023/09/4585094076_902c32b4cf_b.jpg" }
+                    { 1, 3, "Nikon", new DateTime(2008, 8, 1, 12, 59, 16, 0, DateTimeKind.Unspecified), 2, "Pejzaż górski", 4, 345, "https://westerncamp.pl/wp-content/uploads/2023/10/tatry-1080x675.jpg" },
+                    { 2, 3, "Canon", new DateTime(2018, 7, 11, 10, 9, 11, 0, DateTimeKind.Unspecified), 6, "Sowa", 1, 1234, "https://bi.im-g.pl/im/20/19/1b/z28415520AMP,Puszczyk-zwyczajny.jpg" },
+                    { 3, 1, "Nikon", new DateTime(1998, 11, 11, 11, 10, 9, 0, DateTimeKind.Unspecified), 7, "Znak górski", 2, 702, "https://zieloniwpodrozy.pl/wp-content/uploads/2015/06/Zdjęcie-wykonane-o-świcie-na-Połoninie-Caryńskiej-podczas-naszej-krótkiej-wycieczki-w-Bieszczady..jpg" },
+                    { 4, 4, "Sony", new DateTime(2012, 2, 7, 23, 15, 34, 0, DateTimeKind.Unspecified), 3, "Śniadanie", 5, 100, "https://szefsmaku.pl/wp-content/uploads/2019/02/sniadanie-to-podstawa.jpg" },
+                    { 5, 3, "Iphone", new DateTime(2000, 1, 1, 13, 10, 35, 0, DateTimeKind.Unspecified), 4, "Kotek", 3, 98901, "https://img.redro.pl/obrazy/czarny-dlugowlosy-kot-700-204992097.jpg" },
+                    { 6, 2, "screen", new DateTime(2019, 4, 9, 10, 14, 44, 0, DateTimeKind.Unspecified), 6, "Szpic miniaturowy", 2, 23467, "https://ocdn.eu/pulscms-transforms/1/-LUk9kqTURBXy83ZTRmYjIyNmI0YWUxZDZlZjg2OWM4ZTFjY2YxNDE5My5qcGVnk5UDzQHIzQEKzQnszQWVkwXNBLDNAqSTCaY2ZTQwMzgG3gABoTAB/marzy-ci-sie-bezproblemowy-pies-poznaj-rasy-ktore-nie-sprawia-duzo-klopotu.jpeg" },
+                    { 7, 2, "Nokia", new DateTime(2017, 11, 12, 2, 1, 3, 0, DateTimeKind.Unspecified), 2, "College", 1, 1, "https://educat.study/wp-content/uploads/2023/09/4585094076_902c32b4cf_b.jpg" }
                 });
 
             migrationBuilder.CreateIndex(

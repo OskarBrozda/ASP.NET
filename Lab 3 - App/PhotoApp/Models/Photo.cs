@@ -41,7 +41,9 @@ public class Photo
 
     [Display(Name = "Rozdzielczość (px)")] 
     public Definition Definition { get; set; }
-
+    
+    
+    public int Love { get; set; }
 
     [Display(Name = "Format")] 
     public Format Format { get; set; }

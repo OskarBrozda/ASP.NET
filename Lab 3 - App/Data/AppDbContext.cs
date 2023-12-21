@@ -203,44 +203,45 @@ public class AppDbContext : IdentityDbContext<IdentityUser>
             {
                 PhotoId = 1, Date_time = new DateTime(2008, 8, 1, 12, 59, 16), Description = "Pejzaż górski",
                 Camera = "Nikon", AuthorId = 3, Definition = 2, Format = 4,
-                PhotoUrl = "https://westerncamp.pl/wp-content/uploads/2023/10/tatry-1080x675.jpg"
+                PhotoUrl = "https://westerncamp.pl/wp-content/uploads/2023/10/tatry-1080x675.jpg", Love = 345
             },
             new PhotoEntity
             {
                 PhotoId = 2, Date_time = new DateTime(2018, 7, 11, 10, 9, 11), Description = "Sowa",
                 Camera = "Canon", AuthorId = 3, Definition = 6, Format = 1,
-                PhotoUrl = "https://bi.im-g.pl/im/20/19/1b/z28415520AMP,Puszczyk-zwyczajny.jpg"
+                PhotoUrl = "https://bi.im-g.pl/im/20/19/1b/z28415520AMP,Puszczyk-zwyczajny.jpg", Love = 1234
             },
             new PhotoEntity
             {
                 PhotoId = 3, Date_time = new DateTime(1998, 11, 11, 11, 10, 9), Description = "Znak górski",
                 Camera = "Nikon", AuthorId = 1, Definition = 7, Format = 2,
-                PhotoUrl =
-                    "https://zieloniwpodrozy.pl/wp-content/uploads/2015/06/Zdjęcie-wykonane-o-świcie-na-Połoninie-Caryńskiej-podczas-naszej-krótkiej-wycieczki-w-Bieszczady..jpg"
+                PhotoUrl = "https://zieloniwpodrozy.pl/wp-content/uploads/2015/06/Zdjęcie-wykonane-o-świcie-na-Połoninie-Caryńskiej-podczas-naszej-krótkiej-wycieczki-w-Bieszczady..jpg",
+                Love = 702
             },
             new PhotoEntity
             {
                 PhotoId = 4, Date_time = new DateTime(2012, 2, 07, 23, 15, 34), Description = "Śniadanie",
                 Camera = "Sony", AuthorId = 4, Definition = 3, Format = 5,
-                PhotoUrl = "https://szefsmaku.pl/wp-content/uploads/2019/02/sniadanie-to-podstawa.jpg"
+                PhotoUrl = "https://szefsmaku.pl/wp-content/uploads/2019/02/sniadanie-to-podstawa.jpg", Love = 100
             },
             new PhotoEntity
             {
                 PhotoId = 5, Date_time = new DateTime(2000, 1, 1, 13, 10, 35), Description = "Kotek",
                 Camera = "Iphone", AuthorId = 3, Definition = 4, Format = 3,
-                PhotoUrl = "https://img.redro.pl/obrazy/czarny-dlugowlosy-kot-700-204992097.jpg"
+                PhotoUrl = "https://img.redro.pl/obrazy/czarny-dlugowlosy-kot-700-204992097.jpg", Love = 98901
             },
             new PhotoEntity
             {
                 PhotoId = 6, Date_time = new DateTime(2019, 4, 9, 10, 14, 44), Description = "Szpic miniaturowy",
                 Camera = "screen", AuthorId = 2, Definition = 6, Format = 2,
-                PhotoUrl = "https://ocdn.eu/pulscms-transforms/1/-LUk9kqTURBXy83ZTRmYjIyNmI0YWUxZDZlZjg2OWM4ZTFjY2YxNDE5My5qcGVnk5UDzQHIzQEKzQnszQWVkwXNBLDNAqSTCaY2ZTQwMzgG3gABoTAB/marzy-ci-sie-bezproblemowy-pies-poznaj-rasy-ktore-nie-sprawia-duzo-klopotu.jpeg"
+                PhotoUrl = "https://ocdn.eu/pulscms-transforms/1/-LUk9kqTURBXy83ZTRmYjIyNmI0YWUxZDZlZjg2OWM4ZTFjY2YxNDE5My5qcGVnk5UDzQHIzQEKzQnszQWVkwXNBLDNAqSTCaY2ZTQwMzgG3gABoTAB/marzy-ci-sie-bezproblemowy-pies-poznaj-rasy-ktore-nie-sprawia-duzo-klopotu.jpeg",
+                Love = 23467
             },
             new PhotoEntity
             {
                 PhotoId = 7, Date_time = new DateTime(2017, 11, 12, 2, 1, 3), Description = "College",
                 Camera = "Nokia", AuthorId = 2, Definition = 2, Format = 1,
-                PhotoUrl = "https://educat.study/wp-content/uploads/2023/09/4585094076_902c32b4cf_b.jpg"
+                PhotoUrl = "https://educat.study/wp-content/uploads/2023/09/4585094076_902c32b4cf_b.jpg", Love = 1
             }
         );
         

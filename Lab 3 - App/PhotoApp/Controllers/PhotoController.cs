@@ -132,6 +132,13 @@ public class PhotoController : Controller
         return File(fileContents, contentType, fileName);
     }
 
+    [AllowAnonymous]
+    [HttpPost]
+    public IActionResult Loves(int photoId)
+    {
+        _photoService.AddLove(photoId);
+        return Json(new { success = true });
+    }
     
     private List<SelectListItem> CreateSelectListItem()
     {

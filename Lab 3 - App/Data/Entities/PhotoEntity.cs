@@ -23,4 +23,6 @@ public class PhotoEntity
 
     public string PhotoUrl { get; set; }
     public AuthorEntity? Authors { get; set; }
+    
+    public int Love { get; set; }
 }

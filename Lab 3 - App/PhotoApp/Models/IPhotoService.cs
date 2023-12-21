@@ -10,6 +10,7 @@ public interface IPhotoService
     void Update(Photo photo);
     List<Photo> FindAll();
     Photo? FindById(int id);
+    void AddLove(int photoId);
     List<AuthorEntity> FindAllAuthors();
     public PagingList<Photo> FindPage(int page, int size);
 }

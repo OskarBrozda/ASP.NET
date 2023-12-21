@@ -71,12 +71,13 @@
                 <div class="mb-2">
                     @Model.Format.GetDisplayName()
                 </div>
+                <div class="btnback specialPlace">
+                    <form asp-controller="Photo" asp-action="PagedGallery" method="POST">
+                        <button class="btn btn-outline-secondary backBtn" type="submit" asp-action="PagedGallery">Wróć</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="btnback">
-            <form asp-controller="Photo" asp-action="PagedGallery" method="POST">
-                <button class="btn btn-outline-secondary backBtn" type="submit" asp-action="PagedGallery">Wróć</button>
-            </form>
-        </div>
+        
     </div>
 </div>

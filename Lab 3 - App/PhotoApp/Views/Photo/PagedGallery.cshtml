@@ -1,5 +1,20 @@
 @model PagingList<Photo>
 
+<script>
+    function addLove(photoId) {
+        $.ajax({
+            type: "POST",
+            url: "/Photo/Loves",
+            data: { photoId: photoId },
+            success: function (result) {
+                if (result.success) {
+                    $("#loveCount").text(result.loveCount);
+                }
+            }
+        });
+    }
+</script>
+
 <div class="container">
     <div class="title">
         <h2 class="center">
@@ -17,8 +32,14 @@
                         <img src="@photo.PhotoUrl" class="img-thumbnail"/>
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">@photo.Description</h3>
-                        <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="card-title">
+                            <span class=description>@photo.Description</span>
+                            <span class="loves">@photo.Love</span>
+                            <span class="image">
+                                <img src="https://impeccablenestdesign.com/wp-content/uploads/2023/05/purple-heart-emoji-meaning-from-a-guy-646b20f07a288.png" onclick="addLove(@photo.PhotoId)">
+                            </span>
+                        </h3>
+                        <div class="d-flex justify-content-between align-items-center minusMargin">
                             <div class="btn-group">
                                 <a asp-action="Details" asp-controller="Photo" asp-route-id="@photo.PhotoId"
                                    class="btn btn-sm btn-outline-secondary detailsBtn">Szczegłóły</a>

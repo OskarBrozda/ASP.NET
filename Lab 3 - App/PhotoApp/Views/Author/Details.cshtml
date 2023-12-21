@@ -43,11 +43,11 @@
                 <div class="mb-2">
                     @Model.Surname
                 </div>
-                <div class="mb-2">
+                <div class="mb-2 ema">
                     @Model.Email
                 </div>
-                <div class="mb-2">
-                    <br/> @Model.Address.Street @Model.Address.HomeNr
+                <div class="mb-2 adr">
+                    @Model.Address.Street @Model.Address.HomeNr
                     @if (@Model.Address.ApartamentNr != null)
                     {
                         <span> / </span>

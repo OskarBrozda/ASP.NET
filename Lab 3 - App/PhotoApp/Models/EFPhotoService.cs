@@ -20,13 +20,15 @@ public class EFPhotoService : IPhotoService
         int totalCount = _context.Photos.Count();
         var pagingList = PagingList<Photo>.Create(null, totalCount, page, size);
         var authors = _context.Authors.ToList();
+        
         var data = _context.Photos
-            .OrderBy(c => c.Date_time)
+            .OrderByDescending(c => c.Love)
             .Skip((pagingList.Number - 1) * pagingList.Size)
             .Take(pagingList.Size)
             .Include(c=>c.Authors)
             .Select(e => PhotoMapper.FromEntity(e))
             .ToList();
+        
         foreach (var photo in data)
         {
             photo.Author = authors.Select(a => new SelectListItem { Value = a.AuthorId.ToString(), Text = $"{a.Name} {a.Surname}" }).ToList();
@@ -37,6 +39,7 @@ public class EFPhotoService : IPhotoService
     
     public int Add(Photo photo)
     {
+        photo.Love = 0;
         var entity = _context.Photos.Add(PhotoMapper.ToEntity(photo));
         var id = entity.Entity.PhotoId;
         _context.SaveChanges();
@@ -55,8 +58,26 @@ public class EFPhotoService : IPhotoService
 
     public void Update(Photo photo)
     {
-        _context.Photos.Update(PhotoMapper.ToEntity(photo));
-        _context.SaveChanges();
+        var existingPhoto = _context.Photos.Find(photo.PhotoId);
+
+        if (existingPhoto != null)
+        {
+            photo.Love = existingPhoto.Love;
+            _context.Entry(existingPhoto).CurrentValues.SetValues(PhotoMapper.ToEntity(photo));
+            _context.SaveChanges();
+        }
+    }
+
+    
+    public void AddLove(int photoId)
+    {
+        var photo = _context.Photos.Find(photoId);
+        
+        if (photo != null)
+        {
+            photo.Love++;
+            _context.SaveChanges();
+        }
     }
 
     public List<Photo> FindAll()

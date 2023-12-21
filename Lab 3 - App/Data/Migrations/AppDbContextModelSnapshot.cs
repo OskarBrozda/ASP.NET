@@ -249,6 +249,9 @@ namespace Data.Migrations
                     b.Property<int>("Format")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("Love")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("PhotoUrl")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -269,6 +272,7 @@ namespace Data.Migrations
                             Definition = 2,
                             Description = "Pejzaż górski",
                             Format = 4,
+                            Love = 345,
                             PhotoUrl = "https://westerncamp.pl/wp-content/uploads/2023/10/tatry-1080x675.jpg"
                         },
                         new
@@ -280,6 +284,7 @@ namespace Data.Migrations
                             Definition = 6,
                             Description = "Sowa",
                             Format = 1,
+                            Love = 1234,
                             PhotoUrl = "https://bi.im-g.pl/im/20/19/1b/z28415520AMP,Puszczyk-zwyczajny.jpg"
                         },
                         new
@@ -291,6 +296,7 @@ namespace Data.Migrations
                             Definition = 7,
                             Description = "Znak górski",
                             Format = 2,
+                            Love = 702,
                             PhotoUrl = "https://zieloniwpodrozy.pl/wp-content/uploads/2015/06/Zdjęcie-wykonane-o-świcie-na-Połoninie-Caryńskiej-podczas-naszej-krótkiej-wycieczki-w-Bieszczady..jpg"
                         },
                         new
@@ -302,6 +308,7 @@ namespace Data.Migrations
                             Definition = 3,
                             Description = "Śniadanie",
                             Format = 5,
+                            Love = 100,
                             PhotoUrl = "https://szefsmaku.pl/wp-content/uploads/2019/02/sniadanie-to-podstawa.jpg"
                         },
                         new
@@ -313,6 +320,7 @@ namespace Data.Migrations
                             Definition = 4,
                             Description = "Kotek",
                             Format = 3,
+                            Love = 98901,
                             PhotoUrl = "https://img.redro.pl/obrazy/czarny-dlugowlosy-kot-700-204992097.jpg"
                         },
                         new
@@ -324,6 +332,7 @@ namespace Data.Migrations
                             Definition = 6,
                             Description = "Szpic miniaturowy",
                             Format = 2,
+                            Love = 23467,
                             PhotoUrl = "https://ocdn.eu/pulscms-transforms/1/-LUk9kqTURBXy83ZTRmYjIyNmI0YWUxZDZlZjg2OWM4ZTFjY2YxNDE5My5qcGVnk5UDzQHIzQEKzQnszQWVkwXNBLDNAqSTCaY2ZTQwMzgG3gABoTAB/marzy-ci-sie-bezproblemowy-pies-poznaj-rasy-ktore-nie-sprawia-duzo-klopotu.jpeg"
                         },
                         new
@@ -335,6 +344,7 @@ namespace Data.Migrations
                             Definition = 2,
                             Description = "College",
                             Format = 1,
+                            Love = 1,
                             PhotoUrl = "https://educat.study/wp-content/uploads/2023/09/4585094076_902c32b4cf_b.jpg"
                         });
                 });
@@ -367,15 +377,15 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "4eff5f6f-11d6-4a75-a2f8-e49e8bcf0fd1",
-                            ConcurrencyStamp = "4eff5f6f-11d6-4a75-a2f8-e49e8bcf0fd1",
+                            Id = "ed192f30-9146-44cf-af35-ca747de699da",
+                            ConcurrencyStamp = "ed192f30-9146-44cf-af35-ca747de699da",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "ee12adda-468e-4e63-9cef-48e4fbc468dd",
-                            ConcurrencyStamp = "ee12adda-468e-4e63-9cef-48e4fbc468dd",
+                            Id = "1e083dbd-f018-455e-b5b9-a309e1bd2613",
+                            ConcurrencyStamp = "1e083dbd-f018-455e-b5b9-a309e1bd2613",
                             Name = "user",
                             NormalizedName = "USER"
                         });
@@ -470,33 +480,33 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1c4002de-d34c-4ec9-87d4-a776ed817896",
+                            Id = "ee776100-9a00-43d9-bccc-8edae0042523",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "861db507-d8bf-4494-9f49-aab31a292975",
+                            ConcurrencyStamp = "8b32130d-2e9e-4798-990c-5c5dfbbbf249",
                             Email = "oskar@wsei.edu.pl",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "OSKAR@WSEI.EDU.PL",
                             NormalizedUserName = "OSKAR",
-                            PasswordHash = "AQAAAAIAAYagAAAAECp2XLyhqAaSU+wymrTffqY323d5aeknYeyHRoHDZfOs1PvC8OU6C6VmNdH8eIS08Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFVPNpYuo41R/1Pwg0Td4YSWcfqFzHK1YjaD79B+PvvfotB0/KsDYJEa0Ur9Qb8H7A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b63cdd95-9e3b-48f6-a9a5-fc1c7c17a31d",
+                            SecurityStamp = "b5fb94a0-3b20-4de2-bd8b-8c6c17a65707",
                             TwoFactorEnabled = false,
                             UserName = "oskar"
                         },
                         new
                         {
-                            Id = "82afbb7b-5ad8-4151-b49a-e2f49fb4d876",
+                            Id = "61ae0669-417d-4fe3-a918-14046c99e7b7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f7279548-b9ba-439e-9e06-577672a13070",
+                            ConcurrencyStamp = "ce3fdef7-3149-492a-9358-48a32e3d12a8",
                             Email = "zuzia@wsei.edu.pl",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ZUZIA@WSEI.EDU.PL",
                             NormalizedUserName = "ZUZANNA",
-                            PasswordHash = "AQAAAAIAAYagAAAAENRLn00WvL03GlB729NejOY0pGMyn6R77vsxNhtQC+wC54ExBivAPQSRutx+lVuj0Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIFIWZDIv0J5SksClaHCn4EC+pcKurC6mm2nOPJLXmPE+knsDcIrnLLVaSgS9OvO5w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9caf0cfb-505a-47bf-ae94-5b5952914f7b",
+                            SecurityStamp = "a5fec36b-1b01-48be-8537-672179d46b31",
                             TwoFactorEnabled = false,
                             UserName = "zuzanna"
                         });
@@ -564,13 +574,13 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "1c4002de-d34c-4ec9-87d4-a776ed817896",
-                            RoleId = "4eff5f6f-11d6-4a75-a2f8-e49e8bcf0fd1"
+                            UserId = "ee776100-9a00-43d9-bccc-8edae0042523",
+                            RoleId = "ed192f30-9146-44cf-af35-ca747de699da"
                         },
                         new
                         {
-                            UserId = "82afbb7b-5ad8-4151-b49a-e2f49fb4d876",
-                            RoleId = "ee12adda-468e-4e63-9cef-48e4fbc468dd"
+                            UserId = "61ae0669-417d-4fe3-a918-14046c99e7b7",
+                            RoleId = "1e083dbd-f018-455e-b5b9-a309e1bd2613"
                         });
                 });
 
